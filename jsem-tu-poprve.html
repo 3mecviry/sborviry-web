@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jsem tu poprvé | Sbor Víry — Třinec</title>
+<meta name="theme-color" content="#FBF8F5">
+<link rel="icon" href="assets/img/favicon.png" sizes="64x64">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="first">
+<a class="skip" href="#main" data-i18n="ui.skip">Přejít na hlavní obsah</a>
+<div id="site-header"></div>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow" data-i18n="first.hero.eyebrow"></span>
+      <h1 data-i18n="first.hero.h1"></h1>
+      <p data-i18n="first.hero.p"></p>
+      <div class="btn-row mt-2">
+        <a class="btn btn-primary" data-page-link="contact" href="#" data-i18n="cta.contact"></a>
+        <a class="btn btn-ghost" href="#faq" data-i18n="first.faq.eyebrow"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------------------------- ČASY ---------------------------- -->
+  <section class="section-tight">
+    <div class="wrap" data-reveal>
+      <div class="times" id="times"></div>
+      <p class="small muted mt-1" data-i18n="home.times.note"></p>
+    </div>
+  </section>
+
+  <!-- ---------------------------- KROK ZA KROKEM ---------------------------- -->
+  <section class="section section-cream">
+    <div class="wrap">
+      <div class="split wide-left">
+        <div data-reveal>
+          <span class="eyebrow" data-i18n="first.steps.eyebrow"></span>
+          <h2 class="mt-1" data-i18n="first.steps.h2"></h2>
+          <ol class="numbered mt-3">
+            <li><div><h4 data-i18n="first.steps.s1t"></h4><p data-i18n="first.steps.s1d"></p></div></li>
+            <li><div><h4 data-i18n="first.steps.s2t"></h4><p data-i18n="first.steps.s2d"></p></div></li>
+            <li><div><h4 data-i18n="first.steps.s3t"></h4><p data-i18n="first.steps.s3d"></p></div></li>
+            <li><div><h4 data-i18n="first.steps.s4t"></h4><p data-i18n="first.steps.s4d"></p></div></li>
+            <li><div><h4 data-i18n="first.steps.s5t"></h4><p data-i18n="first.steps.s5d"></p></div></li>
+          </ol>
+        </div>
+        <div class="media ratio-3-4" data-photo="assets/img/predsali.jpg" data-photo-alt-key="photos.first" data-reveal style="max-height:640px"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------------------------- FAQ ---------------------------- -->
+  <section class="section" id="faq">
+    <div class="wrap wrap-narrow">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow" data-i18n="first.faq.eyebrow"></span>
+        <h2 data-i18n="first.faq.h2"></h2>
+      </div>
+      <div class="faq" data-reveal>
+        <details open><summary data-i18n="first.faq.q1"></summary><div data-i18n="first.faq.a1"></div></details>
+        <details><summary data-i18n="first.faq.q2"></summary><div data-i18n="first.faq.a2"></div></details>
+        <details><summary data-i18n="first.faq.q3"></summary><div data-i18n="first.faq.a3"></div></details>
+        <details><summary data-i18n="first.faq.q4"></summary><div data-i18n="first.faq.a4"></div></details>
+        <details><summary data-i18n="first.faq.q5"></summary><div data-i18n="first.faq.a5"></div></details>
+        <details><summary data-i18n="first.faq.q6"></summary><div data-i18n="first.faq.a6"></div></details>
+        <details><summary data-i18n="first.faq.q7"></summary><div data-i18n="first.faq.a7"></div></details>
+        <details><summary data-i18n="first.faq.q8"></summary><div data-i18n="first.faq.a8"></div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------------------------- MAPA ---------------------------- -->
+  <section class="section section-cream">
+    <div class="wrap">
+      <div class="split">
+        <div data-reveal>
+          <span class="eyebrow" data-i18n="contact.hero.eyebrow"></span>
+          <h2 class="mt-1" data-i18n="contact.map.h2"></h2>
+          <p class="lead muted mt-1" data-i18n="contact.map.p"></p>
+        </div>
+        <div id="map" data-reveal></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="wrap">
+      <div class="cta-band" data-reveal>
+        <h2 data-i18n="first.cta.h2"></h2>
+        <p data-i18n="first.cta.p"></p>
+        <div class="btn-row">
+          <a class="btn btn-primary" data-page-link="contact" href="#" data-i18n="cta.contact"></a>
+          <a class="btn btn-light" data-page-link="sermons" href="#" data-i18n="cta.watch"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer"></div>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/content.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>
