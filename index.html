@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sbor Víry — Třinec | křesťanský sbor</title>
+<meta name="description" content="Křesťanský sbor v Třinci. Bohoslužby každou neděli na adrese Hraniční 213.">
+<meta name="theme-color" content="#14110F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sbor Víry — Třinec">
+<meta property="og:title" content="Sbor Víry — Třinec">
+<meta property="og:description" content="Křesťanský sbor v Třinci. Přijď takový, jaký jsi.">
+<meta property="og:image" content="assets/img/logo.png">
+<link rel="icon" href="assets/img/favicon.png" sizes="64x64">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="home">
+<a class="skip" href="#main" data-i18n="ui.skip">Přejít na hlavní obsah</a>
+<div id="site-header"></div>
+
+<main id="main">
+
+  <!-- ============================ HERO ============================ -->
+  <section class="hero">
+    <!-- Fotka na pozadí: vložte soubor assets/img/hero.jpg.
+         Dokud tam není, zobrazí se jen tmavé pozadí — web se nerozbije. -->
+    <div class="hero-bg" data-photo="assets/img/hero.jpg" data-photo-alt-key="photos.hero"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-glow-2"></div>
+    <div class="wrap">
+      <span class="eyebrow on-dark" data-i18n="home.hero.eyebrow"></span>
+      <h1 data-i18n="home.hero.h1"></h1>
+      <p class="lead" data-i18n="home.hero.lead"></p>
+      <div class="btn-row">
+        <a class="btn btn-primary" data-page-link="first" href="#" data-i18n="cta.first"></a>
+        <a class="btn btn-light" data-page-link="sermons" href="#" data-i18n="cta.watch"></a>
+      </div>
+      <!-- Hodnoty se doplňují z content.js, aby se překládaly spolu se zbytkem webu. -->
+      <dl class="hero-meta">
+        <div><dt data-i18n="home.hero.m1"></dt><dd id="hero-time"></dd></div>
+        <div><dt data-i18n="home.hero.m2"></dt><dd id="hero-place"></dd></div>
+        <div><dt data-i18n="home.hero.m3"></dt><dd id="hero-online"></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ============================ VÍTEJTE ============================ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head center" data-reveal>
+        <span class="eyebrow" data-i18n="home.welcome.eyebrow"></span>
+        <h2 data-i18n="home.welcome.h2"></h2>
+        <p data-i18n="home.welcome.p"></p>
+      </div>
+      <div class="grid g-3">
+        <article class="card" data-reveal>
+          <span class="card-icon" data-icon="home"></span>
+          <h3 data-i18n="home.welcome.c1t"></h3>
+          <p data-i18n="home.welcome.c1d"></p>
+          <a class="link-arrow" data-page-link="ministries" href="#" data-i18n="cta.more"></a>
+        </article>
+        <article class="card" data-reveal>
+          <span class="card-icon green" data-icon="users"></span>
+          <h3 data-i18n="home.welcome.c2t"></h3>
+          <p data-i18n="home.welcome.c2d"></p>
+          <a class="link-arrow" data-page-link="ministries" href="#" data-i18n="cta.more"></a>
+        </article>
+        <article class="card" data-reveal>
+          <span class="card-icon" data-icon="smile"></span>
+          <h3 data-i18n="home.welcome.c3t"></h3>
+          <p data-i18n="home.welcome.c3d"></p>
+          <a class="link-arrow" data-page-link="ministries" href="#" data-i18n="cta.more"></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ ČASY SETKÁNÍ ============================ -->
+  <section class="section section-cream">
+    <div class="wrap">
+      <div class="split wide-left">
+        <div data-reveal>
+          <span class="eyebrow" data-i18n="home.times.eyebrow"></span>
+          <h2 class="mt-1" data-i18n="home.times.h2"></h2>
+          <p class="lead muted mt-1" data-i18n="home.times.p"></p>
+          <div class="btn-row mt-2">
+            <a class="btn btn-dark" data-page-link="contact" href="#" data-i18n="cta.directions"></a>
+            <a class="btn btn-ghost" data-page-link="first" href="#" data-i18n="cta.first"></a>
+          </div>
+        </div>
+        <div data-reveal>
+          <div class="times" id="times"></div>
+          <p class="small muted mt-1" data-i18n="home.times.note"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ CITÁT ============================ -->
+  <section class="section-tight">
+    <div class="wrap wrap-narrow" data-reveal>
+      <blockquote class="quote">
+        <span data-i18n="home.quote.text"></span>
+        <cite data-i18n="home.quote.cite"></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ============================ YOUTUBE ============================ -->
+  <section class="section section-dark">
+    <div class="wrap">
+      <div class="split">
+        <div data-reveal>
+          <span class="eyebrow on-dark" data-i18n="home.watch.eyebrow"></span>
+          <h2 class="mt-1" data-i18n="home.watch.h2"></h2>
+          <p class="lead mt-1" style="color:#9C948E" data-i18n="home.watch.p"></p>
+          <div class="btn-row mt-2">
+            <a class="btn btn-primary" data-page-link="sermons" href="#" data-i18n="cta.watch"></a>
+            <a class="btn btn-light" href="https://www.youtube.com/@sborviry" target="_blank" rel="noopener" data-i18n="cta.youtube"></a>
+          </div>
+        </div>
+        <div id="yt" data-reveal></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ HODNOTY ============================ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow" data-i18n="home.values.eyebrow"></span>
+        <h2 data-i18n="home.values.h2"></h2>
+      </div>
+      <div class="grid g-4">
+        <article class="card" data-reveal>
+          <span class="card-icon" data-icon="book"></span>
+          <h3 data-i18n="home.values.v1t"></h3><p data-i18n="home.values.v1d"></p>
+        </article>
+        <article class="card" data-reveal>
+          <span class="card-icon green" data-icon="hands"></span>
+          <h3 data-i18n="home.values.v2t"></h3><p data-i18n="home.values.v2d"></p>
+        </article>
+        <article class="card" data-reveal>
+          <span class="card-icon" data-icon="heart"></span>
+          <h3 data-i18n="home.values.v3t"></h3><p data-i18n="home.values.v3d"></p>
+        </article>
+        <article class="card" data-reveal>
+          <span class="card-icon green" data-icon="spark"></span>
+          <h3 data-i18n="home.values.v4t"></h3><p data-i18n="home.values.v4d"></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ FOTOGALERIE ============================ -->
+  <!-- Skryje se sama, dokud v content.js → gallery nejsou žádné fotky. -->
+  <section class="section hide" id="gallery-section">
+    <div class="wrap">
+      <div class="section-head center" data-reveal>
+        <span class="eyebrow" data-i18n="gallery.eyebrow"></span>
+        <h2 data-i18n="gallery.h2"></h2>
+        <p data-i18n="gallery.p"></p>
+      </div>
+      <div class="carousel" data-reveal>
+        <div class="carousel-track" id="gallery"></div>
+        <div class="carousel-controls" id="gallery-controls"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ AKTUALITY ============================ -->
+  <section class="section section-cream">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow" data-i18n="home.news.eyebrow"></span>
+        <h2 data-i18n="home.news.h2"></h2>
+        <p data-i18n="home.news.p"></p>
+      </div>
+      <div class="grid g-3" data-news="3" data-reveal></div>
+      <div class="btn-row mt-3" data-reveal>
+        <a class="btn btn-ghost" data-page-link="news" href="#" data-i18n="cta.allNews"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ CTA ============================ -->
+  <section class="section-tight">
+    <div class="wrap">
+      <div class="cta-band" data-reveal>
+        <h2 data-i18n="home.cta.h2"></h2>
+        <p data-i18n="home.cta.p"></p>
+        <div class="btn-row">
+          <a class="btn btn-primary" data-page-link="first" href="#" data-i18n="cta.first"></a>
+          <a class="btn btn-light" data-page-link="contact" href="#" data-i18n="cta.contact"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer"></div>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/content.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>
