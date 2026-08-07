@@ -1,0 +1,96 @@
+# =============================================================================
+#  Automaticky doplní na web ID nejnovějšího videa z YouTube kanálu.
+#  ---------------------------------------------------------------------------
+#  Funguje jen tehdy, když je web na GitHubu. Nic se nemusí instalovat.
+#  Spouští se dvakrát denně a po každém vašem uložení souborů; navíc jde
+#  spustit ručně: záložka Actions → Nejnovější video z YouTube → Run workflow.
+#
+#  Pokud tuhle automatiku nechcete, soubor smažte — web funguje i bez ní,
+#  jen si ID videa budete vyplňovat sami v assets/js/content.js.
+# =============================================================================
+name: Nejnovější video z YouTube
+
+on:
+  schedule:
+    - cron: '20 5,17 * * *'   # 5:20 a 17:20 UTC
+  workflow_dispatch:           # ruční spuštění tlačítkem
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nejnovejsi-video
+  cancel-in-progress: true
+
+jobs:
+  aktualizovat:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Načíst ID nejnovějšího videa a zapsat do content.js
+        run: |
+          python3 - <<'PY'
+          import re, sys, urllib.request, pathlib
+
+          SOUBOR = pathlib.Path('assets/js/content.js')
+          text = SOUBOR.read_text(encoding='utf-8')
+
+          def pole(nazev):
+              m = re.search(nazev + r":\s*'([^']*)'", text)
+              return m.group(1).strip() if m else ''
+
+          def stahni(url):
+              req = urllib.request.Request(url, headers={'User-Agent': 'sborviry-web'})
+              return urllib.request.urlopen(req, timeout=30).read().decode('utf-8')
+
+          def nejnovejsi(rss):
+              """Vrátí ID videa s nejnovějším datem zveřejnění.
+                 U playlistu totiž nemusí být položky seřazené podle data."""
+              polozky = re.findall(
+                  r'<yt:videoId>([\w-]{11})</yt:videoId>.*?<published>([^<]+)</published>',
+                  rss, re.S)
+              if not polozky:
+                  return ''
+              return max(polozky, key=lambda p: p[1])[0]
+
+          # Přednostně bereme playlist s bohoslužbami — na kanál se občas
+          # nahraje i jiné video a to by se pak na webu ukázalo místo kázání.
+          playlist, kanal = pole('youtubePlaylistId'), pole('youtubeChannelId')
+          nove = ''
+          if playlist and not playlist.startswith('UU'):
+              try:
+                  nove = nejnovejsi(stahni(
+                      'https://www.youtube.com/feeds/videos.xml?playlist_id=' + playlist))
+                  if nove: print('Zdroj: playlist ' + playlist)
+              except Exception as e:
+                  print('Playlist se nepodařilo načíst (%s), zkusím kanál.' % e)
+          if not nove and kanal:
+              nove = nejnovejsi(stahni(
+                  'https://www.youtube.com/feeds/videos.xml?channel_id=' + kanal))
+              if nove: print('Zdroj: kanál ' + kanal)
+          if not nove:
+              sys.exit('Nepodařilo se zjistit žádné video.')
+
+          if pole('youtubeVideoId') == nove:
+              print('Beze změny — nejnovější video je stále ' + nove)
+              sys.exit(0)
+
+          text = re.sub(r"(youtubeVideoId:\s*')[^']*(')", r"\g<1>" + nove + r"\g<2>", text, count=1)
+          SOUBOR.write_text(text, encoding='utf-8')
+          print('Nastaveno nejnovější video: ' + nove)
+          PY
+
+      - name: Uložit změnu
+        run: |
+          if [ -n "$(git status --porcelain assets/js/content.js)" ]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add assets/js/content.js
+            git commit -m "Aktualizace nejnovějšího videa z YouTube"
+            git push
+          else
+            echo "Nic se nezměnilo, není co ukládat."
+          fi
