@@ -21,6 +21,7 @@
   --white: #FFFFFF;
 
   /* Rozměry */
+  --header-h: 76px;          /* min-height .header-inner — drží se s ním sticky odsazení */
   --radius: 20px;
   --radius-lg: 32px;
   --radius-pill: 999px;
@@ -66,6 +67,17 @@ h1, h2, h3, h4, .display {
   letter-spacing: -.025em;
   font-weight: 600;
   text-wrap: balance;
+}
+/* Němčina a maďarština skládají slova jako „Konferenzaufzeichnungen“ nebo
+   „konferenciafelvételek“. Na úzkém displeji se takové slovo nevejde na řádek
+   a normálně by nešlo zalomit — nadpis pak přetekl přes okraj (na 320px až
+   o 78px) a `overflow-x: hidden` na body ho uřízl. break-word se uplatní jen
+   tehdy, když se slovo opravdu nevejde; běžnou sazbu nechává být.
+   Na mobilu k tomu přidáváme dělení slov, ať se dlouhé slovo zalomí spojovníkem
+   podle pravidel jazyka místo uprostřed písmene (html[lang] nastavuje site.js). */
+h1, h2, h3, h4, .display { overflow-wrap: break-word; }
+@media (max-width: 560px) {
+  h1, h2, h3, h4, .display, p, .lead { hyphens: auto; }
 }
 h1 { font-size: clamp(2.6rem, 7vw, 5rem); }
 h2 { font-size: clamp(2rem, 4.5vw, 3.25rem); }
@@ -164,7 +176,17 @@ html[lang="ru"] .stat b, html[lang="ru"] .faq summary, html[lang="ru"] .numbered
 .link-arrow::after { content: '→'; transition: transform .25s var(--ease); }
 .link-arrow:hover::after { transform: translateX(5px); }
 
-/* ---------- Hlavička ---------- */
+/* ---------- Hlavička ----------
+   #site-header je jen přípojné místo, do kterého site.js vloží hotovou
+   hlavičku — v rozvržení nemá co dělat. `display: contents` ho z rozvržení
+   úplně vyjme, takže .header visí přímo pod <body>.
+
+   Není to kosmetika: `position: sticky` se přilepí jen v rámci VLASTNÍHO
+   rodiče, a ten obalový <div> byl přesně tak vysoký jako hlavička (77 px).
+   Sticky tím mělo nula pixelů, kam se přilepit, a hlavička odjížděla nahoru
+   spolu se stránkou, přestože `position: sticky` měla nastavené. */
+#site-header { display: contents; }
+
 .header {
   position: sticky; top: 0; z-index: 100;
   background: rgba(255, 255, 255, .82);
@@ -176,8 +198,11 @@ html[lang="ru"] .stat b, html[lang="ru"] .faq summary, html[lang="ru"] .numbered
 .header.scrolled { border-bottom-color: var(--line); box-shadow: 0 2px 20px rgba(20, 17, 15, .05); }
 .header-inner {
   display: flex; align-items: center; justify-content: space-between;
-  gap: 1.25rem; min-height: 76px; flex-wrap: nowrap;
+  gap: 1.25rem; min-height: var(--header-h); flex-wrap: nowrap;
 }
+/* Skok na kotvu (#faq, #main…) by cíl schoval pod přilepenou hlavičku —
+   scroll-margin ho zastaví o kus níž. Uplatní se jen při skoku na kotvu. */
+main [id], main[id], section[id] { scroll-margin-top: calc(var(--header-h) + 1rem); }
 .brand { display: flex; align-items: center; gap: .7rem; text-decoration: none; flex: none; }
 .brand img { height: 52px; width: auto; }
 .footer .brand img { height: 64px; }
@@ -394,22 +419,34 @@ html[lang="uk"] .hero-meta dd, html[lang="ru"] .hero-meta dd { font-family: 'Int
 .hero-home .hero-meta dt { color: var(--ink); opacity: .6; }
 .hero-home .hero-meta dd { color: var(--ink); font-size: 1.05rem; }
 
+/* ---------- Hero — úvodní stránka na mobilu ----------
+   Na úzkém displeji jde fotka pryč a hero nese typografie.
+   Proč: textový blok je na mobilu vyšší než displej, takže nad ním zbývalo
+   jen pár desítek pixelů na fotku — a u delších jazyků (uk, ru, hu) ještě
+   míň, protože delší překlad text posune výš. Z fotky tak zůstal rozmazaný
+   proužek stropu, přes který navíc vedl náběh krémové. Text ležel přímo na
+   fotografii: červený nadnadpis měl kontrast 1,0 : 1, černý h1 1,2 : 1.
+   Na krémové ploše vychází 5,5 : 1 a 17,8 : 1, ve všech deseti jazycích
+   stejně. Vedlejší efekt: hero.jpg (187 kB) se na mobilu vůbec nestahuje —
+   pozadí display:none prohlížeč nenačítá. */
 @media (max-width: 560px) {
-  .hero-home .wrap { grid-template-columns: 1fr; }
-  /* Na mobilu je okno vysoké a úzké — tam je zvětšení podle VÝŠKY na místě,
-     jinak by „cover" ukázal fotku od stropu po podlahu a nahoře by byl hlavně strop. */
-  .hero-home .hero-bg { background-size: auto 130%; background-position: 47% 82%; }
-  .hero-home .veil {
-    grid-row: 1 / -1;
-    margin: calc(-1 * var(--pad-t)) -100vw calc(-1 * var(--pad-b));
-    background: linear-gradient(180deg,
-      rgba(251,248,245,0)   0%,
-      rgba(251,248,245,.10) 22%,
-      rgba(251,248,245,.72) 33%,
-      rgba(251,248,245,.97) 41%,
-      var(--cream)          47%);
+  .hero-home .hero-bg,
+  .hero-home .veil { display: none; }
+  .hero-home {
+    /* Žádná vynucená výška. Obsah hera je na mobilu tak jako tak vyšší než
+       min(90dvh, 780px), takže by vynucená výška jen přidala prázdno. */
+    min-height: 0;
+    padding-block: clamp(2.25rem, 8vw, 3.5rem) clamp(2.5rem, 8vw, 3.5rem);
   }
+  /* Mřížka existovala jen kvůli krémové podložce — bez ní stačí normální tok. */
+  .hero-home .wrap { display: block; }
+  /* Bez fotky drží hero titulek, tak dostane o kus víc prostoru než dřív. */
+  .hero-home h1 { font-size: clamp(2.05rem, 8.2vw, 2.7rem); }
   .hero-home .lead { max-width: none; }
+  /* --red dává na krémové jen 4,0 : 1 — pod hranicí WCAG AA (4,5 : 1) pro drobné
+     písmo, a nadnadpis je 12,5px verzálkami. --red-dark dá 5,5 : 1. */
+  .hero-home .eyebrow { color: var(--red-dark); }
+  .hero-home .eyebrow::before { background: var(--red-dark); }
   /* Menší tlačítka jen v hero na mobilu, ať zůstanou vedle sebe i u delších
      jazyků (němčina, maďarština) — 44px je pořád nad hranicí dotykového
      cíle podle WCAG 2.2. Zbytek webu (.btn jinde) se nemění. */
@@ -508,7 +545,17 @@ a.card { text-decoration: none; }
 .media iframe { width: 100%; height: 100%; border: 0; position: absolute; inset: 0; }
 
 .split { display: grid; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; grid-template-columns: 1fr; }
-@media (min-width: 900px) { .split { grid-template-columns: 1fr 1fr; } .split.wide-left { grid-template-columns: 1.15fr .85fr; } }
+/* Položka mřížky se ve výchozím stavu nesmrskne pod šířku svého obsahu
+   (min-width: auto). Jedno dlouhé slovo tak dokázalo roztáhnout celý sloupec
+   za okraj stránky. Nula to povolí a o zalomení se postará pravidlo výše. */
+.split > * { min-width: 0; }
+@media (min-width: 900px) {
+  .split { grid-template-columns: 1fr 1fr; }
+  .split.wide-left { grid-template-columns: 1.15fr .85fr; }
+  /* Nadpis vlevo, obsah vpravo — opak .wide-left. minmax(0, …) je tu proto,
+     aby dlouhé slovo v pravém sloupci sloupec nerozšířilo přes okraj mřížky. */
+  .split.wide-right { grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr); }
+}
 .split.reverse > :first-child { order: 2; }
 @media (max-width: 899px) { .split.reverse > :first-child { order: 0; } }
 
@@ -561,16 +608,36 @@ a.card { text-decoration: none; }
   content: ''; flex: none; width: 22px; height: 22px; border-radius: 50%; margin-top: .2rem;
   background: var(--green-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300843F' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center / 13px no-repeat;
 }
-.numbered { list-style: none; padding: 0; counter-reset: n; display: grid; gap: 1.75rem; }
-.numbered li { counter-increment: n; display: grid; grid-template-columns: 46px 1fr; gap: 1.25rem; align-items: start; }
+.numbered { --step-size: 46px; --step-gap: 1.75rem; list-style: none; padding: 0; counter-reset: n; display: grid; gap: var(--step-gap); }
+.numbered li { counter-increment: n; display: grid; grid-template-columns: var(--step-size) 1fr; gap: 1.25rem; align-items: start; }
 .numbered li::before {
   content: counter(n, decimal-leading-zero);
   font-family: 'Bricolage Grotesque', sans-serif; font-size: 1rem; font-weight: 600;
   color: var(--red); background: var(--red-soft); border-radius: 12px;
-  width: 46px; height: 46px; display: grid; place-items: center;
+  width: var(--step-size); height: var(--step-size); display: grid; place-items: center;
 }
 .numbered li h4 { margin-bottom: .3rem; }
 .numbered li p { color: var(--muted); font-size: .98rem; }
+
+/* Časová osa — varianta .numbered pro sled událostí v čase (např. průběh
+   nedělního dopoledne). Čísla spojí svislá linka, takže se seznam čte jako
+   posloupnost, ne jako výčet. Linka jde od spodní hrany čísla k hornímu okraji
+   dalšího, proto sahá přesně o mezeru mřížky pod položku; u poslední odpadá. */
+.numbered.timeline li { position: relative; }
+.numbered.timeline li::after {
+  content: ''; position: absolute;
+  left: calc(var(--step-size) / 2 - 1px); width: 2px; border-radius: 2px;
+  top: var(--step-size); bottom: calc(-1 * var(--step-gap));
+  background: var(--line);
+}
+.numbered.timeline li:last-child::after { content: none; }
+.section-dark .numbered.timeline li::after { background: #322C29; }
+/* Na úzkém displeji ubere čtvereček s číslem citelný kus řádku, tak se zmenší —
+   text tím dostane zpět zhruba dvacet pixelů měřítka. */
+@media (max-width: 560px) {
+  .numbered { --step-size: 38px; --step-gap: 1.5rem; }
+  .numbered li { gap: .9rem; }
+}
 
 /* ---------- FAQ ---------- */
 .faq { border-top: 1px solid var(--line); }

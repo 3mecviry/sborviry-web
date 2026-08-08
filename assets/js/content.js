@@ -120,28 +120,19 @@ const DATA = {
      Nový příspěvek = zkopírujte celý blok { … } a vložte nahoru.
      image: cesta k fotce, např. 'assets/img/konference.jpg' (nebo '' = zástupný obrázek)
      link:  '' = bez odkazu, nebo URL na Facebook / YouTube / plakát
+     dateLabel: nepovinné. U pravidelné akce se místo data zveřejnění ukáže
+                tenhle text, např. 'Každé pondělí 17:30'. Bez něj se vypíše date.
      ------------------------------------------------------------------ */
   news: [
     {
-      date: '2026-07-12',
-      image: '',
-      link: '',
-      tag:   { cs: 'Konference', sk: 'Konferencia', uk: 'Конференція', ru: 'Конференция', de: 'Konferenz', pl: 'Konferencja', en: 'Conference', es: 'Conferencia', sv: 'Konferens', hu: 'Konferencia' },
-      title: {
-        cs: 'Podzimní konference 2026', sk: 'Jesenná konferencia 2026', uk: 'Осіння конференція 2026', ru: 'Осенняя конференция 2026', de: 'Herbstkonferenz 2026',
-        pl: 'Konferencja jesienna 2026',
-        en: 'Autumn Conference 2026',
-        es: 'Conferencia de otoño 2026', sv: 'Höstkonferensen 2026', hu: '2026-os őszi konferencia'
-      },
-      text: {
-        cs: 'Připravujeme společné dny vyučování, chval a modliteb. Program, hosty a přesné termíny zveřejníme na Facebooku a na tomto místě.', sk: 'Pripravujeme spoločné dni vyučovania, chvál a modlitieb. Program, hostí a presné termíny zverejníme na Facebooku a na tomto mieste.', uk: 'Ми готуємо спільні дні навчання, прославлення та молитви. Програму, гостей і точні дати оголосимо на Facebook і тут.', ru: 'Мы готовим совместные дни обучения, прославления и молитвы. Программу, гостей и точные даты объявим в Facebook и здесь.', de: 'Wir bereiten gemeinsame Tage mit Lehre, Lobpreis und Gebet vor. Programm, Gäste und genaue Termine geben wir auf Facebook und hier bekannt.',
-        pl: 'Przygotowujemy wspólne dni nauczania, uwielbienia i modlitwy. Program, gości oraz dokładne terminy ogłosimy na Facebooku i w tym miejscu.',
-        en: 'We are preparing several days of teaching, worship and prayer together. The programme, guests and exact dates will be announced on Facebook and here.',
-        es: 'Estamos preparando varios días de enseñanza, alabanza y oración. El programa, los invitados y las fechas exactas se anunciarán en Facebook y aquí.', sv: 'Vi förbereder gemensamma dagar med undervisning, lovsång och bön. Program, gäster och exakta datum meddelar vi på Facebook och här.', hu: 'Közös tanítási, dicséreti és imanapokra készülünk. A programot, a vendégeket és a pontos időpontokat a Facebookon és itt tesszük közzé.'
-      }
-    },
-    {
       date: '2026-06-01',
+      // Pravidelná akce: místo data zveřejnění se na kartě ukáže tenhle popisek.
+      dateLabel: {
+        cs: 'Každé pondělí 17:30', sk: 'Každý pondelok 17:30', uk: 'Щопонеділка о 17:30',
+        ru: 'Каждый понедельник в 17:30', de: 'Jeden Montag 17:30 Uhr', pl: 'W każdy poniedziałek 17:30',
+        en: 'Every Monday 17:30', es: 'Cada lunes a las 17:30', sv: 'Varje måndag 17.30',
+        hu: 'Minden hétfőn 17:30'
+      },
       image: '',
       link: '',
       tag:   { cs: 'Evangelizace', sk: 'Evanjelizácia', uk: 'Євангелізація', ru: 'Евангелизация', de: 'Evangelisation', pl: 'Ewangelizacja', en: 'Evangelism', es: 'Evangelización', sv: 'Evangelisation', hu: 'Evangelizáció' },
@@ -152,10 +143,10 @@ const DATA = {
         es: 'Cada lunes en la plaza', sv: 'Varje måndag på torget', hu: 'Minden hétfőn a téren'
       },
       text: {
-        cs: 'Scházíme se na náměstí T. G. Masaryka v Třinci, mluvíme s lidmi a nabízíme modlitbu. Přidat se může kdokoli ze sboru — stačí přijít.', sk: 'Stretávame sa na námestí T. G. Masaryka v Třinci, rozprávame sa s ľuďmi a ponúkame modlitbu. Pridať sa môže ktokoľvek zo zboru — stačí prísť.', uk: 'Ми збираємося на площі Т. Ґ. Масарика у Тршинці, розмовляємо з людьми й пропонуємо помолитися. Долучитися може будь-хто з церкви — досить просто прийти.', ru: 'Мы собираемся на площади Т. Г. Масарика в Тршинце, разговариваем с людьми и предлагаем помолиться. Присоединиться может любой из церкви — достаточно просто прийти.', de: 'Wir treffen uns auf dem T.-G.-Masaryk-Platz in Třinec, kommen mit Menschen ins Gespräch und bieten an, mit ihnen zu beten. Mitmachen kann jeder aus der Gemeinde — einfach dazukommen.',
-        pl: 'Spotykamy się na Rynku T. G. Masaryka w Trzyńcu, rozmawiamy z ludźmi i proponujemy modlitwę. Dołączyć może każdy ze zboru — wystarczy przyjść.',
-        en: 'We meet on T. G. Masaryk Square in Třinec, talk with people and offer to pray with them. Anyone from the church is welcome to join — just turn up.',
-        es: 'Nos reunimos en la plaza T. G. Masaryk de Třinec, hablamos con la gente y ofrecemos orar con ellos. Cualquiera de la iglesia puede unirse: basta con venir.', sv: 'Vi träffas på T. G. Masaryks torg i Třinec, samtalar med människor och erbjuder förbön. Vem som helst i församlingen kan följa med — det räcker att komma.', hu: 'A třineci T. G. Masaryk téren gyűlünk össze, beszélgetünk az emberekkel, és felajánljuk, hogy imádkozunk értük. Bárki csatlakozhat a gyülekezetből — elég eljönni.'
+        cs: 'Scházíme se každé pondělí v 17:30 na náměstí T. G. Masaryka v Třinci, mluvíme s lidmi a nabízíme modlitbu. Přidat se může kdokoli ze sboru — stačí přijít. Vynecháváme jen, když vytrvale prší.', sk: 'Stretávame sa každý pondelok o 17:30 na námestí T. G. Masaryka v Třinci, rozprávame sa s ľuďmi a ponúkame modlitbu. Pridať sa môže ktokoľvek zo zboru — stačí prísť. Vynechávame len vtedy, keď vytrvalo prší.', uk: 'Ми збираємося щопонеділка о 17:30 на площі Т. Ґ. Масарика у Тршинці, розмовляємо з людьми й пропонуємо помолитися. Долучитися може будь-хто з церкви — досить просто прийти. Не виходимо лише тоді, коли ллє дощ.', ru: 'Мы собираемся каждый понедельник в 17:30 на площади Т. Г. Масарика в Тршинце, разговариваем с людьми и предлагаем помолиться. Присоединиться может любой из церкви — достаточно просто прийти. Не выходим только в сильный дождь.', de: 'Wir treffen uns jeden Montag um 17:30 Uhr auf dem T.-G.-Masaryk-Platz in Třinec, kommen mit Menschen ins Gespräch und bieten an, mit ihnen zu beten. Mitmachen kann jeder aus der Gemeinde — einfach dazukommen. Nur bei anhaltendem Regen fällt es aus.',
+        pl: 'Spotykamy się w każdy poniedziałek o 17:30 na Rynku T. G. Masaryka w Trzyńcu, rozmawiamy z ludźmi i proponujemy modlitwę. Dołączyć może każdy ze zboru — wystarczy przyjść. Odpuszczamy tylko wtedy, gdy pada rzęsisty deszcz.',
+        en: 'We meet every Monday at 17:30 on T. G. Masaryk Square in Třinec, talk with people and offer to pray with them. Anyone from the church is welcome to join — just turn up. We only skip it when it is pouring with rain.',
+        es: 'Nos reunimos todos los lunes a las 17:30 en la plaza T. G. Masaryk de Třinec, hablamos con la gente y ofrecemos orar con ellos. Cualquiera de la iglesia puede unirse: basta con venir. Solo lo suspendemos cuando llueve con fuerza.', sv: 'Vi träffas varje måndag klockan 17.30 på T. G. Masaryks torg i Třinec, samtalar med människor och erbjuder förbön. Vem som helst i församlingen kan följa med — det räcker att komma. Vi ställer in bara när det regnar ihållande.', hu: 'Minden hétfőn 17:30-kor a třineci T. G. Masaryk téren gyűlünk össze, beszélgetünk az emberekkel, és felajánljuk, hogy imádkozunk értük. Bárki csatlakozhat a gyülekezetből — elég eljönni. Csak tartós esőben marad el.'
       }
     },
     {
@@ -186,24 +177,6 @@ const DATA = {
         es: 'Del jueves 7 al sábado 9 de mayo se celebró en la plaza Svobody de Třinec el festival familiar Rozsviť tmu. Lo preparamos junto con otras iglesias y congregaciones locales. Música, programa para los niños e historias personales sobre un nuevo comienzo, con entrada libre. Esos mismos días el festival se celebró en diez ciudades de toda Chequia: 8100 personas escucharon allí el evangelio, 1074 de ellas tomaron la decisión de seguir a Jesús y 626 pidieron seguir en contacto. Ya se prepara la próxima edición; en cuanto sepamos la fecha, lo anunciaremos aquí y en Facebook.',
         sv: 'Från torsdagen den 7 till lördagen den 9 maj hölls familjefestivalen Rozsviť tmu på torget Svobody i Třinec. Vi förberedde den tillsammans med andra lokala kyrkor och församlingar. Musik, program för barnen och människor som berättade sina egna historier om en ny start — med fri entré. Samma dagar hölls festivalen i tio städer runt om i Tjeckien — 8 100 människor fick höra evangeliet, 1 074 av dem tog emot Jesus och 626 bad om fortsatt kontakt. Nästa upplaga förbereds; så snart vi vet datumet berättar vi det här och på Facebook.',
         hu: 'Május 7. és 9. között, csütörtöktől szombatig rendezték meg a třineci Svobody téren a Rozsviť tmu családi fesztivált. Más helyi egyházakkal és gyülekezetekkel közösen készítettük elő. Zene, gyerekprogram és emberek személyes történetei az újrakezdésről — ingyenes belépéssel. Ugyanezekben a napokban a fesztivál Csehország tíz városában zajlott — ott 8100 ember hallotta az evangéliumot, közülük 1074-en döntöttek Jézus mellett, és 626-an kérték, hogy tartsuk velük a kapcsolatot. Készül a jövő évi fesztivál is; amint tudjuk az időpontot, itt és a Facebookon jelezzük.'
-      }
-    },
-    {
-      date: '2026-04-20',
-      image: '',
-      link: 'https://www.youtube.com/@sborviry',
-      tag:   { cs: 'Vyučování', sk: 'Vyučovanie', uk: 'Навчання', ru: 'Обучение', de: 'Lehre', pl: 'Nauczanie', en: 'Teaching', es: 'Enseñanza', sv: 'Undervisning', hu: 'Tanítás' },
-      title: {
-        cs: 'Nová série kázání je na YouTube', sk: 'Nová séria kázní je na YouTube', uk: 'Нова серія проповідей уже на YouTube', ru: 'Новая серия проповедей уже на YouTube', de: 'Eine neue Predigtreihe ist auf YouTube',
-        pl: 'Nowa seria kazań jest na YouTube',
-        en: 'A new sermon series is on YouTube',
-        es: 'Nueva serie de predicaciones en YouTube', sv: 'En ny predikoserie finns på YouTube', hu: 'Új igehirdetés-sorozat a YouTube-on'
-      },
-      text: {
-        cs: 'Všechna kázání postupně zveřejňujeme na našem kanálu. Můžete si je pustit kdykoli — doma, v autě i cestou do práce.', sk: 'Všetky kázne postupne zverejňujeme na našom kanáli. Môžete si ich pustiť kedykoľvek — doma, v aute aj cestou do práce.', uk: 'Усі проповіді ми поступово публікуємо на нашому каналі. Слухати можна будь-коли — вдома, в авті чи дорогою на роботу.', ru: 'Все проповеди мы постепенно публикуем на нашем канале. Слушать можно в любое время — дома, в машине или по дороге на работу.', de: 'Alle Predigten veröffentlichen wir nach und nach auf unserem Kanal. Sie können sie jederzeit hören — zu Hause, im Auto oder auf dem Weg zur Arbeit.',
-        pl: 'Wszystkie kazania publikujemy sukcesywnie na naszym kanale. Możesz ich słuchać w dowolnej chwili — w domu, w samochodzie czy w drodze do pracy.',
-        en: 'We publish all our sermons on our channel. You can watch or listen any time — at home, in the car or on your way to work.',
-        es: 'Publicamos todas nuestras predicaciones en nuestro canal. Puedes verlas o escucharlas cuando quieras: en casa, en el coche o de camino al trabajo.', sv: 'Alla predikningar publicerar vi efter hand på vår kanal. Du kan lyssna när du vill — hemma, i bilen eller på väg till jobbet.', hu: 'Minden igehirdetést fokozatosan közzéteszünk a csatornánkon. Bármikor meghallgathatod — otthon, az autóban vagy munkába menet.'
       }
     }
   ],

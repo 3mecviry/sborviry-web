@@ -209,6 +209,7 @@ cs: {
     steps: {
       eyebrow: 'Krok za krokem',
       h2: 'Jak vypadá nedělní dopoledne',
+      p: 'Budova se otevírá v 10:30, bohoslužba začíná v 11:00 a trvá přibližně 90 minut. Potom je čas na kávu — a odejít můžete, kdykoli budete chtít.',
       s1t: 'Přijedete a zaparkujete',
       s1d: 'Parkovat lze přímo u budovy. Vchod je společný s dalšími nájemci — naše část se nachází hned vpravo za dveřmi. Budova je otevřená od 10:30, takže můžete dorazit v klidu.',
       s2t: 'Někdo vás přivítá',
@@ -623,6 +624,7 @@ sk: {
     steps: {
       eyebrow: 'Krok za krokom',
       h2: 'Ako vyzerá nedeľné dopoludnie',
+      p: 'Budova sa otvára o 10:30, bohoslužba začína o 11:00 a trvá približne 90 minút. Potom je čas na kávu — a odísť môžete, kedykoľvek budete chcieť.',
       s1t: 'Prídete a zaparkujete',
       s1d: 'Parkovať sa dá priamo pri budove. Vchod je spoločný s ďalšími nájomcami — naša časť sa nachádza hneď vpravo za dverami. Budova je otvorená od 10:30, takže môžete doraziť v pokoji.',
       s2t: 'Niekto vás privíta',
@@ -1037,6 +1039,7 @@ pl: {
     steps: {
       eyebrow: 'Krok po kroku',
       h2: 'Jak wygląda niedzielny poranek',
+      p: 'Budynek otwieramy o 10:30, nabożeństwo zaczyna się o 11:00 i trwa około 90 minut. Potem jest czas na kawę — a wyjść możesz, kiedy tylko zechcesz.',
       s1t: 'Przyjeżdżasz i parkujesz',
       s1d: 'Parkować można bezpośrednio przy budynku. Wejście jest wspólne z innymi najemcami — nasza część znajduje się zaraz po prawej stronie za drzwiami. Budynek jest otwarty od 10:30, więc możesz przyjść bez pośpiechu.',
       s2t: 'Ktoś Cię przywita',
@@ -1451,6 +1454,7 @@ uk: {
     steps: {
       eyebrow: 'Крок за кроком',
       h2: 'Як минає недільний ранок',
+      p: 'Будівля відчиняється о 10:30, богослужіння починається об 11:00 і триває приблизно 90 хвилин. Потім є час на каву — а піти можна будь-коли.',
       s1t: 'Ви приїжджаєте й паркуєтеся',
       s1d: 'Припаркуватися можна просто біля будівлі. Вхід спільний з іншими орендарями — наша частина розташована одразу праворуч за дверима. Будівля відчинена з 10:30, тож можете прийти спокійно.',
       s2t: 'Вас хтось привітає',
@@ -1865,6 +1869,7 @@ ru: {
     steps: {
       eyebrow: 'Шаг за шагом',
       h2: 'Как проходит воскресное утро',
+      p: 'Здание открывается в 10:30, богослужение начинается в 11:00 и длится примерно 90 минут. Потом есть время на кофе — а уйти можно в любой момент.',
       s1t: 'Вы приезжаете и паркуетесь',
       s1d: 'Припарковаться можно прямо у здания. Вход общий с другими арендаторами — наша часть находится сразу справа за дверью. Здание открыто с 10:30, так что можете прийти спокойно.',
       s2t: 'Вас кто-нибудь встретит',
@@ -2182,7 +2187,7 @@ de: {
     },
     watch: {
       eyebrow: 'Online',
-      h2: 'Predigten und Konferenzaufzeichnungen',
+      h2: 'Predigten und Konferenz­aufzeichnungen',
       p: 'Seit vielen Jahren veröffentlichen wir Aufzeichnungen unserer Predigten und Konferenzen auf unserem YouTube-Kanal. Sonntag verpasst? Sie können ihn jederzeit nachholen.',
       fallback: 'Schauen Sie auf unserem Kanal vorbei und sehen Sie sich die neueste Predigt an.'
     },
@@ -2279,6 +2284,7 @@ de: {
     steps: {
       eyebrow: 'Schritt für Schritt',
       h2: 'So sieht ein Sonntagvormittag aus',
+      p: 'Das Gebäude öffnet um 10:30 Uhr, der Gottesdienst beginnt um 11:00 Uhr und dauert etwa 90 Minuten. Danach ist Zeit für einen Kaffee — und gehen können Sie jederzeit.',
       s1t: 'Sie kommen an und parken',
       s1d: 'Direkt am Gebäude können Sie parken. Der Eingang wird mit anderen Mietern geteilt — unser Bereich liegt gleich rechts hinter der Tür. Das Gebäude ist ab 10:30 Uhr geöffnet, Sie können also in Ruhe eintreffen.',
       s2t: 'Jemand begrüßt Sie',
@@ -2693,6 +2699,7 @@ en: {
     steps: {
       eyebrow: 'Step by step',
       h2: 'What a Sunday morning looks like',
+      p: 'The building opens at 10:30, the service starts at 11:00 and lasts about 90 minutes. Afterwards there is time for coffee — and you can leave whenever you like.',
       s1t: 'You arrive and park',
       s1d: 'There is parking right by the building. The entrance is shared with other tenants — our part is immediately on the right once you are through the door. The building opens at 10:30, so there is no need to rush.',
       s2t: 'Someone welcomes you',
@@ -3107,6 +3114,7 @@ es: {
     steps: {
       eyebrow: 'Paso a paso',
       h2: 'Cómo es un domingo por la mañana',
+      p: 'El edificio abre a las 10:30, el culto empieza a las 11:00 y dura unos 90 minutos. Después hay tiempo para un café, y puedes irte cuando quieras.',
       s1t: 'Llegas y aparcas',
       s1d: 'Se puede aparcar justo al lado del edificio. La entrada es compartida con otros inquilinos: nuestra parte está justo a la derecha al pasar la puerta. El edificio abre a las 10:30, así que puedes llegar sin prisas.',
       s2t: 'Alguien te da la bienvenida',
@@ -3521,6 +3529,7 @@ sv: {
     steps: {
       eyebrow: 'Steg för steg',
       h2: 'Så ser en söndagsförmiddag ut',
+      p: 'Byggnaden öppnar 10.30, gudstjänsten börjar 11.00 och varar ungefär 90 minuter. Efteråt finns tid för kaffe — och du kan gå när du vill.',
       s1t: 'Du kommer fram och parkerar',
       s1d: 'Det går att parkera alldeles intill byggnaden. Entrén delar vi med andra hyresgäster — vår del ligger direkt till höger innanför dörren. Byggnaden öppnar kl. 10.30, så du kan komma i lugn och ro.',
       s2t: 'Någon tar emot dig',
@@ -3838,7 +3847,7 @@ hu: {
     },
     watch: {
       eyebrow: 'Online',
-      h2: 'Igehirdetések és konferenciafelvételek',
+      h2: 'Igehirdetések és konferencia­felvételek',
       p: 'Évek óta rendszeresen közzétesszük az igehirdetések és a konferenciák felvételeit a YouTube-csatornánkon. Lemaradtál a vasárnapról? Bármikor megnézheted.',
       fallback: 'Nézd meg a csatornánkat, és játszd le a legújabb igehirdetést.'
     },
@@ -3935,6 +3944,7 @@ hu: {
     steps: {
       eyebrow: 'Lépésről lépésre',
       h2: 'Így néz ki egy vasárnap délelőtt',
+      p: 'Az épület 10:30-kor nyit, az istentisztelet 11:00-kor kezdődik és körülbelül 90 percig tart. Utána van idő egy kávéra — és bármikor elmehetsz.',
       s1t: 'Megérkezel és parkolsz',
       s1d: 'Közvetlenül az épület mellett lehet parkolni. A bejárat közös a többi bérlővel — a mi részünk rögtön az ajtó után jobbra van. Az épület 10.30-tól nyitva van, így nyugodtan megérkezhetsz.',
       s2t: 'Valaki fogad téged',

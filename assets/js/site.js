@@ -340,7 +340,9 @@
     const inner = `
       <div class="media ratio-16-9">${media}</div>
       <div>
-        <span class="post-date">${esc(formatDate(item.date))}</span>
+        <!-- U pravidelné akce dává datum zveřejnění špatnou informaci — proto smí
+             příspěvek v content.js místo něj nést vlastní popisek (dateLabel). -->
+        <span class="post-date">${esc(item.dateLabel ? loc(item.dateLabel) : formatDate(item.date))}</span>
         ${item.tag ? ` &middot; <span class="tag">${esc(loc(item.tag))}</span>` : ''}
       </div>
       <h3>${esc(loc(item.title))}</h3>

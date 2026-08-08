@@ -74,7 +74,7 @@ pojmenovat a nakopírovat do složky `assets/img/` — nic v kódu se upravovat 
 | `sbor-1.jpg` | O nás — vedle příběhu sboru | na šířku (ořezává se na 4 : 3) |
 | `sbor-2.jpg` | O nás — vedle vize | na šířku (ořezává se na 4 : 3) |
 | `pastor.jpg` | O nás — portrét pastora | **na výšku** (ořezává se na 3 : 4) |
-| `predsali.jpg` | Jsem tu poprvé — vedle popisu neděle | **na výšku** (ořezává se na 3 : 4) |
+| `predsali.jpg` | zatím nikde — sekce „Jak vypadá nedělní dopoledne“ je bez fotky | **na výšku** (ořezává se na 3 : 4) |
 | `galerie-01.jpg` … `-12.jpg` | fotogalerie na úvodní stránce | první na šířku, ostatní čtvercový ořez |
 
 Všechny tyto fotky jsou už **vložené a zmenšené** (dohromady zabírají 1,7 MB).
