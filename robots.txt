@@ -6,4 +6,11 @@ Allow: /
 Disallow: /404.html
 Disallow: /ochrana-osobnich-udaju.html
 
+# Dokumentace k webu. GitHub Pages servíruje všechno z kořene repozitáře,
+# takže by se jinak dala najít i na sborviry.org — do výsledků vyhledávání
+# ale nepatří, je určená správci webu, ne návštěvníkům.
+Disallow: /*.md$
+Disallow: /README.md
+Disallow: /KONTROLA-JAZYKU.md
+
 Sitemap: https://sborviry.org/sitemap.xml
