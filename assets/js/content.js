@@ -128,26 +128,44 @@ const DATA = {
       date: '2026-06-01',
       // Pravidelná akce: místo data zveřejnění se na kartě ukáže tenhle popisek.
       dateLabel: {
-        cs: 'Každé pondělí 17:30', sk: 'Každý pondelok 17:30', uk: 'Щопонеділка о 17:30',
-        ru: 'Каждый понедельник в 17:30', de: 'Jeden Montag 17:30 Uhr', pl: 'W każdy poniedziałek 17:30',
-        en: 'Every Monday 17:30', es: 'Cada lunes a las 17:30', sv: 'Varje måndag 17.30',
-        hu: 'Minden hétfőn 17:30'
+        cs: 'Každé pondělí v 17:30',
+        sk: 'Každý pondelok o 17:30',
+        pl: 'W każdy poniedziałek o 17:30',
+        uk: 'Щопонеділка о 17:30',
+        ru: 'Каждый понедельник в 17:30',
+        de: 'Jeden Montag um 17:30 Uhr',
+        en: 'Every Monday at 17:30',
+        es: 'Cada lunes a las 17:30',
+        sv: 'Varje måndag kl. 17.30',
+        hu: 'Minden hétfőn 17:30-kor'
       },
       // Zástupná karta s logem — používá se u aktualit, ke kterým nemáme fotku.
       image: 'assets/img/logo-karta.jpg',
       link: '',
       tag:   { cs: 'Evangelizace', sk: 'Evanjelizácia', uk: 'Євангелізація', ru: 'Евангелизация', de: 'Evangelisation', pl: 'Ewangelizacja', en: 'Evangelism', es: 'Evangelización', sv: 'Evangelisation', hu: 'Evangelizáció' },
       title: {
-        cs: 'Evangelizace každé pondělí na náměstí v Třinci', sk: 'Evanjelizácia každý pondelok na námestí v Třinci', uk: 'Євангелізація щопонеділка на площі у Тршинці', ru: 'Евангелизация каждый понедельник на площади в Тршинце', de: 'Evangelisation jeden Montag auf dem Platz in Třinec',
-        pl: 'Ewangelizacja w każdy poniedziałek na rynku w Trzyńcu',
-        en: 'Street evangelism every Monday on the square in Třinec',
-        es: 'Evangelización cada lunes en la plaza de Třinec', sv: 'Evangelisation varje måndag på torget i Třinec', hu: 'Evangelizáció minden hétfőn a třineci főtéren'
+        cs: 'Evangelizace v Třinci',
+        sk: 'Evanjelizácia v Třinci',
+        pl: 'Ewangelizacja w Trzyńcu',
+        uk: 'Євангелізація у Тршинці',
+        ru: 'Евангелизация в Тршинце',
+        de: 'Evangelisation in Třinec',
+        en: 'Street evangelism in Třinec',
+        es: 'Evangelización en Třinec',
+        sv: 'Evangelisation i Třinec',
+        hu: 'Evangelizáció Třinecben'
       },
       text: {
-        cs: 'Scházíme se každé pondělí v 17:30 na náměstí T. G. Masaryka v Třinci, mluvíme s lidmi a nabízíme modlitbu. Přidat se může kdokoli ze sboru — stačí přijít. Vynecháváme jen, když vytrvale prší.', sk: 'Stretávame sa každý pondelok o 17:30 na námestí T. G. Masaryka v Třinci, rozprávame sa s ľuďmi a ponúkame modlitbu. Pridať sa môže ktokoľvek zo zboru — stačí prísť. Vynechávame len vtedy, keď vytrvalo prší.', uk: 'Ми збираємося щопонеділка о 17:30 на площі Т. Ґ. Масарика у Тршинці, розмовляємо з людьми й пропонуємо помолитися. Долучитися може будь-хто з церкви — досить просто прийти. Не виходимо лише тоді, коли ллє дощ.', ru: 'Мы собираемся каждый понедельник в 17:30 на площади Т. Г. Масарика в Тршинце, разговариваем с людьми и предлагаем помолиться. Присоединиться может любой из церкви — достаточно просто прийти. Не выходим только в сильный дождь.', de: 'Wir treffen uns jeden Montag um 17:30 Uhr auf dem T.-G.-Masaryk-Platz in Třinec, kommen mit Menschen ins Gespräch und bieten an, mit ihnen zu beten. Mitmachen kann jeder aus der Gemeinde — einfach dazukommen. Nur bei anhaltendem Regen fällt es aus.',
-        pl: 'Spotykamy się w każdy poniedziałek o 17:30 na Rynku T. G. Masaryka w Trzyńcu, rozmawiamy z ludźmi i proponujemy modlitwę. Dołączyć może każdy ze zboru — wystarczy przyjść. Odpuszczamy tylko wtedy, gdy pada rzęsisty deszcz.',
-        en: 'We meet every Monday at 17:30 on T. G. Masaryk Square in Třinec, talk with people and offer to pray with them. Anyone from the church is welcome to join — just turn up. We only skip it when it is pouring with rain.',
-        es: 'Nos reunimos todos los lunes a las 17:30 en la plaza T. G. Masaryk de Třinec, hablamos con la gente y ofrecemos orar con ellos. Cualquiera de la iglesia puede unirse: basta con venir. Solo lo suspendemos cuando llueve con fuerza.', sv: 'Vi träffas varje måndag klockan 17.30 på T. G. Masaryks torg i Třinec, samtalar med människor och erbjuder förbön. Vem som helst i församlingen kan följa med — det räcker att komma. Vi ställer in bara när det regnar ihållande.', hu: 'Minden hétfőn 17:30-kor a třineci T. G. Masaryk téren gyűlünk össze, beszélgetünk az emberekkel, és felajánljuk, hogy imádkozunk értük. Bárki csatlakozhat a gyülekezetből — elég eljönni. Csak tartós esőben marad el.'
+        cs: 'Pravidelně se scházíme na náměstí T. G. Masaryka, kde se sdílíme s lidmi a nabízíme jim modlitbu. Přidat se může kdokoli ze sboru — stačí prostě přijít. Vynecháváme jen tehdy, když vytrvale prší.',
+        sk: 'Pravidelne sa stretávame na námestí T. G. Masaryka, kde sa zdieľame s ľuďmi a ponúkame im modlitbu. Pridať sa môže ktokoľvek zo zboru — stačí jednoducho prísť. Vynechávame len vtedy, keď vytrvalo prší.',
+        pl: 'Regularnie spotykamy się na Rynku T. G. Masaryka, gdzie dzielimy się z ludźmi i proponujemy im modlitwę. Dołączyć może każdy ze zboru — wystarczy po prostu przyjść. Odpuszczamy tylko wtedy, gdy pada rzęsisty deszcz.',
+        uk: 'Ми регулярно збираємося на площі Т. Ґ. Масарика, де ділимося з людьми й пропонуємо їм помолитися. Долучитися може будь-хто з церкви — досить просто прийти. Не виходимо лише тоді, коли ллє дощ.',
+        ru: 'Мы регулярно собираемся на площади Т. Г. Масарика, где делимся с людьми и предлагаем им помолиться. Присоединиться может любой из церкви — достаточно просто прийти. Не выходим только тогда, когда льёт дождь.',
+        de: 'Wir treffen uns regelmäßig auf dem T.-G.-Masaryk-Platz, kommen dort mit Menschen ins Gespräch und bieten an, mit ihnen zu beten. Mitmachen kann jeder aus der Gemeinde — einfach dazukommen. Nur bei anhaltendem Regen fällt es aus.',
+        en: 'We meet regularly on T. G. Masaryk Square, where we get into conversation with people and offer to pray with them. Anyone from the church is welcome to join — just turn up. We only skip it when it is pouring with rain.',
+        es: 'Nos reunimos habitualmente en la plaza T. G. Masaryk, donde hablamos con la gente y le ofrecemos orar por ella. Cualquiera de la iglesia puede unirse: basta con venir. Solo lo suspendemos cuando llueve con fuerza.',
+        sv: 'Vi träffas regelbundet på T. G. Masaryks torg, där vi samtalar med människor och erbjuder dem förbön. Vem som helst i församlingen kan följa med — det räcker att komma. Vi ställer in bara när det regnar ihållande.',
+        hu: 'Rendszeresen összegyűlünk a T. G. Masaryk téren, ahol beszélgetünk az emberekkel, és felajánljuk, hogy imádkozunk értük. Bárki csatlakozhat a gyülekezetből — elég egyszerűen eljönni. Csak tartós esőben marad el.'
       }
     },
     {
