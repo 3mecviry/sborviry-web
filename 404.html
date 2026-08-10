@@ -32,9 +32,18 @@
     Array.from(parametry.keys()).forEach(function (klic) {
       if (klic.indexOf('utm_') === 0) { parametry.delete(klic); zmeneno = true; }
     });
+    // Adresy webu jedou bez koncovky .html (sborviry.org/kazani). Kdo přijde
+    // po starém odkazu s .html, uvidí čistou adresu — stránka se přitom
+    // znovu nenačítá. Mimo ostrou doménu (z disku, z lokálního serveru)
+    // koncovka zůstává, tam ji prohlížeč potřebuje.
+    var cesta = adresa.pathname;
+    if (/(^|\.)sborviry\.org$/.test(location.hostname)) {
+      var ciste = cesta.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
+      if (ciste !== cesta) { cesta = ciste; zmeneno = true; }
+    }
     if (zmeneno) {
       var zbytek = parametry.toString();
-      history.replaceState(null, '', adresa.pathname + (zbytek ? '?' + zbytek : '') + adresa.hash);
+      history.replaceState(null, '', cesta + (zbytek ? '?' + zbytek : '') + adresa.hash);
     }
   } catch (e) { /* starý prohlížeč nebo otevřeno přes file:// — adresa zůstane beze změny */ }
 })();

@@ -63,11 +63,32 @@ přetáhnout do prohlížeče na jejich stránce.
 Soubor `assets/js/site.js` obsahuje logiku (přepínání jazyků, menu, mapa).
 Ten měnit nemusíte.
 
+### Adresy bez koncovky `.html`
+
+Web se venku ukazuje jako `sborviry.org/kazani`, ne `sborviry.org/kazani.html`.
+Soubory na disku se nepřejmenovávaly — pořád je to `kazani.html`. GitHub Pages
+(i Netlify a Cloudflare Pages) umí soubor najít i bez koncovky, takže stačilo
+přepsat odkazy: menu a patičku vyrábí `assets/js/site.js`, adresy pro vyhledávače
+jsou v `canonical`, `og:url` a `hreflang` v hlavičkách stránek a v `sitemap.xml`.
+
+Staré odkazy s `.html` (třeba ve starším příspěvku na Facebooku) fungují dál —
+stránka se otevře úplně stejná a v adresním řádku se koncovka jen tiše schová.
+Vyhledávačům říká značka `canonical`, že platí ta kratší podoba, takže se stránka
+nepočítá dvakrát.
+
+**Při zkoušení z disku** (otevřením `index.html` v prohlížeči) si menu koncovky
+nechává — bez serveru by odkazy bez koncovky nikam nevedly. Pozná se to podle
+adresy: pravidlo v `site.js` (`CISTE_ADRESY`) i v hlavičce stránek reaguje jen
+na `sborviry.org` a `*.github.io`.
+
+**Přidáváte-li novou stránku,** odkazujte na ni bez koncovky a nezapomeňte ji
+dopsat do `sitemap.xml` — také bez `.html`.
+
 ### Úklid adresy ze sociálních sítí
 
 Když někdo přijde z Facebooku nebo Instagramu, odkaz s sebou nese sledovací kód
 (`?fbclid=IwAR3xK9mQ2vL8pN…`, `?igsh=…`). V adresním řádku pak místo
-`sborviry.org/aktuality.html` visí dlouhý chuchvalec, který návštěvníkovi nic neříká.
+`sborviry.org/aktuality` visí dlouhý chuchvalec, který návštěvníkovi nic neříká.
 
 V `<head>` každé stránky je proto krátký úsek označený komentářem **ÚKLID ADRESY**.
 Smaže tyhle kódy hned na začátku načítání, ještě než se stránka vykreslí.
@@ -271,16 +292,18 @@ prohlížeče a lze ji předat i odkazem:
 
 | Kód | Jazyk | Odkaz |
 |---|---|---|
-| `cs` | čeština (výchozí) | `index.html` |
-| `sk` | slovenština | `index.html?lang=sk` |
-| `pl` | polština | `index.html?lang=pl` |
-| `uk` | ukrajinština | `index.html?lang=uk` |
-| `ru` | ruština | `index.html?lang=ru` |
-| `de` | němčina | `index.html?lang=de` |
-| `en` | angličtina | `index.html?lang=en` |
-| `es` | španělština | `index.html?lang=es` |
-| `sv` | švédština | `index.html?lang=sv` |
-| `hu` | maďarština | `index.html?lang=hu` |
+| `cs` | čeština (výchozí) | `sborviry.org/` |
+| `sk` | slovenština | `sborviry.org/?lang=sk` |
+| `pl` | polština | `sborviry.org/?lang=pl` |
+| `uk` | ukrajinština | `sborviry.org/?lang=uk` |
+| `ru` | ruština | `sborviry.org/?lang=ru` |
+| `de` | němčina | `sborviry.org/?lang=de` |
+| `en` | angličtina | `sborviry.org/?lang=en` |
+| `es` | španělština | `sborviry.org/?lang=es` |
+| `sv` | švédština | `sborviry.org/?lang=sv` |
+| `hu` | maďarština | `sborviry.org/?lang=hu` |
+
+Stejně to funguje na kterékoli stránce — `sborviry.org/o-nas?lang=pl`.
 
 Při první návštěvě se jazyk vybere podle nastavení prohlížeče (prochází se celý
 seznam preferovaných jazyků, ne jen první). Běloruština se mapuje na ukrajinštinu.
@@ -308,7 +331,7 @@ tedy nikdy nerozbije, jen bude na daném místě česky.
 3. V `assets/js/content.js` doplňte nový jazyk do polí `times`, `gallery` a `news`.
 
 Než web zveřejníte, projděte si v novém jazyce všechny stránky — nejrychleji
-přes odkazy `index.html?lang=xx`, `o-nas.html?lang=xx` a tak dál. Hlídejte
+přes odkazy `sborviry.org/?lang=xx`, `sborviry.org/o-nas?lang=xx` a tak dál. Hlídejte
 hlavně délku položek v menu: když se nevejdou, hlavička se sama přepne na
 tlačítko s nabídkou. Nejdelší menu má zatím španělština (79 znaků) — pokud se
 pod ní vejdete, je to v pořádku.
@@ -343,6 +366,9 @@ pod ní vejdete, je to v pořádku.
 ---
 
 ## 10. Struktura souborů
+
+Jde o názvy souborů na disku. Na webu se stránky ukazují bez koncovky —
+`o-nas.html` je na adrese `sborviry.org/o-nas` (viz *Adresy bez koncovky `.html`*).
 
 ```
 index.html                    Úvodní stránka

@@ -103,9 +103,21 @@
   // Pozor na délku: nevejde-li se menu do hlavičky, sbalí se samo do tlačítka.
   const NAV_KEYS = ['about', 'first', 'sermons', 'ministries', 'news', 'give', 'contact'];
 
+  // Na ostrém webu jsou adresy bez koncovky (sborviry.org/o-nas) — GitHub Pages
+  // soubor najde i tak a adresa je hezčí a lépe se předává dál. Otevře-li se
+  // složka z disku nebo z jiného lokálního serveru, koncovka zůstává, jinak by
+  // odkazy nikam nevedly. Stejné pravidlo hlídá i úsek "úklid adresy" v *.html.
+  const CISTE_ADRESY = /(^|\.)sborviry\.org$|\.github\.io$/.test(location.hostname);
+
+  /** Ze jména souboru udělá adresu: 'o-nas.html' → 'o-nas', 'index.html' → './' */
+  const adresaStranky = (file) => {
+    if (!CISTE_ADRESY) return file;
+    return file === 'index.html' ? './' : file.replace(/\.html$/, '');
+  };
+
   const href = (key) => {
     const p = PAGES.find((x) => x.key === key);
-    return (p ? p.file : 'index.html') + (LANG === DEFAULT_LANG ? '' : '?lang=' + LANG);
+    return adresaStranky(p ? p.file : 'index.html') + (LANG === DEFAULT_LANG ? '' : '?lang=' + LANG);
   };
 
   const PAGE = document.body.dataset.page || 'home';
@@ -277,7 +289,7 @@
           </div>
           <div class="footer-bottom">
             <span>© ${new Date().getFullYear()} ${esc(c.orgName)} · IČO ${esc(c.ico)} · ${esc(t('footer.rights'))}</span>
-            <a href="ochrana-osobnich-udaju.html${LANG === DEFAULT_LANG ? '' : '?lang=' + LANG}">${esc(t('footer.privacy'))}</a>
+            <a href="${adresaStranky('ochrana-osobnich-udaju.html')}${LANG === DEFAULT_LANG ? '' : '?lang=' + LANG}">${esc(t('footer.privacy'))}</a>
           </div>
         </div>
       </footer>`;

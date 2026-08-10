@@ -2,9 +2,10 @@
 User-agent: *
 Allow: /
 
-# Stránky, které do vyhledávání nepatří
-Disallow: /404.html
-Disallow: /ochrana-osobnich-udaju.html
+# Stránky, které do vyhledávání nepatří.
+# Zápis bez koncovky pokrývá obě podoby adresy — /404 i /404.html.
+Disallow: /404
+Disallow: /ochrana-osobnich-udaju
 
 # Dokumentace k webu. GitHub Pages servíruje všechno z kořene repozitáře,
 # takže by se jinak dala najít i na sborviry.org — do výsledků vyhledávání

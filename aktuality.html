@@ -32,9 +32,18 @@
     Array.from(parametry.keys()).forEach(function (klic) {
       if (klic.indexOf('utm_') === 0) { parametry.delete(klic); zmeneno = true; }
     });
+    // Adresy webu jedou bez koncovky .html (sborviry.org/kazani). Kdo přijde
+    // po starém odkazu s .html, uvidí čistou adresu — stránka se přitom
+    // znovu nenačítá. Mimo ostrou doménu (z disku, z lokálního serveru)
+    // koncovka zůstává, tam ji prohlížeč potřebuje.
+    var cesta = adresa.pathname;
+    if (/(^|\.)sborviry\.org$/.test(location.hostname)) {
+      var ciste = cesta.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
+      if (ciste !== cesta) { cesta = ciste; zmeneno = true; }
+    }
     if (zmeneno) {
       var zbytek = parametry.toString();
-      history.replaceState(null, '', adresa.pathname + (zbytek ? '?' + zbytek : '') + adresa.hash);
+      history.replaceState(null, '', cesta + (zbytek ? '?' + zbytek : '') + adresa.hash);
     }
   } catch (e) { /* starý prohlížeč nebo otevřeno přes file:// — adresa zůstane beze změny */ }
 })();
@@ -42,11 +51,11 @@
 <title>Aktuality | Sbor Víry — Třinec</title>
 <meta name="description" content="Novinky, akce a oznámení ze života sboru.">
 <meta name="theme-color" content="#FBF8F5">
-<link rel="canonical" href="https://sborviry.org/aktuality.html">
+<link rel="canonical" href="https://sborviry.org/aktuality">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Sbor Víry — Třinec">
 <meta property="og:locale" content="cs_CZ">
-<meta property="og:url" content="https://sborviry.org/aktuality.html">
+<meta property="og:url" content="https://sborviry.org/aktuality">
 <meta property="og:title" content="Aktuality | Sbor Víry — Třinec">
 <meta property="og:description" content="Novinky, akce a oznámení ze života sboru.">
 <meta property="og:image" content="https://sborviry.org/assets/img/og-image.jpg">
@@ -56,17 +65,17 @@
 <meta name="twitter:title" content="Aktuality | Sbor Víry — Třinec">
 <meta name="twitter:description" content="Novinky, akce a oznámení ze života sboru.">
 <meta name="twitter:image" content="https://sborviry.org/assets/img/og-image.jpg">
-<link rel="alternate" hreflang="cs" href="https://sborviry.org/aktuality.html">
-<link rel="alternate" hreflang="sk" href="https://sborviry.org/aktuality.html?lang=sk">
-<link rel="alternate" hreflang="pl" href="https://sborviry.org/aktuality.html?lang=pl">
-<link rel="alternate" hreflang="uk" href="https://sborviry.org/aktuality.html?lang=uk">
-<link rel="alternate" hreflang="ru" href="https://sborviry.org/aktuality.html?lang=ru">
-<link rel="alternate" hreflang="de" href="https://sborviry.org/aktuality.html?lang=de">
-<link rel="alternate" hreflang="en" href="https://sborviry.org/aktuality.html?lang=en">
-<link rel="alternate" hreflang="es" href="https://sborviry.org/aktuality.html?lang=es">
-<link rel="alternate" hreflang="sv" href="https://sborviry.org/aktuality.html?lang=sv">
-<link rel="alternate" hreflang="hu" href="https://sborviry.org/aktuality.html?lang=hu">
-<link rel="alternate" hreflang="x-default" href="https://sborviry.org/aktuality.html">
+<link rel="alternate" hreflang="cs" href="https://sborviry.org/aktuality">
+<link rel="alternate" hreflang="sk" href="https://sborviry.org/aktuality?lang=sk">
+<link rel="alternate" hreflang="pl" href="https://sborviry.org/aktuality?lang=pl">
+<link rel="alternate" hreflang="uk" href="https://sborviry.org/aktuality?lang=uk">
+<link rel="alternate" hreflang="ru" href="https://sborviry.org/aktuality?lang=ru">
+<link rel="alternate" hreflang="de" href="https://sborviry.org/aktuality?lang=de">
+<link rel="alternate" hreflang="en" href="https://sborviry.org/aktuality?lang=en">
+<link rel="alternate" hreflang="es" href="https://sborviry.org/aktuality?lang=es">
+<link rel="alternate" hreflang="sv" href="https://sborviry.org/aktuality?lang=sv">
+<link rel="alternate" hreflang="hu" href="https://sborviry.org/aktuality?lang=hu">
+<link rel="alternate" hreflang="x-default" href="https://sborviry.org/aktuality">
 <link rel="icon" href="assets/img/favicon.png" sizes="64x64">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
