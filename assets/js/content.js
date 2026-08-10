@@ -156,16 +156,16 @@ const DATA = {
         hu: 'Evangelizáció Třinecben'
       },
       text: {
-        cs: 'Pravidelně se scházíme na náměstí T. G. Masaryka, kde se sdílíme s lidmi a nabízíme jim modlitbu. Přidat se může kdokoli ze sboru — stačí prostě přijít. Vynecháváme jen tehdy, když vytrvale prší.',
-        sk: 'Pravidelne sa stretávame na námestí T. G. Masaryka, kde sa zdieľame s ľuďmi a ponúkame im modlitbu. Pridať sa môže ktokoľvek zo zboru — stačí jednoducho prísť. Vynechávame len vtedy, keď vytrvalo prší.',
-        pl: 'Regularnie spotykamy się na Rynku T. G. Masaryka, gdzie dzielimy się z ludźmi i proponujemy im modlitwę. Dołączyć może każdy ze zboru — wystarczy po prostu przyjść. Odpuszczamy tylko wtedy, gdy pada rzęsisty deszcz.',
-        uk: 'Ми регулярно збираємося на площі Т. Ґ. Масарика, де ділимося з людьми й пропонуємо їм помолитися. Долучитися може будь-хто з церкви — досить просто прийти. Не виходимо лише тоді, коли ллє дощ.',
-        ru: 'Мы регулярно собираемся на площади Т. Г. Масарика, где делимся с людьми и предлагаем им помолиться. Присоединиться может любой из церкви — достаточно просто прийти. Не выходим только тогда, когда льёт дождь.',
-        de: 'Wir treffen uns regelmäßig auf dem T.-G.-Masaryk-Platz, kommen dort mit Menschen ins Gespräch und bieten an, mit ihnen zu beten. Mitmachen kann jeder aus der Gemeinde — einfach dazukommen. Nur bei anhaltendem Regen fällt es aus.',
-        en: 'We meet regularly on T. G. Masaryk Square, where we get into conversation with people and offer to pray with them. Anyone from the church is welcome to join — just turn up. We only skip it when it is pouring with rain.',
-        es: 'Nos reunimos habitualmente en la plaza T. G. Masaryk, donde hablamos con la gente y le ofrecemos orar por ella. Cualquiera de la iglesia puede unirse: basta con venir. Solo lo suspendemos cuando llueve con fuerza.',
-        sv: 'Vi träffas regelbundet på T. G. Masaryks torg, där vi samtalar med människor och erbjuder dem förbön. Vem som helst i församlingen kan följa med — det räcker att komma. Vi ställer in bara när det regnar ihållande.',
-        hu: 'Rendszeresen összegyűlünk a T. G. Masaryk téren, ahol beszélgetünk az emberekkel, és felajánljuk, hogy imádkozunk értük. Bárki csatlakozhat a gyülekezetből — elég egyszerűen eljönni. Csak tartós esőben marad el.'
+        cs: 'Pravidelně se scházíme na třineckém náměstí T. G. Masaryka, kde se sdílíme s lidmi a nabízíme jim modlitbu. Přidat se může kdokoli ze sboru — stačí prostě přijít. Vynecháváme jen tehdy, když vytrvale prší.',
+        sk: 'Pravidelne sa stretávame na třineckom námestí T. G. Masaryka, kde sa zdieľame s ľuďmi a ponúkame im modlitbu. Pridať sa môže ktokoľvek zo zboru — stačí jednoducho prísť. Vynechávame len vtedy, keď vytrvalo prší.',
+        pl: 'Regularnie spotykamy się na Rynku T. G. Masaryka w Trzyńcu, gdzie dzielimy się z ludźmi i proponujemy im modlitwę. Dołączyć może każdy ze zboru — wystarczy po prostu przyjść. Odpuszczamy tylko wtedy, gdy pada rzęsisty deszcz.',
+        uk: 'Ми регулярно збираємося на площі Т. Ґ. Масарика у Тршинці, де ділимося з людьми й пропонуємо їм помолитися. Долучитися може будь-хто з церкви — досить просто прийти. Не виходимо лише тоді, коли ллє дощ.',
+        ru: 'Мы регулярно собираемся на площади Т. Г. Масарика в Тршинце, где делимся с людьми и предлагаем им помолиться. Присоединиться может любой из церкви — достаточно просто прийти. Не выходим только тогда, когда льёт дождь.',
+        de: 'Wir treffen uns regelmäßig auf dem T.-G.-Masaryk-Platz in Třinec, kommen dort mit Menschen ins Gespräch und bieten an, mit ihnen zu beten. Mitmachen kann jeder aus der Gemeinde — einfach dazukommen. Nur bei anhaltendem Regen fällt es aus.',
+        en: 'We meet regularly on T. G. Masaryk Square in Třinec, where we get into conversation with people and offer to pray with them. Anyone from the church is welcome to join — just turn up. We only skip it when it is pouring with rain.',
+        es: 'Nos reunimos habitualmente en la plaza T. G. Masaryk de Třinec, donde hablamos con la gente y le ofrecemos orar por ella. Cualquiera de la iglesia puede unirse: basta con venir. Solo lo suspendemos cuando llueve con fuerza.',
+        sv: 'Vi träffas regelbundet på T. G. Masaryks torg i Třinec, där vi samtalar med människor och erbjuder dem förbön. Vem som helst i församlingen kan följa med — det räcker att komma. Vi ställer in bara när det regnar ihållande.',
+        hu: 'Rendszeresen összegyűlünk a třineci T. G. Masaryk téren, ahol beszélgetünk az emberekkel, és felajánljuk, hogy imádkozunk értük. Bárki csatlakozhat a gyülekezetből — elég egyszerűen eljönni. Csak tartós esőben marad el.'
       }
     },
     {
