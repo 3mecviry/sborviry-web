@@ -1,0 +1,14 @@
+# Lokální nastavení nástrojů — nepatří do repozitáře
+.claude/
+.vscode/
+.idea/
+
+# Systémové smetí
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Dočasné soubory editorů
+*~
+*.swp
+*.bak

@@ -508,6 +508,16 @@ a.card { text-decoration: none; }
 .time-row .where { grid-column: 2; justify-self: end; text-align: right; color: var(--muted); font-size: .95rem; }
 .time-row .where:empty { display: none; }
 
+/* Poznámka pod harmonogramem („Budova je otevřená od 10:30…“).
+   Tabulka má výrazný obrys, takže běžné odsazení .mt-1 (1rem) na ni text
+   opticky přilepí — potřebuje víc vzduchu než odstavec pod prostým textem.
+   Zároveň je o kousek větší než .small: je to nejdelší drobný text na
+   úvodní stránce a v patnácti pixelech se na mobilu čte ztěžka. */
+.times + p {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+}
+
 /* Tabulka bankovních údajů — popisek vlevo, hodnota vpravo.
    Hodnota se nikdy neláme uprostřed (IBAN by se jinak rozpadl na dva řádky);
    když se nevejde vedle popisku, přesune se celá pod něj. */

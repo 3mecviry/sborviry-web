@@ -18,8 +18,28 @@ ruština, němčina, angličtina, španělština, švédština, maďarština).
 4. V *Source* zvolte `Deploy from a branch`, větev `main`, složka `/ (root)`. Uložte.
 5. Za minutu bude web na adrese `https://vase-jmeno.github.io/sborviry-web/`.
 
-**Až budete mít doménu** (např. `sborviry.cz`): v Settings → Pages zadejte doménu do pole
-*Custom domain* a u registrátora domény nastavte `CNAME` záznam na `vase-jmeno.github.io`.
+### Doména sborviry.org (Cloudflare + GitHub Pages)
+
+Doména je vedená na Cloudflare. **Pořadí kroků je důležité** — když se prohodí,
+web na pár hodin přestane být dostupný, než se srovnají certifikáty.
+
+1. **Cloudflare → DNS.** U kořenové domény `sborviry.org` založte **čtyři `A` záznamy**
+   na adresy GitHub Pages: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`,
+   `185.199.111.153`. Pro `www` přidejte `CNAME` na `vase-jmeno.github.io`.
+2. **Oranžový mráček zatím vypněte** (*DNS only*, šedý). GitHub si potřebuje sám
+   ověřit doménu a vystavit certifikát; přes zapnutou proxy to neprojde.
+3. **Cloudflare → SSL/TLS → Overview:** režim musí být **Full**, ne *Flexible*.
+   Při *Flexible* se web zacyklí v nekonečném přesměrování — je to nejčastější
+   chyba téhle kombinace.
+4. **GitHub → Settings → Pages → Custom domain:** zadejte `sborviry.org` a uložte.
+   V repozitáři tím vznikne soubor `CNAME`. Počkejte, až se u pole objeví zelená
+   fajfka (většinou do hodiny).
+5. Teprve pak zaškrtněte **Enforce HTTPS** a případně v Cloudflare zapněte proxy zpět.
+
+> **Adresa je už zadrátovaná v souborech.** `sitemap.xml`, `robots.txt` a značky
+> `canonical`, `og:` a `hreflang` ve všech `*.html` odkazují na `https://sborviry.org`.
+> Kdyby se doména někdy měnila, je potřeba přepsat je všechny — hledejte
+> řetězec `sborviry.org`.
 
 Stejně dobře fungují i **Netlify** nebo **Cloudflare Pages** — obojí zdarma; stačí složku
 přetáhnout do prohlížeče na jejich stránce.
@@ -42,6 +62,23 @@ přetáhnout do prohlížeče na jejich stránce.
 
 Soubor `assets/js/site.js` obsahuje logiku (přepínání jazyků, menu, mapa).
 Ten měnit nemusíte.
+
+### Úklid adresy ze sociálních sítí
+
+Když někdo přijde z Facebooku nebo Instagramu, odkaz s sebou nese sledovací kód
+(`?fbclid=IwAR3xK9mQ2vL8pN…`, `?igsh=…`). V adresním řádku pak místo
+`sborviry.org/aktuality.html` visí dlouhý chuchvalec, který návštěvníkovi nic neříká.
+
+V `<head>` každé stránky je proto krátký úsek označený komentářem **ÚKLID ADRESY**.
+Smaže tyhle kódy hned na začátku načítání, ještě než se stránka vykreslí.
+Odstraňuje značky Facebooku, Instagramu, Googlu, Microsoftu, TikToku, X, LinkedInu,
+Yandexu, Mailchimpu, YouTube a všechny parametry začínající `utm_`.
+
+**Vlastní parametr `?lang=` zůstává nedotčený** — na něm stojí přepínání jazyků.
+Maže se jen to, co je vyjmenované v seznamu `smeti`; cokoli neznámého zůstává.
+
+Kdyby některá síť zavedla nový sledovací kód, dopište ho do seznamu `smeti`
+a stejnou úpravu zkopírujte do zbylých devíti stránek — úsek je ve všech totožný.
 
 ### Přidání nové aktuality
 
@@ -76,8 +113,10 @@ pojmenovat a nakopírovat do složky `assets/img/` — nic v kódu se upravovat 
 | `pastor.jpg` | O nás — portrét pastora | **na výšku** (ořezává se na 3 : 4) |
 | `predsali.jpg` | zatím nikde — sekce „Jak vypadá nedělní dopoledne“ je bez fotky | **na výšku** (ořezává se na 3 : 4) |
 | `galerie-01.jpg` … `-12.jpg` | fotogalerie na úvodní stránce | první na šířku, ostatní čtvercový ořez |
+| `logo-karta.jpg` | zástupná karta u aktualit bez fotky | hotová, 1200 × 675 |
+| `og-image.jpg` | náhled při sdílení na sociálních sítích | hotová, 1200 × 630 |
 
-Všechny tyto fotky jsou už **vložené a zmenšené** (dohromady zabírají 1,7 MB).
+Všechny tyto fotky jsou už **vložené a zmenšené** (celá složka `assets/img/` má 2,1 MB).
 Chcete-li některou vyměnit, prostě přepište soubor stejného jména.
 
 **Chybějící soubor web nerozbije** — místo fotky se zobrazí šrafovaná plocha
@@ -279,6 +318,8 @@ pod ní vejdete, je to v pořádku.
 ## 9. Co ještě doplnit (TODO)
 
 - [ ] Den a čas modlitebního setkání (`content.js` → `times`, poslední položka)
+- [ ] Odkaz na záznam prorockého večeru na YouTube — vložte URL do pole `link`
+      u té aktuality; karta se tím stane prokliknutelnou
 
 - [x] ~~Originální soubor loga~~ — hotovo
 - [x] ~~Souřadnice mapy~~ — hotovo (podle firemního profilu na Google Maps)
@@ -291,6 +332,13 @@ pod ní vejdete, je to v pořádku.
       až bude znám termín dalšího ročníku, stačí u aktuality přepsat text)
 - [x] ~~Domácí skupinky~~ — hotovo (čtvrtek 18:00, adresy domácností se
       záměrně nezveřejňují; zájemce se ozve e-mailem nebo přes Facebook)
+- [x] ~~Návštěva prorocké služby 13. 10. 2025~~ — hotovo (aktualita ve všech
+      deseti jazycích; příjmení hostů jsou kvůli GDPR zkrácená na iniciálu
+      a kontaktní údaje se nezveřejňují; fotka `prorocka-sluzba-2025.jpg`
+      — zbývá jen odkaz na záznam výše)
+- [x] ~~Seminář o Božím uzdravení 22.–23. 5. 2026~~ — hotovo (aktualita ve všech
+      deseti jazycích, fotka `tomasz-kmiecik.jpg`, odkaz na playlist na YouTube;
+      playlist „Škola víry: Boží uzdravení a moc“ je veřejný)
 
 ---
 
@@ -307,6 +355,8 @@ podporte-nas.html             Dary
 kontakt.html                  Kontakt, formulář, mapa
 ochrana-osobnich-udaju.html   Zásady zpracování údajů
 404.html                      Chybová stránka
+sitemap.xml                   Mapa webu pro vyhledávače (8 stránek × 11 jazykových variant)
+robots.txt                    Pravidla pro roboty vyhledávačů
 assets/css/style.css          Vzhled
 assets/js/i18n.js             Texty ve 4 jazycích
 assets/js/content.js          Kontakty, časy, aktuality, dary

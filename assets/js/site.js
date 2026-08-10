@@ -11,6 +11,10 @@
   const LANGS = ['cs', 'sk', 'pl', 'uk', 'ru', 'de', 'en', 'es', 'sv', 'hu'];
   const DEFAULT_LANG = 'cs';
   const STORE_KEY = 'sborviry-lang';
+  // Ostrá adresa webu. Používá se ve strukturovaných datech (schema.org),
+  // která vyžadují absolutní odkazy. Při změně domény přepsat i v *.html
+  // (canonical, og:, hreflang), v sitemap.xml a v robots.txt.
+  const SITE_URL = 'https://sborviry.org';
 
   // Formát data pro výpis u aktualit
   const DATE_LOCALE = {
@@ -665,9 +669,13 @@
     const data = {
       '@context': 'https://schema.org',
       '@type': 'Church',
+      '@id': SITE_URL + '/#organizace',
       name: 'Sbor Víry',
       alternateName: ['Sbor Víry Třinec', 'Sbor Víry, z. s.'],
       legalName: c.orgName,
+      url: SITE_URL + '/',
+      logo: SITE_URL + '/assets/img/logo.png',
+      image: SITE_URL + '/assets/img/og-image.jpg',
       description: t('meta.home.desc'),
       inLanguage: LANG,
       email: c.email,

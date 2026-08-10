@@ -3,8 +3,70 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- ÚKLID ADRESY: sociální sítě a reklamní systémy připojují k odkazu sledovací
+     kódy (fbclid od Facebooku, igsh od Instagramu, utm_… z newsletterů), které
+     pak straší v adresním řádku. Tenhle úsek je smaže hned na začátku načítání,
+     takže návštěvník vidí jen sborviry.org a název stránky.
+     Vlastní parametr ?lang= zůstává — na něm stojí přepínání jazyků.
+     Nový sledovací kód se přidá do seznamu níž. -->
+<script>
+(function () {
+  try {
+    var adresa = new URL(location.href);
+    var parametry = adresa.searchParams;
+    var zmeneno = false;
+    var smeti = [
+      'fbclid', 'igshid', 'igsh',                     // Facebook, Instagram
+      'gclid', 'dclid', 'gbraid', 'wbraid', '_ga', '_gl',  // Google
+      'msclkid',                                      // Microsoft / Bing
+      'ttclid',                                       // TikTok
+      'twclid', 'ref_src', 'ref_url',                 // X (Twitter)
+      'li_fat_id',                                    // LinkedIn
+      'yclid',                                        // Yandex
+      'mc_cid', 'mc_eid',                             // Mailchimp
+      'si'                                            // YouTube (sdílení)
+    ];
+    smeti.forEach(function (klic) {
+      if (parametry.has(klic)) { parametry.delete(klic); zmeneno = true; }
+    });
+    Array.from(parametry.keys()).forEach(function (klic) {
+      if (klic.indexOf('utm_') === 0) { parametry.delete(klic); zmeneno = true; }
+    });
+    if (zmeneno) {
+      var zbytek = parametry.toString();
+      history.replaceState(null, '', adresa.pathname + (zbytek ? '?' + zbytek : '') + adresa.hash);
+    }
+  } catch (e) { /* starý prohlížeč nebo otevřeno přes file:// — adresa zůstane beze změny */ }
+})();
+</script>
 <title>Aktuality | Sbor Víry — Třinec</title>
+<meta name="description" content="Novinky, akce a oznámení ze života sboru.">
 <meta name="theme-color" content="#FBF8F5">
+<link rel="canonical" href="https://sborviry.org/aktuality.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sbor Víry — Třinec">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:url" content="https://sborviry.org/aktuality.html">
+<meta property="og:title" content="Aktuality | Sbor Víry — Třinec">
+<meta property="og:description" content="Novinky, akce a oznámení ze života sboru.">
+<meta property="og:image" content="https://sborviry.org/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Aktuality | Sbor Víry — Třinec">
+<meta name="twitter:description" content="Novinky, akce a oznámení ze života sboru.">
+<meta name="twitter:image" content="https://sborviry.org/assets/img/og-image.jpg">
+<link rel="alternate" hreflang="cs" href="https://sborviry.org/aktuality.html">
+<link rel="alternate" hreflang="sk" href="https://sborviry.org/aktuality.html?lang=sk">
+<link rel="alternate" hreflang="pl" href="https://sborviry.org/aktuality.html?lang=pl">
+<link rel="alternate" hreflang="uk" href="https://sborviry.org/aktuality.html?lang=uk">
+<link rel="alternate" hreflang="ru" href="https://sborviry.org/aktuality.html?lang=ru">
+<link rel="alternate" hreflang="de" href="https://sborviry.org/aktuality.html?lang=de">
+<link rel="alternate" hreflang="en" href="https://sborviry.org/aktuality.html?lang=en">
+<link rel="alternate" hreflang="es" href="https://sborviry.org/aktuality.html?lang=es">
+<link rel="alternate" hreflang="sv" href="https://sborviry.org/aktuality.html?lang=sv">
+<link rel="alternate" hreflang="hu" href="https://sborviry.org/aktuality.html?lang=hu">
+<link rel="alternate" hreflang="x-default" href="https://sborviry.org/aktuality.html">
 <link rel="icon" href="assets/img/favicon.png" sizes="64x64">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">

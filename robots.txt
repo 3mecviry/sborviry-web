@@ -1,0 +1,9 @@
+# Sbor Víry — https://sborviry.org
+User-agent: *
+Allow: /
+
+# Stránky, které do vyhledávání nepatří
+Disallow: /404.html
+Disallow: /ochrana-osobnich-udaju.html
+
+Sitemap: https://sborviry.org/sitemap.xml

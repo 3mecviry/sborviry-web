@@ -51,6 +51,10 @@ cs: {
       title: 'Kontakt | Sbor Víry — Třinec',
       desc: 'Hraniční 213, 739 61 Třinec. Napište nám nebo se stavte.'
     },
+    privacy: {
+      title: 'Ochrana osobních údajů | Sbor Víry — Třinec',
+      desc: 'Jak Sbor Víry, z. s., v Třinci nakládá s osobními údaji z kontaktního formuláře a jaká máte podle GDPR práva.'
+    },
     notfound: {
       title: 'Stránka nenalezena | Sbor Víry — Třinec',
       desc: ''
@@ -465,6 +469,10 @@ sk: {
     contact: {
       title: 'Kontakt | Sbor Víry — Třinec',
       desc: 'Hraniční 213, 739 61 Třinec. Napíšte nám alebo sa zastavte.'
+    },
+    privacy: {
+      title: 'Ochrana osobných údajov | Sbor Víry — Třinec',
+      desc: 'Ako Sbor Víry, z. s., v Třinci narába s osobnými údajmi z kontaktného formulára a aké máte podľa GDPR práva.'
     },
     notfound: {
       title: 'Stránka sa nenašla | Sbor Víry — Třinec',
@@ -881,6 +889,10 @@ pl: {
       title: 'Kontakt | Sbor Víry — Trzyniec',
       desc: 'Hraniční 213, 739 61 Trzyniec. Napisz do nas albo po prostu wpadnij.'
     },
+    privacy: {
+      title: 'Ochrona danych osobowych | Sbor Víry — Trzyniec',
+      desc: 'Jak zbór Sbor Víry w Trzyńcu postępuje z danymi osobowymi z formularza kontaktowego i jakie masz prawa zgodnie z RODO.'
+    },
     notfound: {
       title: 'Nie znaleziono strony | Sbor Víry — Trzyniec',
       desc: ''
@@ -1295,6 +1307,10 @@ uk: {
     contact: {
       title: 'Контакти | Sbor Víry — Тршинець',
       desc: 'Hraniční 213, 739 61 Тршинець, Чехія. Напишіть нам або просто завітайте.'
+    },
+    privacy: {
+      title: 'Захист персональних даних | Sbor Víry — Тршинець',
+      desc: 'Як церква Sbor Víry у Тршинці поводиться з персональними даними з контактної форми і які ви маєте права за GDPR.'
     },
     notfound: {
       title: 'Сторінку не знайдено | Sbor Víry — Тршинець',
@@ -1711,6 +1727,10 @@ ru: {
       title: 'Контакты | Sbor Víry — Тршинец',
       desc: 'Hraniční 213, 739 61 Тршинец, Чехия. Напишите нам или просто зайдите.'
     },
+    privacy: {
+      title: 'Защита персональных данных | Sbor Víry — Тршинец',
+      desc: 'Как церковь Sbor Víry в Тршинце обращается с персональными данными из контактной формы и какие у вас права по GDPR.'
+    },
     notfound: {
       title: 'Страница не найдена | Sbor Víry — Тршинец',
       desc: ''
@@ -2125,6 +2145,10 @@ de: {
     contact: {
       title: 'Kontakt | Sbor Víry — Třinec',
       desc: 'Hraniční 213, 739 61 Třinec, Tschechien. Schreiben Sie uns oder kommen Sie einfach vorbei.'
+    },
+    privacy: {
+      title: 'Datenschutz | Sbor Víry — Třinec',
+      desc: 'Wie die Gemeinde Sbor Víry in Třinec mit personenbezogenen Daten aus dem Kontaktformular umgeht und welche Rechte Sie nach der DSGVO haben.'
     },
     notfound: {
       title: 'Seite nicht gefunden | Sbor Víry — Třinec',
@@ -2541,6 +2565,10 @@ en: {
       title: 'Contact | Sbor Víry — Třinec',
       desc: 'Hraniční 213, 739 61 Třinec, Czechia. Write to us or simply drop by.'
     },
+    privacy: {
+      title: 'Privacy policy | Sbor Víry — Třinec',
+      desc: 'How Sbor Víry in Třinec handles the personal data you send through the contact form, and what rights you have under the GDPR.'
+    },
     notfound: {
       title: 'Page not found | Sbor Víry — Třinec',
       desc: ''
@@ -2723,7 +2751,7 @@ en: {
       q4: 'How long does the whole thing take?',
       a4: 'The service lasts about 90 minutes, followed by an informal time for coffee and conversation.',
       q5: 'What do I do with my children?',
-      a5: 'Children are very welcome and can stay with you throughout the service. We do not run a separate children\'s programme at the moment — the church today is made up mostly of adults.',
+      a5: 'Children are very welcome and can stay with you throughout the service. We do not run a separate children’s programme at the moment — the church today is made up mostly of adults.',
       q6: 'Do I need to register in advance?',
       a6: 'No. Simply come along.',
       q7: 'What language is the service in?',
@@ -2955,6 +2983,10 @@ es: {
     contact: {
       title: 'Contacto | Sbor Víry — Třinec',
       desc: 'Hraniční 213, 739 61 Třinec, Chequia. Escríbenos o simplemente ven a vernos.'
+    },
+    privacy: {
+      title: 'Protección de datos | Sbor Víry — Třinec',
+      desc: 'Cómo la iglesia Sbor Víry de Třinec trata los datos personales del formulario de contacto y qué derechos tiene usted según el RGPD.'
     },
     notfound: {
       title: 'Página no encontrada | Sbor Víry — Třinec',
@@ -3371,6 +3403,10 @@ sv: {
       title: 'Kontakt | Sbor Víry — Třinec',
       desc: 'Hraniční 213, 739 61 Třinec, Tjeckien. Skriv till oss eller kom förbi.'
     },
+    privacy: {
+      title: 'Personuppgifter | Sbor Víry — Třinec',
+      desc: 'Hur församlingen Sbor Víry i Třinec hanterar personuppgifter från kontaktformuläret och vilka rättigheter du har enligt GDPR.'
+    },
     notfound: {
       title: 'Sidan hittades inte | Sbor Víry — Třinec',
       desc: ''
@@ -3785,6 +3821,10 @@ hu: {
     contact: {
       title: 'Kapcsolat | Sbor Víry — Třinec',
       desc: 'Hraniční 213, 739 61 Třinec, Csehország. Írj nekünk, vagy nézz be hozzánk.'
+    },
+    privacy: {
+      title: 'Adatvédelem | Sbor Víry — Třinec',
+      desc: 'Hogyan kezeli a třineci Sbor Víry gyülekezet a kapcsolatfelvételi űrlapon küldött személyes adatokat, és milyen jogaid vannak a GDPR szerint.'
     },
     notfound: {
       title: 'Az oldal nem található | Sbor Víry — Třinec',
