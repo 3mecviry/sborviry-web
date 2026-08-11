@@ -193,6 +193,28 @@ a nástroje s umělou inteligencí:
 
 Nic z toho se needituje ručně; vzniká to z `i18n.js` a `content.js`.
 
+### Oznámení vyhledávačům (IndexNow)
+
+Vyhledávač se o změně běžně dozví, až se u nás někdy zastaví jeho robot —
+u menšího webu to bývá týdny. Proto mu to umíme říct sami:
+
+```
+node nastroje/indexnow.mjs                 ohlásí všech 80 adres ze sitemapy
+node nastroje/indexnow.mjs /kazani         ohlásí jen vyjmenované stránky
+```
+
+Spouští se **až po nahrání na GitHub** — vyhledávač si stránku vzápětí přijde
+přečíst, takže na webu už musí být nová verze. Jedno oznámení stačí pro Bing,
+Seznam i další; rozešlou si ho mezi sebou. Google zapojený není, ten chodí sám
+podle `sitemap.xml`.
+
+**O nové kázání se starat nemusíte** — automatika, která hlídá YouTube, si
+oznámení pošle sama, jakmile video vymění.
+
+Vlastnictví webu se dokládá souborem `18ae…150b.txt` v kořeni, který obsahuje
+tentýž klíč jako `nastroje/indexnow.mjs`. Nesmí se smazat ani přejmenovat,
+jinak vyhledávač oznámení odmítne. Klíč není tajný, je veřejně čitelný.
+
 ### Když se generování nepovede
 
 Generátor si po sobě kontroluje, že stránka opravdu vznikla, že je ve správném
@@ -504,6 +526,8 @@ _sablony/                     ZDROJ — kostry stránek, tady se upravuje rozlo�
 
 nastroje/generator.mjs        Generátor stránek — spouští se ručně
 nastroje/ikony.mjs            Výroba ikon ze symbolu (viz kapitola 5)
+nastroje/indexnow.mjs         Oznámení změn vyhledávačům (viz kapitola 3)
+18ae…150b.txt                 Klíč, kterým se web prokáže u IndexNow
 
 *.html                      * Hotová česká verze (stejné názvy jako v _sablony/)
 sk/  pl/  uk/  ru/  de/     * Hotové jazykové verze
