@@ -18,6 +18,10 @@ const I18N = {
 /* ########  ČEŠTINA  ######################################################## */
 cs: {
   langName: 'Čeština',
+  // Krátké představení pro vyhledávače a AI — díky němu nás nespletou
+  // s podobně znějícími sbory jinde. Ve strukturovaných datech jde
+  // do pole disambiguatingDescription (viz renderSchema v site.js).
+  identita: 'Křesťanský sbor v Třinci na adrese Hraniční 213. Zapsaný spolek, IČO 26596865, působí od roku 2002.',
   meta: {
     home: {
       title: 'Sbor Víry — Třinec | křesťanský sbor',
@@ -437,6 +441,10 @@ cs: {
 /* ########  SLOVENŠTINA  #################################################### */
 sk: {
   langName: 'Slovenčina',
+  // Krátké představení pro vyhledávače a AI — díky němu nás nespletou
+  // s podobně znějícími sbory jinde. Ve strukturovaných datech jde
+  // do pole disambiguatingDescription (viz renderSchema v site.js).
+  identita: 'Kresťanský zbor v Třinci na adrese Hraniční 213. Zapísaný spolok, IČO 26596865, pôsobí od roku 2002.',
   meta: {
     home: {
       title: 'Sbor Víry — Třinec | kresťanský zbor',
@@ -856,6 +864,10 @@ sk: {
 /* ########  POLŠTINA  ####################################################### */
 pl: {
   langName: 'Polski',
+  // Krátké představení pro vyhledávače a AI — díky němu nás nespletou
+  // s podobně znějícími sbory jinde. Ve strukturovaných datech jde
+  // do pole disambiguatingDescription (viz renderSchema v site.js).
+  identita: 'Zbór chrześcijański w Trzyńcu przy ulicy Hraniční 213. Stowarzyszenie rejestrowe, IČO 26596865, działa od 2002 roku.',
   meta: {
     home: {
       title: 'Sbor Víry — Trzyniec | zbór chrześcijański',
@@ -1275,6 +1287,10 @@ pl: {
 /* ########  UKRAJINŠTINA  ################################################### */
 uk: {
   langName: 'Українська',
+  // Krátké představení pro vyhledávače a AI — díky němu nás nespletou
+  // s podobně znějícími sbory jinde. Ve strukturovaných datech jde
+  // do pole disambiguatingDescription (viz renderSchema v site.js).
+  identita: 'Християнська церква у Тршинці на вулиці Hraniční 213. Зареєстроване товариство, IČO 26596865, діє з 2002 року.',
   meta: {
     home: {
       title: 'Sbor Víry — Тршинець | християнська церква',
@@ -1694,6 +1710,10 @@ uk: {
 /* ########  RUŠTINA  ######################################################## */
 ru: {
   langName: 'Русский',
+  // Krátké představení pro vyhledávače a AI — díky němu nás nespletou
+  // s podobně znějícími sbory jinde. Ve strukturovaných datech jde
+  // do pole disambiguatingDescription (viz renderSchema v site.js).
+  identita: 'Христианская церковь в Тршинце на улице Hraniční 213. Зарегистрированное объединение, IČO 26596865, действует с 2002 года.',
   meta: {
     home: {
       title: 'Sbor Víry — Тршинец | христианская церковь',
@@ -2113,6 +2133,10 @@ ru: {
 /* ########  NĚMČINA  ######################################################## */
 de: {
   langName: 'Deutsch',
+  // Krátké představení pro vyhledávače a AI — díky němu nás nespletou
+  // s podobně znějícími sbory jinde. Ve strukturovaných datech jde
+  // do pole disambiguatingDescription (viz renderSchema v site.js).
+  identita: 'Christliche Gemeinde in Třinec, Hraniční 213. Eingetragener Verein, IČO 26596865, besteht seit 2002.',
   meta: {
     home: {
       title: 'Sbor Víry — Třinec | christliche Gemeinde',
@@ -2532,6 +2556,10 @@ de: {
 /* ########  ANGLIČTINA  ##################################################### */
 en: {
   langName: 'English',
+  // Krátké představení pro vyhledávače a AI — díky němu nás nespletou
+  // s podobně znějícími sbory jinde. Ve strukturovaných datech jde
+  // do pole disambiguatingDescription (viz renderSchema v site.js).
+  identita: 'Christian church in Třinec at Hraniční 213, Czechia. Registered association, company ID 26596865, active since 2002.',
   meta: {
     home: {
       title: 'Sbor Víry — Třinec | a Christian church',
@@ -2951,6 +2979,10 @@ en: {
 /* ########  ŠPANĚLŠTINA  #################################################### */
 es: {
   langName: 'Español',
+  // Krátké představení pro vyhledávače a AI — díky němu nás nespletou
+  // s podobně znějícími sbory jinde. Ve strukturovaných datech jde
+  // do pole disambiguatingDescription (viz renderSchema v site.js).
+  identita: 'Iglesia cristiana en Třinec, Hraniční 213 (Chequia). Asociación registrada, IČO 26596865, activa desde 2002.',
   meta: {
     home: {
       title: 'Sbor Víry — Třinec | iglesia cristiana',
@@ -3370,6 +3402,10 @@ es: {
 /* ########  ŠVÉDŠTINA  ###################################################### */
 sv: {
   langName: 'Svenska',
+  // Krátké představení pro vyhledávače a AI — díky němu nás nespletou
+  // s podobně znějícími sbory jinde. Ve strukturovaných datech jde
+  // do pole disambiguatingDescription (viz renderSchema v site.js).
+  identita: 'Kristen församling i Třinec på Hraniční 213, Tjeckien. Registrerad förening, org.nr 26596865, verksam sedan 2002.',
   meta: {
     home: {
       title: 'Sbor Víry — Třinec | kristen församling',
@@ -3789,6 +3825,10 @@ sv: {
 /* ########  MAĎARŠTINA  ##################################################### */
 hu: {
   langName: 'Magyar',
+  // Krátké představení pro vyhledávače a AI — díky němu nás nespletou
+  // s podobně znějícími sbory jinde. Ve strukturovaných datech jde
+  // do pole disambiguatingDescription (viz renderSchema v site.js).
+  identita: 'Keresztény gyülekezet Třinecben, Hraniční 213. Bejegyzett egyesület, nyilvántartási szám 26596865, 2002 óta működik.',
   meta: {
     home: {
       title: 'Sbor Víry — Třinec | keresztény gyülekezet',

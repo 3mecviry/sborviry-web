@@ -372,8 +372,19 @@ function slozLlmsTxt(html) {
   radky.push('');
   radky.push('> ' + (org.description || ''));
   radky.push('');
-  radky.push('Křesťanský sbor v Třinci (Moravskoslezský kraj, Česko).');
-  if (org.foundingDate) radky.push('Působí od roku ' + org.foundingDate + '.');
+  // Krátké představení, které sbor odliší od podobně znějících organizací.
+  // Rok založení i adresa v něm už jsou, proto se neopakují zvlášť.
+  if (org.disambiguatingDescription) {
+    radky.push(org.disambiguatingDescription);
+  } else {
+    radky.push('Křesťanský sbor v Třinci.');
+    if (org.foundingDate) radky.push('Působí od roku ' + org.foundingDate + '.');
+  }
+  const kde = org.areaServed;
+  if (kde) {
+    radky.push('Působnost: ' + kde.name
+      + (kde.containedInPlace ? ', ' + kde.containedInPlace.name : '') + ', Česko.');
+  }
   radky.push('');
 
   radky.push('## Základní údaje');

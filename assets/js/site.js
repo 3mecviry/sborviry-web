@@ -748,6 +748,19 @@
       geo: { '@type': 'GeoCoordinates', latitude: c.lat, longitude: c.lon },
       sameAs: [s.youtube, s.facebook, s.instagram].filter(Boolean)
     };
+    /* Krátké představení, které sbor odliší od podobně znějících organizací
+       jinde v republice. Vyhledávače i AI podle něj poznají, o koho jde —
+       spolu s IČO, adresou a souřadnicemi výš je to jednoznačné.
+       Text se překládá, klíč `identita` je v assets/js/i18n.js. */
+    const identita = t('identita');
+    if (identita) organizace.disambiguatingDescription = identita;
+
+    // Působnost — sbor slouží Třinci a okolí, ne celé republice.
+    organizace.areaServed = {
+      '@type': 'City', name: 'Třinec',
+      containedInPlace: { '@type': 'AdministrativeArea', name: 'Moravskoslezský kraj' }
+    };
+
     if (c.phone) organizace.telephone = c.phone;
     if (c.googleMapsUrl) organizace.hasMap = c.googleMapsUrl;
     if (DATA.founded) organizace.foundingDate = DATA.founded;
