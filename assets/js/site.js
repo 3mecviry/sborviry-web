@@ -746,7 +746,11 @@
         addressCountry: 'CZ'
       },
       geo: { '@type': 'GeoCoordinates', latitude: c.lat, longitude: c.lon },
-      sameAs: [s.youtube, s.facebook, s.instagram].filter(Boolean)
+      /* Oficiální profily. Podle nich si vyhledávače a AI ověří, že jde
+         pořád o tutéž organizaci. Poslední v řadě je archivní podcast
+         z roku 2020 — na webu na něj neodkazujeme, ale přiznat se k němu
+         se vyplatí, jinak by mohl vyjít jako cizí subjekt (content.js). */
+      sameAs: [s.youtube, s.facebook, s.instagram, DATA.podcastArchiv].filter(Boolean)
     };
     /* Krátké představení, které sbor odliší od podobně znějících organizací
        jinde v republice. Vyhledávače i AI podle něj poznají, o koho jde —
@@ -780,6 +784,19 @@
     if (hodiny.length) organizace.openingHoursSpecification = hodiny;
 
     const graf = [organizace];
+
+    /* Web jako takový — odlišuje „stránky sborviry.org“ od „sboru samotného“.
+       Díky tomu umí Google ve výsledcích ukázat název webu místo holé adresy
+       a AI ví, kdo za obsahem stojí. Vydavatelem je organizace výš, proto se
+       tu jen odkáže přes @id a údaje se neopakují podruhé. */
+    graf.push({
+      '@type': 'WebSite',
+      '@id': SITE_URL + '/#web',
+      url: SITE_URL + '/',
+      name: 'Sbor Víry — Třinec',
+      inLanguage: LANG,
+      publisher: { '@id': SITE_URL + '/#organizace' }
+    });
 
     /* Pravidelná setkání ještě jednou, tentokrát jako události. Otevírací doba
        výš říká „kdy je otevřeno“, tohle říká „co se koná“ — vyhledávač i AI to

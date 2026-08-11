@@ -19,6 +19,13 @@
        assets/img/favicon.png            192×192   ikona v záložce
        assets/img/apple-touch-icon.png   180×180   ikona na ploše iPhonu
        assets/img/icon.png               256×256   záloha ve větší velikosti
+       favicon.ico                        48×48    záloha v kořeni webu
+
+   Proč ještě favicon.ico, když v hlavičce stránek je odkaz na favicon.png:
+   část nástrojů se na adresu /favicon.ico ptá napevno, bez ohledu na to,
+   co je v hlavičce — čtečky, náhledy odkazů, starší prohlížeče. Bez souboru
+   dostanou chybu 404. Proto leží v kořeni webu, ne v assets/img: ta adresa
+   je daná zvykem a nedá se přesunout.
 
    Velikost favicony musí zůstat násobkem 48 px, jinak ji Google ve výsledcích
    vyhledávání neukáže. Změníte-li ji, přepište i sizes="…" v _sablony/*.html.
@@ -44,8 +51,31 @@ const ZDROJ = 'assets/img/logo_zmena.png';
 const IKONY = [
   ['favicon.png', 192, 0.05],
   ['apple-touch-icon.png', 180, 0.10],   // ikona na ploše snese větší okraj
-  ['icon.png', 256, 0.05]
+  ['icon.png', 256, 0.05],
+  ['favicon.ico', 48, 0.05]              // v kořeni webu, viz hlavička skriptu
 ];
+
+/* Prohlížeč umí z plátna vydat jen PNG nebo JPEG, žádné ICO. Formát ICO ale
+   od Windows Vista dovoluje mít PNG přímo uvnitř — stačí kolem něj obalit
+   dvaadvacetibajtovou hlavičku. Tím se obejde nutnost cokoli instalovat.
+
+   Hlavička má dvě části: popis souboru (kolik je uvnitř obrázků) a záznam
+   o jediném obrázku (jak je velký a kde v souboru začíná). */
+function zabalDoIco(png, hrana) {
+  const hlavicka = Buffer.alloc(22);
+  hlavicka.writeUInt16LE(0, 0);          // rezervováno, vždy nula
+  hlavicka.writeUInt16LE(1, 2);          // typ 1 = ikona
+  hlavicka.writeUInt16LE(1, 4);          // počet obrázků uvnitř
+  hlavicka.writeUInt8(hrana, 6);         // šířka  (0 by znamenala 256)
+  hlavicka.writeUInt8(hrana, 7);         // výška
+  hlavicka.writeUInt8(0, 8);             // počet barev palety — 0 = plné barvy
+  hlavicka.writeUInt8(0, 9);             // rezervováno
+  hlavicka.writeUInt16LE(1, 10);         // barevné roviny
+  hlavicka.writeUInt16LE(32, 12);        // bitů na pixel (RGBA)
+  hlavicka.writeUInt32LE(png.length, 14);// délka obrázku
+  hlavicka.writeUInt32LE(22, 18);        // kde obrázek začíná — hned za hlavičkou
+  return Buffer.concat([hlavicka, png]);
+}
 
 function najdiChrome() {
   const kandidati = [
@@ -153,9 +183,14 @@ async function main() {
   for (const kus of vse.split('###')) {
     const [nazev, url] = kus.split('|');
     const png = Buffer.from(url.split(',')[1], 'base64');
-    await writeFile(path.join(KOREN, 'assets/img', nazev), png);
-    console.log('  ' + nazev.padEnd(24) + png.readUInt32BE(16) + '×' + png.readUInt32BE(20)
-      + '   ' + (png.length / 1024).toFixed(1) + ' kB');
+    const hrana = png.readUInt32BE(16);
+    // Rozměry se čtou z PNG i u ikony — uvnitř ICO je pořád PNG.
+    const jeIco = nazev.endsWith('.ico');
+    const data = jeIco ? zabalDoIco(png, hrana) : png;
+    // favicon.ico patří do kořene webu, ostatní ikony do assets/img.
+    await writeFile(path.join(KOREN, jeIco ? '' : 'assets/img', nazev), data);
+    console.log('  ' + nazev.padEnd(24) + hrana + '×' + png.readUInt32BE(20)
+      + '   ' + (data.length / 1024).toFixed(1) + ' kB');
   }
   console.log('\nHotovo. Ikony se na webu projeví po nahrání na GitHub;');
   console.log('v prohlížeči je někdy potřeba načíst stránku bez mezipaměti (Ctrl+F5).');

@@ -193,6 +193,14 @@ a nástroje s umělou inteligencí:
 
 Nic z toho se needituje ručně; vzniká to z `i18n.js` a `content.js`.
 
+**Datum poslední změny v sitemapě** se bere z historie v Gitu — z posledního
+commitu, který se dotkl šablony stránky nebo souborů `content.js`, `i18n.js`
+a `site.js` (z nich stránka vzniká). Pustíte-li generátor, aniž jste něco
+změnili, data zůstanou stát. To je záměr: kdyby se pokaždé přepsala na dnešek,
+Google by údaj vyhodnotil jako nespolehlivý a přestal by ho brát v potaz
+u celého webu. Rozepsaná změna, která ještě není v commitu, se počítá jako
+dnešní. Bez Gitu (stažený ZIP) se použije datum souboru na disku.
+
 ### Oznámení vyhledávačům (IndexNow)
 
 Vyhledávač se o změně běžně dozví, až se u nás někdy zastaví jeho robot —
@@ -289,6 +297,7 @@ Web používá **vaše originální logo** (`logo_bez_pozadi.png`), zpracované 
 | `icon.png` | ikona 256 × 256 (záloha ve větší velikosti) |
 | `favicon.png` | ikona v záložce prohlížeče, 192 × 192 |
 | `apple-touch-icon.png` | ikona po přidání webu na plochu telefonu, 180 × 180 |
+| `favicon.ico` | záloha v **kořeni webu**, 48 × 48 — viz poznámka níž |
 
 ### Ikony se vyrábějí příkazem
 
@@ -296,8 +305,16 @@ Web používá **vaše originální logo** (`logo_bez_pozadi.png`), zpracované 
 node nastroje/ikony.mjs
 ```
 
-Ze souboru `logo_zmena.png` vzniknou naráz všechny tři velikosti — symbol se
+Ze souboru `logo_zmena.png` vzniknou naráz všechny velikosti — symbol se
 v obrázku najde sám a vycentruje, takže se nic neořezává ručně.
+
+**Proč ještě `favicon.ico`,** když v hlavičce stránek je odkaz na `favicon.png`:
+část nástrojů se ptá napevno na adresu `/favicon.ico` bez ohledu na to, co je
+v hlavičce — čtečky, náhledy odkazů při sdílení, starší prohlížeče. Bez souboru
+dostanou chybu 404. Proto leží v kořeni webu, ne v `assets/img/`: ta adresa je
+daná zvykem a přesunout se nedá. Uvnitř je obyčejné PNG, jen obalené hlavičkou
+formátu ICO — prohlížeč umí z plátna vydat jen PNG, takže se obal dopisuje
+v `ikony.mjs` a nic se kvůli tomu neinstaluje.
 
 **Proč se ikony nedělají z `logo.png`:** v logu je nápis „Sbor Víry" napsaný
 přes spodní část srdce. Čtvercový výřez by tedy buď usekl písmena (což byl
@@ -401,6 +418,20 @@ web dělá tři věci:
    stránky. Obsahují IČO 26596865, přesnou adresu, souřadnice a odkazy na oficiální
    YouTube, Facebook a Instagram. Podle nich Google i AI asistenti spolehlivě poznají,
    že jde o jinou organizaci než podobně znějící sbory.
+
+V seznamu profilů (`sameAs`) je i **archivní podcast** na Apple Podcasts — patnáct
+kázání z roku 2020, nahraných tehdy přes službu Anchor. Nové epizody nepřibývají
+a na webu na něj záměrně nikde neodkazujeme; posílat návštěvníky na spící pořad
+nemá smysl. Ve strukturovaných datech ale zůstat má: bez něj by mohl vyjít jako
+cizí subjekt se stejným názvem, což je přesně to, čemu se tahle kapitola věnuje.
+Proto je v `content.js` uložený zvlášť jako `podcastArchiv`, mimo `social`, ze
+kterého se skládají viditelná tlačítka. V `llms.txt` se u něj automaticky doplní
+poznámka, že se neaktualizuje — jinak ho AI nabízí jako zdroj aktuálních kázání.
+
+> **Pozor:** v RSS feedu toho podcastu je jako web uvedená stará doména
+> `sborviry.cz`, která už neexistuje. Dnešní rozhraní Spotify for Creators
+> pole s webem vůbec nenabízí, takže se ta hodnota přes ně opravit nedá —
+> jediná cesta by byla přestěhovat podcast k jinému hostiteli.
 
 Generuje je funkce `renderSchema()` v `assets/js/site.js` — čerpá z `content.js`,
 takže se aktualizují samy, jakmile doplníte telefon nebo upravíte kontakty.
@@ -534,6 +565,7 @@ sk/  pl/  uk/  ru/  de/     * Hotové jazykové verze
 en/  es/  sv/  hu/          *
 sitemap.xml                 * Mapa webu (8 stránek × 10 jazyků = 80 adres)
 llms.txt                    * Rozcestník pro nástroje s umělou inteligencí
+favicon.ico                 * Ikona pro nástroje, které se ptají napevno (kap. 5)
 
 robots.txt                    Pravidla pro roboty vyhledávačů
 CNAME                         Doména pro GitHub Pages

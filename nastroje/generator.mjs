@@ -30,9 +30,9 @@
    ========================================================================== */
 
 import { createServer } from 'node:http';
-import { execFile } from 'node:child_process';
+import { execFile, execFileSync } from 'node:child_process';
 import { readFile, writeFile, mkdir, readdir } from 'node:fs/promises';
-import { existsSync } from 'node:fs';
+import { existsSync, statSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
@@ -315,12 +315,60 @@ function absolutniCesty(html, jazyk, jeChybova) {
 }
 
 /* --------------------------------------------------------------- sitemap */
+/* --- Datum poslední změny --------------------------------------------------
+   V sitemapě má <lastmod> říkat, kdy se stránka naposledy opravdu změnila.
+   Dřív se sem psalo datum spuštění generátoru — jenže ten se pouští i tehdy,
+   když se nezměnilo nic, takže se všech osmdesát adres tvářilo jako čerstvé.
+   Google takový údaj pozná a přestane ho brát vážně u celého webu.
+
+   Datum se proto bere z historie v Gitu: kdy padl poslední commit, který
+   se daného souboru dotkl. Rozepsaná změna, která ještě není v commitu,
+   se počítá jako dnešní — jinak by web tvrdil, že je starší, než je.
+
+   Bez Gitu (stažené ZIP) se použije datum souboru na disku. */
+const DATUM_CACHE = new Map();
+
+function datumSouboru(relCesta) {
+  if (DATUM_CACHE.has(relCesta)) return DATUM_CACHE.get(relCesta);
+  const plna = path.join(KOREN, relCesta);
+  let datum = null;
+
+  try {
+    const zmeneno = execFileSync('git', ['status', '--porcelain', '--', relCesta],
+      { cwd: KOREN, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
+    datum = zmeneno
+      ? new Date().toISOString().slice(0, 10)
+      : execFileSync('git', ['log', '-1', '--format=%cs', '--', relCesta],
+          { cwd: KOREN, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim() || null;
+  } catch { /* Git není k dispozici — spadneme na datum souboru níž. */ }
+
+  if (!datum) {
+    try { datum = statSync(plna).mtime.toISOString().slice(0, 10); }
+    catch { datum = new Date().toISOString().slice(0, 10); }
+  }
+
+  DATUM_CACHE.set(relCesta, datum);
+  return datum;
+}
+
+/* Obsah stránky nevzniká jen z její šablony — texty jsou v i18n.js, údaje
+   v content.js a vykreslení řeší site.js. Změna kteréhokoli z nich je změnou
+   stránky, takže se bere to nejnovější datum ze všech. */
+const SPOLECNE = ['assets/js/content.js', 'assets/js/i18n.js', 'assets/js/site.js'];
+
+function datumStranky(soubor) {
+  return [path.posix.join('_sablony', soubor), ...SPOLECNE]
+    .map(datumSouboru)
+    .sort()
+    .pop();                             // řetězce RRRR-MM-DD se řadí jako data
+}
+
 function slozSitemap() {
-  const dnes = new Date().toISOString().slice(0, 10);
   const zaznamy = [];
 
   for (const s of STRANKY) {
     if (!s.priorita) continue;          // stránky mimo vyhledávání vynecháme
+    const zmeneno = datumStranky(s.soubor);
     for (const jazyk of JAZYKY) {
       const odkazy = JAZYKY
         .map((j) => `    <xhtml:link rel="alternate" hreflang="${j}" href="${DOMENA}${adresa(j, s.soubor)}"/>`)
@@ -330,7 +378,7 @@ function slozSitemap() {
     <loc>${DOMENA}${adresa(jazyk, s.soubor)}</loc>
 ${odkazy}
     <xhtml:link rel="alternate" hreflang="x-default" href="${DOMENA}${adresa(VYCHOZI, s.soubor)}"/>
-    <lastmod>${dnes}</lastmod>
+    <lastmod>${zmeneno}</lastmod>
     <changefreq>${s.zmena}</changefreq>
     <priority>${s.priorita}</priority>
   </url>`);
@@ -443,7 +491,18 @@ function slozLlmsTxt(html) {
   if ((org.sameAs || []).length) {
     radky.push('## Oficiální profily');
     radky.push('');
-    for (const url of org.sameAs) radky.push('- ' + url);
+    /* U archivního podcastu je potřeba dodat, že se neaktualizuje. Bez toho
+       ho AI nabízí jako zdroj kázání a posluchač skončí u nahrávek z roku
+       2020. Ve strukturovaných datech poznámka být nemůže — sameAs snese
+       jen holé adresy — proto se dopisuje až tady. */
+    const POZNAMKA = [
+      [/podcasts\.apple\.com/, ' — archiv patnácti kázání z roku 2020, dál se neaktualizuje; '
+        + 'aktuální kázání jsou na YouTube']
+    ];
+    for (const url of org.sameAs) {
+      const p = POZNAMKA.find(([vzor]) => vzor.test(url));
+      radky.push('- ' + url + (p ? p[1] : ''));
+    }
     radky.push('');
   }
 

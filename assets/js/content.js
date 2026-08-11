@@ -40,6 +40,22 @@ const DATA = {
     instagram: 'https://www.instagram.com/sborviryorg/'
   },
 
+  /* --- Archivní podcast ----------------------------------------------
+     Patnáct kázání z roku 2020, tehdy nahraných přes službu Anchor
+     (dnes Spotify for Creators). Nové epizody nepřibývají.
+
+     Na webu ho záměrně nikde neodkazujeme — posílat návštěvníky na spící
+     pořad nemá smysl. Ve strukturovaných datech ale být má: říká
+     vyhledávačům a AI „tenhle podcast jsme my“, takže nás nerozdělí
+     na dvě různé organizace. Proto stojí mimo `social` výš, ze kterého
+     se skládají viditelná tlačítka v patičce.
+
+     Adresa je záměrně ta s číslem pořadu (id…) — textová část se v Apple
+     Podcasts mění, číslo zůstává. V llms.txt se u ní doplní poznámka,
+     že jde o archiv, aby ji AI nenabízela jako zdroj aktuálních kázání.
+     -------------------------------------------------------------------- */
+  podcastArchiv: 'https://podcasts.apple.com/cz/podcast/sbor-v%C3%ADry/id1525580706',
+
   // ID YouTube kanálu @sborviry (používá se ve strukturovaných datech).
   youtubeChannelId: 'UCjtt9_ez5UzekptGN_88xhA',
 
