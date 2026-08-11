@@ -70,7 +70,8 @@ async function main() {
   const cizi = adresy.filter((a) => !a.startsWith('https://' + DOMENA + '/'));
   if (cizi.length) { console.error('Adresa mimo web: ' + cizi[0]); process.exit(1); }
 
-  console.log('Ohlašuji ' + adresy.length + ' adres…');
+  const pocetAdres = (n) => n + (n === 1 ? ' adresu' : (n < 5 ? ' adresy' : ' adres'));
+  console.log('Ohlašuji ' + pocetAdres(adresy.length) + '…');
 
   const odpoved = await fetch(SLUZBA, {
     method: 'POST',
