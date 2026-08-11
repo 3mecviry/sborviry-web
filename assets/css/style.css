@@ -4,9 +4,16 @@
    ============================================================ */
 
 :root {
-  /* Barvy z loga */
-  --red: #E8332A;
-  --red-dark: #C4241C;
+  /* Barvy z loga.
+     Červená z loga (--red) je světlejší, než aby na bílé unesla drobné písmo:
+     dává kontrast 4,25 : 1, zatímco přístupnost (WCAG AA) žádá u běžného textu
+     4,5 : 1. Zůstává proto pro logo, grafické prvky a velké nadpisy, kde limit
+     platí nižší (3 : 1) — a je jich vidět nejvíc, takže barevnost webu se nemění.
+     Drobný červený text a bílý nápis na tlačítku sahají po ztmavených odstínech
+     níž. Rozdíl je okem sotva znatelný, měřitelně ale rozhoduje. */
+  --red: #E8332A;         /* logo, grafika, velké nadpisy   — 4,25 : 1 na bílé */
+  --red-aa: #D62A22;      /* pozadí tlačítek s bílým textem — 4,98 : 1 */
+  --red-dark: #C4241C;    /* drobný červený text, najetí myší — 5,81 : 1 */
   --red-soft: #FFF1F0;
   --green: #00A651;
   --green-dark: #00843F;
@@ -90,7 +97,7 @@ p { text-wrap: pretty; }
 .eyebrow {
   display: inline-flex; align-items: center; gap: .5rem;
   font-size: .78rem; font-weight: 600; letter-spacing: .12em;
-  text-transform: uppercase; color: var(--red);
+  text-transform: uppercase; color: var(--red-dark);
 }
 .eyebrow::before {
   content: ''; width: 22px; height: 2px; background: var(--red); border-radius: 2px;
@@ -113,7 +120,15 @@ html[lang="ru"] .stat b, html[lang="ru"] .faq summary, html[lang="ru"] .numbered
 }
 
 /* ---------- Layout ---------- */
-.wrap { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: var(--gutter); }
+/* Telefony se zaoblenými rohy a výřezem hlásí přes env(safe-area-inset-*),
+   kolik místa si po stranách ukusuje rámeček displeje. Bez toho by text
+   při otočení na šířku mizel pod okrajem. Uvnitř max() proto bereme vždy
+   ten větší odstup — buď náš běžný, nebo ten vynucený displejem. */
+.wrap {
+  width: 100%; max-width: var(--maxw); margin-inline: auto;
+  padding-inline: max(var(--gutter), env(safe-area-inset-left))
+                  max(var(--gutter), env(safe-area-inset-right));
+}
 .wrap-narrow { max-width: 780px; }
 .section { padding-block: clamp(4rem, 9vw, 8rem); }
 .section-tight { padding-block: clamp(3rem, 6vw, 5rem); }
@@ -153,7 +168,7 @@ html[lang="ru"] .stat b, html[lang="ru"] .faq summary, html[lang="ru"] .numbered
 .btn:active { transform: translateY(0); }
 .btn svg { width: 1.1em; height: 1.1em; flex: none; }
 
-.btn-primary { background: var(--red); color: #fff; box-shadow: 0 6px 20px rgba(232, 51, 42, .28); }
+.btn-primary { background: var(--red-aa); color: #fff; box-shadow: 0 6px 20px rgba(232, 51, 42, .28); }
 .btn-primary:hover { background: var(--red-dark); box-shadow: 0 10px 28px rgba(232, 51, 42, .36); }
 
 .btn-dark { background: var(--ink); color: #fff; }
@@ -171,7 +186,7 @@ html[lang="ru"] .stat b, html[lang="ru"] .faq summary, html[lang="ru"] .numbered
 
 .link-arrow {
   display: inline-flex; align-items: center; gap: .4rem;
-  font-weight: 600; color: var(--red); text-decoration: none; font-size: .98rem;
+  font-weight: 600; color: var(--red-dark); text-decoration: none; font-size: .98rem;
 }
 .link-arrow::after { content: '→'; transition: transform .25s var(--ease); }
 .link-arrow:hover::after { transform: translateX(5px); }
@@ -228,7 +243,7 @@ main [id], main[id], section[id] { scroll-margin-top: calc(var(--header-h) + 1re
   white-space: nowrap;   /* položky se nikdy nelámou na dva řádky */
 }
 .nav a:hover { background: var(--cream); color: var(--ink); }
-.nav a[aria-current="page"] { color: var(--red); font-weight: 600; }
+.nav a[aria-current="page"] { color: var(--red-dark); font-weight: 600; }
 
 .header-actions { display: flex; align-items: center; gap: .6rem; flex: none; }
 
@@ -245,7 +260,12 @@ main [id], main[id], section[id] { scroll-margin-top: calc(var(--header-h) + 1re
 .lang.open .lang-btn svg { transform: rotate(180deg); }
 .lang-menu {
   position: absolute; top: calc(100% + .5rem); right: 0; min-width: 190px;
-  max-height: min(70vh, 420px); overflow-y: auto;
+  /* dvh počítá s tím, že na mobilu adresní řádek při posouvání zmizí —
+     nabídka se pak nezalomí pod spodní okraj. Starší prohlížeč druhý
+     řádek přeskočí a použije vh nad ním. */
+  max-height: min(70vh, 420px);
+  max-height: min(70dvh, 420px);
+  overflow-y: auto;
   background: var(--white); border: 1px solid var(--line); border-radius: 16px;
   box-shadow: var(--shadow-md); padding: .35rem; z-index: 60;
   opacity: 0; visibility: hidden; transform: translateY(-6px);
@@ -258,9 +278,9 @@ main [id], main[id], section[id] { scroll-margin-top: calc(var(--header-h) + 1re
   font-size: .92rem; text-align: left; cursor: pointer; transition: background-color .15s;
 }
 .lang-menu button:hover { background: var(--cream); }
-.lang-menu button[aria-selected="true"] { color: var(--red); font-weight: 600; }
+.lang-menu button[aria-selected="true"] { color: var(--red-dark); font-weight: 600; }
 .lang-menu button i { font-style: normal; font-size: .72rem; font-weight: 700; letter-spacing: .06em; color: var(--muted); width: 1.6rem; }
-.lang-menu button[aria-selected="true"] i { color: var(--red); }
+.lang-menu button[aria-selected="true"] i { color: var(--red-dark); }
 
 /* Mobilní menu */
 .burger {
@@ -623,7 +643,7 @@ a.card { text-decoration: none; }
 .numbered li::before {
   content: counter(n, decimal-leading-zero);
   font-family: 'Bricolage Grotesque', sans-serif; font-size: 1rem; font-weight: 600;
-  color: var(--red); background: var(--red-soft); border-radius: 12px;
+  color: var(--red-dark); background: var(--red-soft); border-radius: 12px;
   width: var(--step-size); height: var(--step-size); display: grid; place-items: center;
 }
 .numbered li h4 { margin-bottom: .3rem; }
@@ -658,7 +678,7 @@ a.card { text-decoration: none; }
   font-weight: 600; color: var(--ink); letter-spacing: -.02em; transition: color .2s;
 }
 .faq summary::-webkit-details-marker { display: none; }
-.faq summary:hover { color: var(--red); }
+.faq summary:hover { color: var(--red-dark); }
 .faq summary::after {
   content: ''; position: absolute; right: .25rem; top: 50%; width: 15px; height: 15px;
   margin-top: -7px; transition: transform .3s var(--ease);
@@ -725,7 +745,7 @@ a.card { text-decoration: none; }
 .post:hover .media img { transform: scale(1.04); }
 .post-date { font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
 .post h3 { transition: color .2s; }
-.post:hover h3 { color: var(--red); }
+.post:hover h3 { color: var(--red-dark); }
 .tag {
   display: inline-block; padding: .3rem .7rem; border-radius: var(--radius-pill);
   background: var(--red-soft); color: var(--red-dark);
@@ -758,7 +778,7 @@ form .grid { gap: 1.1rem; }
 .info-list dt { font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
 .info-list dd { margin: .25rem 0 0; color: var(--ink); font-weight: 500; }
 .info-list dd a { text-decoration: none; }
-.info-list dd a:hover { color: var(--red); }
+.info-list dd a:hover { color: var(--red-dark); }
 
 /* ---------- CTA pruh ---------- */
 .cta-band {
@@ -791,7 +811,8 @@ form .grid { gap: 1.1rem; }
 .footer .socials a:hover { background: #fff; color: var(--ink); border-color: #fff; }
 
 /* ---------- Patička ---------- */
-.footer { background: var(--ink); color: #918983; padding-block: clamp(3.5rem, 7vw, 5.5rem) 2rem; }
+/* Spodní odsazení počítá i s pruhem pro gesta na telefonech bez tlačítek. */
+.footer { background: var(--ink); color: #918983; padding-block: clamp(3.5rem, 7vw, 5.5rem) max(2rem, env(safe-area-inset-bottom)); }
 .footer a { text-decoration: none; }
 .footer-grid { display: grid; gap: clamp(2.5rem, 5vw, 4rem); grid-template-columns: 1fr; }
 @media (min-width: 780px) { .footer-grid { grid-template-columns: 1.6fr 1fr 1fr 1.2fr; } }
@@ -800,13 +821,13 @@ form .grid { gap: 1.1rem; }
 .footer ul a { color: #918983; font-size: .95rem; transition: color .2s; }
 .footer ul a:hover { color: #fff; }
 .footer .brand-text b { color: #fff; }
-.footer .brand-text span { color: #7A716B; }
-.footer-note { color: #6E6560; font-size: .92rem; margin-top: 1.25rem; max-width: 34ch; }
+.footer .brand-text span { color: #847B75; }
+.footer-note { color: #847B76; font-size: .92rem; margin-top: 1.25rem; max-width: 34ch; }
 .footer-bottom {
   margin-top: clamp(3rem, 6vw, 4.5rem); padding-top: 1.75rem;
   border-top: 1px solid rgba(255,255,255,.1);
   display: flex; flex-wrap: wrap; gap: 1rem 2rem; justify-content: space-between;
-  font-size: .875rem; color: #6E6560;
+  font-size: .875rem; color: #847B76;
 }
 .footer-bottom a:hover { color: #fff; }
 
@@ -815,10 +836,32 @@ form .grid { gap: 1.1rem; }
 .page-hero h1 { font-size: clamp(2.4rem, 6vw, 4.25rem); margin-top: 1rem; }
 .page-hero p { margin-top: 1.25rem; max-width: 58ch; color: var(--muted); font-size: clamp(1.05rem, 1.6vw, 1.25rem); }
 
-/* ---------- Animace při scrollu ---------- */
-[data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
-[data-reveal].in { opacity: 1; transform: none; }
+/* ---------- Animace při scrollu ----------
+   Prvky se nasouvají zdola, ale schovat je smíme jen tam, kde JavaScript
+   opravdu běží a umí je zase odkrýt. Pozná to sám prohlížeč přes dotaz
+   (scripting: enabled) — bez JavaScriptu, a tak čtou stránku vyhledávače
+   i AI, se pravidlo vůbec nepoužije a text je rovnou vidět.
+   Starší prohlížeč, který dotaz nezná, pravidlo přeskočí také — obsah tedy
+   uvidí bez animace, což je ta bezpečnější možnost. */
+@media (scripting: enabled) {
+  [data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+  [data-reveal].in { opacity: 1; transform: none; }
+}
 @media (prefers-reduced-motion: reduce) { [data-reveal] { opacity: 1; transform: none; } }
+
+/* ---------- Ovládání prstem ----------
+   Na dotykovém displeji se prvek menší než zhruba 44 × 44 px špatně trefuje —
+   shodují se na tom doporučení Applu i pravidla přístupnosti WCAG. Myš je
+   podstatně přesnější, a tak se zvětšení váže na hrubé ukazovátko
+   (pointer: coarse); na počítači zůstává hlavička kompaktní. */
+@media (pointer: coarse) {
+  .nav a,
+  .lang-btn,
+  .lang-menu button,
+  .btn-sm,
+  .link-arrow { min-height: 44px; }
+  .nav a, .link-arrow { display: inline-flex; align-items: center; }
+}
 
 /* ---------- Utility ---------- */
 .hide { display: none !important; }

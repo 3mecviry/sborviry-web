@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- BEZPEČNOST: seznam níž určuje, odkud smí stránka načítat obsah — písma
+     z Googlu, náhledy z YouTube, mapu z OpenStreetMap. Cokoli jiného prohlížeč
+     odmítne, takže i kdyby se do stránky někdy dostal cizí kód, nemá odkud
+     stáhnout další ani kam poslat data.
+     Přidáváte-li na web cizí službu (jiné mapy, formulářový server, měření
+     návštěvnosti), musíte její adresu dopsat sem — jinak ji prohlížeč
+     zablokuje a služba se prostě nezobrazí. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://i.ytimg.com; frame-src https://www.youtube-nocookie.com https://www.openstreetmap.org; upgrade-insecure-requests">
+<!-- Cizí web se při odchodu dozví jen doménu, ze které návštěvník přišel,
+     ne konkrétní stránku. -->
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<!-- ÚKLID ADRESY: smaže z odkazu sledovací kódy sociálních sítí a newsletterů,
+     aby v adresním řádku zůstalo jen sborviry.org. Viz assets/js/start.js —
+     dřív byl tenhle úsek vepsaný v každé stránce zvlášť. -->
+<script src="assets/js/start.js"></script>
+<title>Jsem tu poprvé | Sbor Víry — Třinec</title>
+<meta name="description" content="Co vás čeká, když k nám přijdete poprvé. Praktické odpovědi na běžné otázky.">
+<meta name="theme-color" content="#FBF8F5">
+<link rel="canonical" href="https://sborviry.org/jsem-tu-poprve">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sbor Víry — Třinec">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:url" content="https://sborviry.org/jsem-tu-poprve">
+<meta property="og:title" content="Jsem tu poprvé | Sbor Víry — Třinec">
+<meta property="og:description" content="Co vás čeká, když k nám přijdete poprvé. Praktické odpovědi na běžné otázky.">
+<meta property="og:image" content="https://sborviry.org/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jsem tu poprvé | Sbor Víry — Třinec">
+<meta name="twitter:description" content="Co vás čeká, když k nám přijdete poprvé. Praktické odpovědi na běžné otázky.">
+<meta name="twitter:image" content="https://sborviry.org/assets/img/og-image.jpg">
+<link rel="alternate" hreflang="cs" href="https://sborviry.org/jsem-tu-poprve">
+<link rel="alternate" hreflang="sk" href="https://sborviry.org/jsem-tu-poprve?lang=sk">
+<link rel="alternate" hreflang="pl" href="https://sborviry.org/jsem-tu-poprve?lang=pl">
+<link rel="alternate" hreflang="uk" href="https://sborviry.org/jsem-tu-poprve?lang=uk">
+<link rel="alternate" hreflang="ru" href="https://sborviry.org/jsem-tu-poprve?lang=ru">
+<link rel="alternate" hreflang="de" href="https://sborviry.org/jsem-tu-poprve?lang=de">
+<link rel="alternate" hreflang="en" href="https://sborviry.org/jsem-tu-poprve?lang=en">
+<link rel="alternate" hreflang="es" href="https://sborviry.org/jsem-tu-poprve?lang=es">
+<link rel="alternate" hreflang="sv" href="https://sborviry.org/jsem-tu-poprve?lang=sv">
+<link rel="alternate" hreflang="hu" href="https://sborviry.org/jsem-tu-poprve?lang=hu">
+<link rel="alternate" hreflang="x-default" href="https://sborviry.org/jsem-tu-poprve">
+<link rel="icon" href="assets/img/favicon.png" sizes="96x96">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="first">
+<a class="skip" href="#main" data-i18n="ui.skip">Přejít na hlavní obsah</a>
+<div id="site-header"></div>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow" data-i18n="first.hero.eyebrow"></span>
+      <h1 data-i18n="first.hero.h1"></h1>
+      <p data-i18n="first.hero.p"></p>
+      <div class="btn-row mt-2">
+        <a class="btn btn-primary" data-page-link="contact" href="#" data-i18n="cta.contact"></a>
+        <a class="btn btn-ghost" href="#faq" data-i18n="first.faq.eyebrow"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------------------------- ČASY ---------------------------- -->
+  <section class="section-tight">
+    <div class="wrap" data-reveal>
+      <div class="times" id="times"></div>
+      <p class="small muted mt-1" data-i18n="home.times.note"></p>
+    </div>
+  </section>
+
+  <!-- ---------------------------- KROK ZA KROKEM ---------------------------- -->
+  <section class="section section-cream">
+    <div class="wrap">
+      <!-- Bez fotky: nadpis drží užší levý sloupec, kroky jdou vedle něj jako
+           časová osa. Sekce popisuje sled událostí, takže se čte odshora dolů —
+           mřížka karet by chronologii rozbila do zetka. -->
+      <div class="split wide-right align-top">
+        <div data-reveal>
+          <span class="eyebrow" data-i18n="first.steps.eyebrow"></span>
+          <h2 class="mt-1" data-i18n="first.steps.h2"></h2>
+          <p class="lead muted mt-1" data-i18n="first.steps.p"></p>
+        </div>
+        <ol class="numbered timeline" data-reveal>
+          <li><div><h4 data-i18n="first.steps.s1t"></h4><p data-i18n="first.steps.s1d"></p></div></li>
+          <li><div><h4 data-i18n="first.steps.s2t"></h4><p data-i18n="first.steps.s2d"></p></div></li>
+          <li><div><h4 data-i18n="first.steps.s3t"></h4><p data-i18n="first.steps.s3d"></p></div></li>
+          <li><div><h4 data-i18n="first.steps.s4t"></h4><p data-i18n="first.steps.s4d"></p></div></li>
+          <li><div><h4 data-i18n="first.steps.s5t"></h4><p data-i18n="first.steps.s5d"></p></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------------------------- FAQ ---------------------------- -->
+  <section class="section" id="faq">
+    <div class="wrap wrap-narrow">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow" data-i18n="first.faq.eyebrow"></span>
+        <h2 data-i18n="first.faq.h2"></h2>
+      </div>
+      <div class="faq" data-reveal>
+        <details open><summary data-i18n="first.faq.q1"></summary><div data-i18n="first.faq.a1"></div></details>
+        <details><summary data-i18n="first.faq.q2"></summary><div data-i18n="first.faq.a2"></div></details>
+        <details><summary data-i18n="first.faq.q3"></summary><div data-i18n="first.faq.a3"></div></details>
+        <details><summary data-i18n="first.faq.q4"></summary><div data-i18n="first.faq.a4"></div></details>
+        <details><summary data-i18n="first.faq.q5"></summary><div data-i18n="first.faq.a5"></div></details>
+        <details><summary data-i18n="first.faq.q6"></summary><div data-i18n="first.faq.a6"></div></details>
+        <details><summary data-i18n="first.faq.q7"></summary><div data-i18n="first.faq.a7"></div></details>
+        <details><summary data-i18n="first.faq.q8"></summary><div data-i18n="first.faq.a8"></div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------------------------- MAPA ---------------------------- -->
+  <section class="section section-cream">
+    <div class="wrap">
+      <div class="split">
+        <div data-reveal>
+          <span class="eyebrow" data-i18n="contact.hero.eyebrow"></span>
+          <h2 class="mt-1" data-i18n="contact.map.h2"></h2>
+          <p class="lead muted mt-1" data-i18n="contact.map.p"></p>
+        </div>
+        <div id="map" data-reveal></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="wrap">
+      <div class="cta-band" data-reveal>
+        <h2 data-i18n="first.cta.h2"></h2>
+        <p data-i18n="first.cta.p"></p>
+        <div class="btn-row">
+          <a class="btn btn-primary" data-page-link="contact" href="#" data-i18n="cta.contact"></a>
+          <a class="btn btn-light" data-page-link="sermons" href="#" data-i18n="cta.watch"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer"></div>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/content.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>

@@ -69,18 +69,29 @@ const DATA = {
   /* ------------------------------------------------------------------
      3) ČASY SETKÁNÍ
      ------------------------------------------------------------------ */
+  /* U každého setkání je vedle textu pro návštěvníka i strojový zápis
+     (`den` a `cas`). Z něj se skládají strukturovaná data pro vyhledávače
+     a hlasové i textové asistenty — díky nim umí odpovědět na otázku
+     „kdy má Sbor Víry bohoslužby“ přímo, bez otvírání webu.
+     Den se píše anglicky (Sunday, Monday, Tuesday, Wednesday, Thursday,
+     Friday, Saturday), čas ve tvaru HH:MM. Obojí je nepovinné — když je
+     vynecháte, na webu se setkání ukáže úplně stejně, jen se nedostane
+     do strukturovaných dat. */
   times: [
     {
+      den: 'Sunday', cas: '11:00',
       when:  { cs: 'Neděle 11:00', sk: 'Nedeľa 11:00', pl: 'Niedziela 11:00', uk: 'Неділя 11:00', ru: 'Воскресенье 11:00', de: 'Sonntag 11:00 Uhr', en: 'Sunday 11:00', es: 'Domingo 11:00', sv: 'Söndag kl. 11.00', hu: 'Vasárnap 11.00' },
       what:  { cs: 'Bohoslužba', sk: 'Bohoslužba', pl: 'Nabożeństwo', uk: 'Богослужіння', ru: 'Богослужение', de: 'Gottesdienst', en: 'Service', es: 'Culto', sv: 'Gudstjänst', hu: 'Istentisztelet' },
       where: { cs: 'Hraniční 213, Třinec', sk: 'Hraniční 213, Třinec', pl: 'Hraniční 213, Trzyniec', uk: 'Hraniční 213, Тршинець', ru: 'Hraniční 213, Тршинец', de: 'Hraniční 213, Třinec', en: 'Hraniční 213, Třinec', es: 'Hraniční 213, Třinec', sv: 'Hraniční 213, Třinec', hu: 'Hraniční 213, Třinec' }
     },
     {
+      den: 'Monday', cas: '17:30',
       when:  { cs: 'Pondělí 17:30', sk: 'Pondelok 17:30', pl: 'Poniedziałek 17:30', uk: 'Понеділок 17:30', ru: 'Понедельник 17:30', de: 'Montag 17:30 Uhr', en: 'Monday 17:30', es: 'Lunes 17:30', sv: 'Måndag kl. 17.30', hu: 'Hétfő 17.30' },
       what:  { cs: 'Evangelizace', sk: 'Evanjelizácia', pl: 'Ewangelizacja', uk: 'Євангелізація', ru: 'Евангелизация', de: 'Evangelisation', en: 'Evangelism', es: 'Evangelización', sv: 'Evangelisation', hu: 'Evangelizáció' },
       where: { cs: 'nám. T. G. Masaryka, Třinec', sk: 'nám. T. G. Masaryka, Třinec', pl: 'Rynek T. G. Masaryka, Trzyniec', uk: 'пл. Т. Ґ. Масарика, Тршинець', ru: 'пл. Т. Г. Масарика, Тршинец', de: 'T.-G.-Masaryk-Platz, Třinec', en: 'T. G. Masaryk Square, Třinec', es: 'Plaza T. G. Masaryk, Třinec', sv: 'T. G. Masaryks torg, Třinec', hu: 'T. G. Masaryk tér, Třinec' }
     },
     {
+      den: 'Thursday', cas: '18:00',
       when:  { cs: 'Čtvrtek 18:00', sk: 'Štvrtok 18:00', pl: 'Czwartek 18:00', uk: 'Четвер 18:00', ru: 'Четверг 18:00', de: 'Donnerstag 18:00 Uhr', en: 'Thursday 18:00', es: 'Jueves 18:00', sv: 'Torsdag kl. 18.00', hu: 'Csütörtök 18.00' },
       what:  { cs: 'Domácí skupinky', sk: 'Domáce skupinky', pl: 'Grupy domowe', uk: 'Домашні групи', ru: 'Домашние группы', de: 'Hauskreise', en: 'Home groups', es: 'Grupos en casas', sv: 'Hemgrupper', hu: 'Házicsoportok' },
       // Místo se u skupinek neuvádí — adresy domácností se nezveřejňují.

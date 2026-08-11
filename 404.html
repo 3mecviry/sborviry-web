@@ -1,75 +1,113 @@
 <!DOCTYPE html>
-<html lang="cs">
-<head>
+<html lang="cs"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- ÚKLID ADRESY: sociální sítě a reklamní systémy připojují k odkazu sledovací
-     kódy (fbclid od Facebooku, igsh od Instagramu, utm_… z newsletterů), které
-     pak straší v adresním řádku. Tenhle úsek je smaže hned na začátku načítání,
-     takže návštěvník vidí jen sborviry.org a název stránky.
-     Vlastní parametr ?lang= zůstává — na něm stojí přepínání jazyků.
-     Nový sledovací kód se přidá do seznamu níž. -->
-<script>
-(function () {
-  try {
-    var adresa = new URL(location.href);
-    var parametry = adresa.searchParams;
-    var zmeneno = false;
-    var smeti = [
-      'fbclid', 'igshid', 'igsh',                     // Facebook, Instagram
-      'gclid', 'dclid', 'gbraid', 'wbraid', '_ga', '_gl',  // Google
-      'msclkid',                                      // Microsoft / Bing
-      'ttclid',                                       // TikTok
-      'twclid', 'ref_src', 'ref_url',                 // X (Twitter)
-      'li_fat_id',                                    // LinkedIn
-      'yclid',                                        // Yandex
-      'mc_cid', 'mc_eid',                             // Mailchimp
-      'si'                                            // YouTube (sdílení)
-    ];
-    smeti.forEach(function (klic) {
-      if (parametry.has(klic)) { parametry.delete(klic); zmeneno = true; }
-    });
-    Array.from(parametry.keys()).forEach(function (klic) {
-      if (klic.indexOf('utm_') === 0) { parametry.delete(klic); zmeneno = true; }
-    });
-    // Adresy webu jedou bez koncovky .html (sborviry.org/kazani). Kdo přijde
-    // po starém odkazu s .html, uvidí čistou adresu — stránka se přitom
-    // znovu nenačítá. Mimo ostrou doménu (z disku, z lokálního serveru)
-    // koncovka zůstává, tam ji prohlížeč potřebuje.
-    var cesta = adresa.pathname;
-    if (/(^|\.)sborviry\.org$/.test(location.hostname)) {
-      var ciste = cesta.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
-      if (ciste !== cesta) { cesta = ciste; zmeneno = true; }
-    }
-    if (zmeneno) {
-      var zbytek = parametry.toString();
-      history.replaceState(null, '', cesta + (zbytek ? '?' + zbytek : '') + adresa.hash);
-    }
-  } catch (e) { /* starý prohlížeč nebo otevřeno přes file:// — adresa zůstane beze změny */ }
-})();
-</script>
+<!-- BEZPEČNOST: seznam níž určuje, odkud smí stránka načítat obsah — písma
+     z Googlu, náhledy z YouTube, mapu z OpenStreetMap. Cokoli jiného prohlížeč
+     odmítne, takže i kdyby se do stránky někdy dostal cizí kód, nemá odkud
+     stáhnout další ani kam poslat data.
+     Přidáváte-li na web cizí službu (jiné mapy, formulářový server, měření
+     návštěvnosti), musíte její adresu dopsat sem — jinak ji prohlížeč
+     zablokuje a služba se prostě nezobrazí. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://i.ytimg.com; frame-src https://www.youtube-nocookie.com https://www.openstreetmap.org; upgrade-insecure-requests">
+<!-- Cizí web se při odchodu dozví jen doménu, ze které návštěvník přišel,
+     ne konkrétní stránku. -->
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<!-- ÚKLID ADRESY: smaže z odkazu sledovací kódy sociálních sítí a newsletterů,
+     aby v adresním řádku zůstalo jen sborviry.org. Viz assets/js/start.js —
+     dřív byl tenhle úsek vepsaný v každé stránce zvlášť. -->
+<script src="/assets/js/start.js"></script>
 <meta name="theme-color" content="#FBF8F5">
 <title>Stránka nenalezena | Sbor Víry — Třinec</title>
 <meta name="robots" content="noindex">
-<link rel="icon" href="/assets/img/favicon.png" sizes="64x64">
+<link rel="icon" href="/assets/img/favicon.png" sizes="96x96">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css">
-</head>
+<meta name="description" content=""><script type="application/ld+json" id="schema-org">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Church",
+      "@id": "https://sborviry.org/#organizace",
+      "name": "Sbor Víry",
+      "alternateName": [
+        "Sbor Víry Třinec",
+        "Sbor Víry, z. s."
+      ],
+      "legalName": "Sbor Víry, z. s.",
+      "url": "https://sborviry.org/",
+      "logo": "https://sborviry.org/assets/img/logo.png",
+      "image": "https://sborviry.org/assets/img/og-image.jpg",
+      "description": "Sbor Víry, z. s. — křesťanský sbor v Třinci. Bohoslužby každou neděli na adrese Hraniční 213. Přijď takový, jaký jsi.",
+      "inLanguage": "cs",
+      "email": "sborviry@gmail.com",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "IČO",
+        "value": "26596865"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Hraniční 213",
+        "postalCode": "739 61",
+        "addressLocality": "Třinec",
+        "addressRegion": "Moravskoslezský kraj",
+        "addressCountry": "CZ"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 49.6818592,
+        "longitude": 18.6510254
+      },
+      "sameAs": [
+        "https://www.youtube.com/@sborviry",
+        "https://www.facebook.com/sborviry.org/",
+        "https://www.instagram.com/sborviryorg/"
+      ],
+      "hasMap": "https://maps.google.com/?cid=5863197709849295835",
+      "foundingDate": "2002",
+      "employee": {
+        "@type": "Person",
+        "name": "Petr Lysek",
+        "jobTitle": "Pastor a zakladatel sboru"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "https://schema.org/Sunday",
+          "opens": "11:00",
+          "name": "Bohoslužba"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "https://schema.org/Monday",
+          "opens": "17:30",
+          "name": "Evangelizace"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "https://schema.org/Thursday",
+          "opens": "18:00",
+          "name": "Domácí skupinky"
+        }
+      ]
+    }
+  ]
+}</script></head>
 <body data-page="notfound">
 <main id="main">
   <section class="hero" style="min-height:100dvh;align-items:center">
     <div class="hero-glow"></div>
     <div class="hero-glow-2"></div>
     <div class="wrap center">
-      <img src="/assets/img/logo-light.png" alt="Sbor Víry" width="210" height="141"
-           style="margin:0 auto 2.5rem">
-      <h1 style="font-size:clamp(2.2rem,6vw,4rem)" data-i18n="notfound.h1"></h1>
-      <p class="lead" style="margin:1.25rem auto 0;max-width:46ch" data-i18n="notfound.p"></p>
+      <img src="/assets/img/logo-light.png" alt="Sbor Víry" width="210" height="141" style="margin:0 auto 2.5rem">
+      <h1 style="font-size:clamp(2.2rem,6vw,4rem)" data-i18n="notfound.h1">Tuhle stránku jsme nenašli</h1>
+      <p class="lead" style="margin:1.25rem auto 0;max-width:46ch" data-i18n="notfound.p">Odkaz je nejspíš neplatný nebo se stránka přesunula. Zkuste to od začátku.</p>
       <div class="btn-row" style="justify-content:center;margin-top:2.25rem">
-        <a class="btn btn-primary" href="/" data-i18n="notfound.btn"></a>
+        <a class="btn btn-primary" href="/" data-i18n="notfound.btn">Zpět na úvod</a>
       </div>
     </div>
   </section>
@@ -77,5 +115,6 @@
 <script src="/assets/js/i18n.js"></script>
 <script src="/assets/js/content.js"></script>
 <script src="/assets/js/site.js"></script>
-</body>
-</html>
+
+
+</body></html>

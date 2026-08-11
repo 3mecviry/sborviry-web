@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- BEZPEČNOST: seznam níž určuje, odkud smí stránka načítat obsah — písma
+     z Googlu, náhledy z YouTube, mapu z OpenStreetMap. Cokoli jiného prohlížeč
+     odmítne, takže i kdyby se do stránky někdy dostal cizí kód, nemá odkud
+     stáhnout další ani kam poslat data.
+     Přidáváte-li na web cizí službu (jiné mapy, formulářový server, měření
+     návštěvnosti), musíte její adresu dopsat sem — jinak ji prohlížeč
+     zablokuje a služba se prostě nezobrazí. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://i.ytimg.com; frame-src https://www.youtube-nocookie.com https://www.openstreetmap.org; upgrade-insecure-requests">
+<!-- Cizí web se při odchodu dozví jen doménu, ze které návštěvník přišel,
+     ne konkrétní stránku. -->
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<!-- ÚKLID ADRESY: smaže z odkazu sledovací kódy sociálních sítí a newsletterů,
+     aby v adresním řádku zůstalo jen sborviry.org. Viz assets/js/start.js —
+     dřív byl tenhle úsek vepsaný v každé stránce zvlášť. -->
+<script src="assets/js/start.js"></script>
+<title>Aktuality | Sbor Víry — Třinec</title>
+<meta name="description" content="Novinky, akce a oznámení ze života sboru.">
+<meta name="theme-color" content="#FBF8F5">
+<link rel="canonical" href="https://sborviry.org/aktuality">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sbor Víry — Třinec">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:url" content="https://sborviry.org/aktuality">
+<meta property="og:title" content="Aktuality | Sbor Víry — Třinec">
+<meta property="og:description" content="Novinky, akce a oznámení ze života sboru.">
+<meta property="og:image" content="https://sborviry.org/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Aktuality | Sbor Víry — Třinec">
+<meta name="twitter:description" content="Novinky, akce a oznámení ze života sboru.">
+<meta name="twitter:image" content="https://sborviry.org/assets/img/og-image.jpg">
+<link rel="alternate" hreflang="cs" href="https://sborviry.org/aktuality">
+<link rel="alternate" hreflang="sk" href="https://sborviry.org/aktuality?lang=sk">
+<link rel="alternate" hreflang="pl" href="https://sborviry.org/aktuality?lang=pl">
+<link rel="alternate" hreflang="uk" href="https://sborviry.org/aktuality?lang=uk">
+<link rel="alternate" hreflang="ru" href="https://sborviry.org/aktuality?lang=ru">
+<link rel="alternate" hreflang="de" href="https://sborviry.org/aktuality?lang=de">
+<link rel="alternate" hreflang="en" href="https://sborviry.org/aktuality?lang=en">
+<link rel="alternate" hreflang="es" href="https://sborviry.org/aktuality?lang=es">
+<link rel="alternate" hreflang="sv" href="https://sborviry.org/aktuality?lang=sv">
+<link rel="alternate" hreflang="hu" href="https://sborviry.org/aktuality?lang=hu">
+<link rel="alternate" hreflang="x-default" href="https://sborviry.org/aktuality">
+<link rel="icon" href="assets/img/favicon.png" sizes="96x96">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="news">
+<a class="skip" href="#main" data-i18n="ui.skip">Přejít na hlavní obsah</a>
+<div id="site-header"></div>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow" data-i18n="news.hero.eyebrow"></span>
+      <h1 data-i18n="news.hero.h1"></h1>
+      <p data-i18n="news.hero.p"></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="grid g-3" data-news="" data-reveal></div>
+    </div>
+  </section>
+
+  <section class="section section-cream">
+    <div class="wrap wrap-narrow center" data-reveal>
+      <h2 data-i18n="sermons.follow.h2"></h2>
+      <p class="lead muted mt-1" data-i18n="sermons.follow.p"></p>
+      <div class="btn-row mt-2" id="socials" style="justify-content:center"></div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="wrap">
+      <div class="cta-band" data-reveal>
+        <h2 data-i18n="home.cta.h2"></h2>
+        <p data-i18n="home.cta.p"></p>
+        <div class="btn-row">
+          <a class="btn btn-primary" data-page-link="first" href="#" data-i18n="cta.first"></a>
+          <a class="btn btn-light" data-page-link="contact" href="#" data-i18n="cta.contact"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer"></div>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/content.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>

@@ -1,139 +1,1366 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<!-- Tenhle soubor generuje nastroje/generator.mjs. Needitujte ho ručně —
+     při dalším spuštění by se změny ztratily. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://sborviry.org/</loc>
     <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/"/>
-    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/?lang=sk"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/?lang=pl"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/?lang=uk"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/?lang=ru"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/?lang=de"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/?lang=es"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/?lang=sv"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/?lang=hu"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/"/>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/sk/</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/pl/</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/uk/</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/ru/</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/de/</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/en/</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/es/</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/sv/</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/hu/</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/"/>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://sborviry.org/o-nas</loc>
     <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/o-nas"/>
-    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/o-nas?lang=sk"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/o-nas?lang=pl"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/o-nas?lang=uk"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/o-nas?lang=ru"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/o-nas?lang=de"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/o-nas?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/o-nas?lang=es"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/o-nas?lang=sv"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/o-nas?lang=hu"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/o-nas"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/o-nas"/>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/sk/o-nas</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/o-nas"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/pl/o-nas</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/o-nas"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/uk/o-nas</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/o-nas"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/ru/o-nas</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/o-nas"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/de/o-nas</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/o-nas"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/en/o-nas</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/o-nas"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/es/o-nas</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/o-nas"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/sv/o-nas</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/o-nas"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/hu/o-nas</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/o-nas"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://sborviry.org/jsem-tu-poprve</loc>
     <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/jsem-tu-poprve"/>
-    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/jsem-tu-poprve?lang=sk"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/jsem-tu-poprve?lang=pl"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/jsem-tu-poprve?lang=uk"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/jsem-tu-poprve?lang=ru"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/jsem-tu-poprve?lang=de"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/jsem-tu-poprve?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/jsem-tu-poprve?lang=es"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/jsem-tu-poprve?lang=sv"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/jsem-tu-poprve?lang=hu"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/jsem-tu-poprve"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/jsem-tu-poprve"/>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/sk/jsem-tu-poprve</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/jsem-tu-poprve"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/pl/jsem-tu-poprve</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/jsem-tu-poprve"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/uk/jsem-tu-poprve</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/jsem-tu-poprve"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/ru/jsem-tu-poprve</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/jsem-tu-poprve"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/de/jsem-tu-poprve</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/jsem-tu-poprve"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/en/jsem-tu-poprve</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/jsem-tu-poprve"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/es/jsem-tu-poprve</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/jsem-tu-poprve"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/sv/jsem-tu-poprve</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/jsem-tu-poprve"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/hu/jsem-tu-poprve</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/jsem-tu-poprve"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/jsem-tu-poprve"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://sborviry.org/kazani</loc>
     <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/kazani"/>
-    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/kazani?lang=sk"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/kazani?lang=pl"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/kazani?lang=uk"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/kazani?lang=ru"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/kazani?lang=de"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/kazani?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/kazani?lang=es"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/kazani?lang=sv"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/kazani?lang=hu"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/kazani"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/kazani"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/kazani"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/kazani"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/kazani"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/kazani"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/kazani"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/kazani"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/kazani"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/kazani"/>
-    <lastmod>2026-08-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/sk/kazani</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/kazani"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/kazani"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/kazani"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/kazani"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/kazani"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/kazani"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/kazani"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/kazani"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/kazani"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/kazani"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/kazani"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/pl/kazani</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/kazani"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/kazani"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/kazani"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/kazani"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/kazani"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/kazani"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/kazani"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/kazani"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/kazani"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/kazani"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/kazani"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/uk/kazani</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/kazani"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/kazani"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/kazani"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/kazani"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/kazani"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/kazani"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/kazani"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/kazani"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/kazani"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/kazani"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/kazani"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/ru/kazani</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/kazani"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/kazani"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/kazani"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/kazani"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/kazani"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/kazani"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/kazani"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/kazani"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/kazani"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/kazani"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/kazani"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/de/kazani</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/kazani"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/kazani"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/kazani"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/kazani"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/kazani"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/kazani"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/kazani"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/kazani"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/kazani"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/kazani"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/kazani"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/en/kazani</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/kazani"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/kazani"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/kazani"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/kazani"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/kazani"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/kazani"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/kazani"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/kazani"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/kazani"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/kazani"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/kazani"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/es/kazani</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/kazani"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/kazani"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/kazani"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/kazani"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/kazani"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/kazani"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/kazani"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/kazani"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/kazani"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/kazani"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/kazani"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/sv/kazani</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/kazani"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/kazani"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/kazani"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/kazani"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/kazani"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/kazani"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/kazani"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/kazani"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/kazani"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/kazani"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/kazani"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/hu/kazani</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/kazani"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/kazani"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/kazani"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/kazani"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/kazani"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/kazani"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/kazani"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/kazani"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/kazani"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/kazani"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/kazani"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sborviry.org/aktuality</loc>
     <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/aktuality"/>
-    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/aktuality?lang=sk"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/aktuality?lang=pl"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/aktuality?lang=uk"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/aktuality?lang=ru"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/aktuality?lang=de"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/aktuality?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/aktuality?lang=es"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/aktuality?lang=sv"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/aktuality?lang=hu"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/aktuality"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/aktuality"/>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/sk/aktuality</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/aktuality"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/pl/aktuality</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/aktuality"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/uk/aktuality</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/aktuality"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/ru/aktuality</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/aktuality"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/de/aktuality</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/aktuality"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/en/aktuality</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/aktuality"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/es/aktuality</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/aktuality"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/sv/aktuality</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/aktuality"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/hu/aktuality</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/aktuality"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/aktuality"/>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sborviry.org/co-u-nas-najdete</loc>
     <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/co-u-nas-najdete"/>
-    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/co-u-nas-najdete?lang=sk"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/co-u-nas-najdete?lang=pl"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/co-u-nas-najdete?lang=uk"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/co-u-nas-najdete?lang=ru"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/co-u-nas-najdete?lang=de"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/co-u-nas-najdete?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/co-u-nas-najdete?lang=es"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/co-u-nas-najdete?lang=sv"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/co-u-nas-najdete?lang=hu"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/co-u-nas-najdete"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/co-u-nas-najdete"/>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/sk/co-u-nas-najdete</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/co-u-nas-najdete"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/pl/co-u-nas-najdete</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/co-u-nas-najdete"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/uk/co-u-nas-najdete</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/co-u-nas-najdete"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/ru/co-u-nas-najdete</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/co-u-nas-najdete"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/de/co-u-nas-najdete</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/co-u-nas-najdete"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/en/co-u-nas-najdete</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/co-u-nas-najdete"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/es/co-u-nas-najdete</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/co-u-nas-najdete"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/sv/co-u-nas-najdete</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/co-u-nas-najdete"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/hu/co-u-nas-najdete</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/co-u-nas-najdete"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/co-u-nas-najdete"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sborviry.org/podporte-nas</loc>
     <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/podporte-nas"/>
-    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/podporte-nas?lang=sk"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/podporte-nas?lang=pl"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/podporte-nas?lang=uk"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/podporte-nas?lang=ru"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/podporte-nas?lang=de"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/podporte-nas?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/podporte-nas?lang=es"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/podporte-nas?lang=sv"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/podporte-nas?lang=hu"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/podporte-nas"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/podporte-nas"/>
-    <lastmod>2026-08-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/sk/podporte-nas</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/podporte-nas"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/pl/podporte-nas</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/podporte-nas"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/uk/podporte-nas</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/podporte-nas"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/ru/podporte-nas</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/podporte-nas"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/de/podporte-nas</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/podporte-nas"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/en/podporte-nas</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/podporte-nas"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/es/podporte-nas</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/podporte-nas"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/sv/podporte-nas</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/podporte-nas"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/hu/podporte-nas</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/podporte-nas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/podporte-nas"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sborviry.org/kontakt</loc>
     <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/kontakt"/>
-    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/kontakt?lang=sk"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/kontakt?lang=pl"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/kontakt?lang=uk"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/kontakt?lang=ru"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/kontakt?lang=de"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/kontakt?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/kontakt?lang=es"/>
-    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/kontakt?lang=sv"/>
-    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/kontakt?lang=hu"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/kontakt"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/kontakt"/>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/sk/kontakt</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/kontakt"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/pl/kontakt</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/kontakt"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/uk/kontakt</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/kontakt"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/ru/kontakt</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/kontakt"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/de/kontakt</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/kontakt"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/en/kontakt</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/kontakt"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/es/kontakt</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/kontakt"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/sv/kontakt</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/kontakt"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sborviry.org/hu/kontakt</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://sborviry.org/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sborviry.org/de/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sborviry.org/en/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sborviry.org/es/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sborviry.org/kontakt"/>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 </urlset>

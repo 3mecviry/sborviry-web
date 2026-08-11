@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="sk"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- BEZPEČNOST: seznam níž určuje, odkud smí stránka načítat obsah — písma
+     z Googlu, náhledy z YouTube, mapu z OpenStreetMap. Cokoli jiného prohlížeč
+     odmítne, takže i kdyby se do stránky někdy dostal cizí kód, nemá odkud
+     stáhnout další ani kam poslat data.
+     Přidáváte-li na web cizí službu (jiné mapy, formulářový server, měření
+     návštěvnosti), musíte její adresu dopsat sem — jinak ji prohlížeč
+     zablokuje a služba se prostě nezobrazí. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://i.ytimg.com; frame-src https://www.youtube-nocookie.com https://www.openstreetmap.org; upgrade-insecure-requests">
+<!-- Cizí web se při odchodu dozví jen doménu, ze které návštěvník přišel,
+     ne konkrétní stránku. -->
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<!-- ÚKLID ADRESY: smaže z odkazu sledovací kódy sociálních sítí a newsletterů,
+     aby v adresním řádku zůstalo jen sborviry.org. Viz assets/js/start.js —
+     dřív byl tenhle úsek vepsaný v každé stránce zvlášť. -->
+<script src="/assets/js/start.js"></script>
+<title>O nás | Sbor Víry — Třinec</title>
+<meta name="description" content="Kto sme, čomu veríme a ako zbor vznikol. Sbor Víry, z. s., Hraniční 213, Třinec.">
+<meta name="theme-color" content="#FBF8F5">
+<link rel="canonical" href="https://sborviry.org/sk/o-nas">
+<link rel="alternate" hreflang="cs" href="https://sborviry.org/o-nas">
+<link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/o-nas">
+<link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/o-nas">
+<link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/o-nas">
+<link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/o-nas">
+<link rel="alternate" hreflang="de" href="https://sborviry.org/de/o-nas">
+<link rel="alternate" hreflang="en" href="https://sborviry.org/en/o-nas">
+<link rel="alternate" hreflang="es" href="https://sborviry.org/es/o-nas">
+<link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/o-nas">
+<link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/o-nas">
+<link rel="alternate" hreflang="x-default" href="https://sborviry.org/o-nas">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sbor Víry — Třinec">
+<meta property="og:locale" content="sk_SK">
+<meta property="og:url" content="https://sborviry.org/sk/o-nas">
+<meta property="og:title" content="O nás | Sbor Víry — Třinec">
+<meta property="og:description" content="Kto sme, čomu veríme a ako zbor vznikol. Sbor Víry, z. s., Hraniční 213, Třinec.">
+<meta property="og:image" content="https://sborviry.org/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="O nás | Sbor Víry — Třinec">
+<meta name="twitter:description" content="Kto sme, čomu veríme a ako zbor vznikol. Sbor Víry, z. s., Hraniční 213, Třinec.">
+<meta name="twitter:image" content="https://sborviry.org/assets/img/og-image.jpg">
+<link rel="icon" href="/assets/img/favicon.png" sizes="96x96">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json" id="schema-org">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Church",
+      "@id": "https://sborviry.org/#organizace",
+      "name": "Sbor Víry",
+      "alternateName": [
+        "Sbor Víry Třinec",
+        "Sbor Víry, z. s."
+      ],
+      "legalName": "Sbor Víry, z. s.",
+      "url": "https://sborviry.org/",
+      "logo": "https://sborviry.org/assets/img/logo.png",
+      "image": "https://sborviry.org/assets/img/og-image.jpg",
+      "description": "Sbor Víry, z. s. — kresťanský zbor v Třinci. Bohoslužby každú nedeľu na adrese Hraniční 213. Príď taký, aký si.",
+      "inLanguage": "sk",
+      "email": "sborviry@gmail.com",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "IČO",
+        "value": "26596865"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Hraniční 213",
+        "postalCode": "739 61",
+        "addressLocality": "Třinec",
+        "addressRegion": "Moravskoslezský kraj",
+        "addressCountry": "CZ"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 49.6818592,
+        "longitude": 18.6510254
+      },
+      "sameAs": [
+        "https://www.youtube.com/@sborviry",
+        "https://www.facebook.com/sborviry.org/",
+        "https://www.instagram.com/sborviryorg/"
+      ],
+      "hasMap": "https://maps.google.com/?cid=5863197709849295835",
+      "foundingDate": "2002",
+      "employee": {
+        "@type": "Person",
+        "name": "Petr Lysek",
+        "jobTitle": "Pastor a zakladateľ zboru"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "https://schema.org/Sunday",
+          "opens": "11:00",
+          "name": "Bohoslužba"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "https://schema.org/Monday",
+          "opens": "17:30",
+          "name": "Evanjelizácia"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "https://schema.org/Thursday",
+          "opens": "18:00",
+          "name": "Domáce skupinky"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Sbor Víry",
+          "item": "https://sborviry.org/sk/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "O nás",
+          "item": "https://sborviry.org/sk/o-nas"
+        }
+      ]
+    }
+  ]
+}</script></head>
+<body data-page="about" class="nav-compact">
+<a class="skip" href="#main" data-i18n="ui.skip">Prejsť na hlavný obsah</a>
+<div id="site-header">
+      <header class="header" id="hdr">
+        <div class="wrap header-inner">
+          <a class="brand" href="/sk/" aria-label="Sbor Víry — Třinec">
+            <img src="/assets/img/logo.png" alt="Sbor Víry" width="78" height="52">
+            <span class="brand-city">Třinec</span>
+          </a>
+          <nav class="nav" id="mainnav" aria-label="Menu"><a href="/sk/o-nas" aria-current="page">O nás</a><a href="/sk/jsem-tu-poprve">Prvýkrát u nás</a><a href="/sk/kazani">Kázne</a><a href="/sk/co-u-nas-najdete">Čo robíme</a><a href="/sk/aktuality">Aktuality</a><a href="/sk/podporte-nas">Podporte nás</a><a href="/sk/kontakt">Kontakt</a></nav>
+          <div class="header-actions">
+            <div class="lang" id="langpick">
+              <button class="lang-btn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Jazyk">SK <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+              <div class="lang-menu" role="listbox" aria-label="Jazyk"><button type="button" data-set-lang="cs" role="option" aria-selected="false">
+         <i>CS</i><span>Čeština</span>
+       </button><button type="button" data-set-lang="sk" role="option" aria-selected="true">
+         <i>SK</i><span>Slovenčina</span>
+       </button><button type="button" data-set-lang="pl" role="option" aria-selected="false">
+         <i>PL</i><span>Polski</span>
+       </button><button type="button" data-set-lang="uk" role="option" aria-selected="false">
+         <i>UK</i><span>Українська</span>
+       </button><button type="button" data-set-lang="ru" role="option" aria-selected="false">
+         <i>RU</i><span>Русский</span>
+       </button><button type="button" data-set-lang="de" role="option" aria-selected="false">
+         <i>DE</i><span>Deutsch</span>
+       </button><button type="button" data-set-lang="en" role="option" aria-selected="false">
+         <i>EN</i><span>English</span>
+       </button><button type="button" data-set-lang="es" role="option" aria-selected="false">
+         <i>ES</i><span>Español</span>
+       </button><button type="button" data-set-lang="sv" role="option" aria-selected="false">
+         <i>SV</i><span>Svenska</span>
+       </button><button type="button" data-set-lang="hu" role="option" aria-selected="false">
+         <i>HU</i><span>Magyar</span>
+       </button></div>
+            </div>
+            <a class="btn btn-primary btn-sm header-cta" href="/sk/jsem-tu-poprve">Prvýkrát u nás</a>
+            <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mainnav"><span></span></button>
+          </div>
+        </div>
+      </header></div>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow" data-i18n="about.hero.eyebrow">O nás</span>
+      <h1 data-i18n="about.hero.h1">Zbor, ktorý stojí na ľuďoch</h1>
+      <p data-i18n="about.hero.p">Sme spoločenstvo kresťanov v Třinci. Veríme, že kresťanstvo nie je súbor pravidiel, ale živý vzťah, ktorý premieňa bežný život.</p>
+    </div>
+  </section>
+
+  <!-- ---------------------------- PŘÍBĚH ---------------------------- -->
+  <section class="section">
+    <div class="wrap">
+      <div class="split align-top">
+        <div class="stack" data-reveal="" style="transition-delay: 0ms;">
+          <span class="eyebrow" data-i18n="about.story.eyebrow">Naša cesta</span>
+          <h2 data-i18n="about.story.h2">Kto sme a kde sme začali</h2>
+          <p data-i18n="about.story.p1">Sbor Víry vznikol v Třinci v roku 2002. Snažíme sa pomáhať ľuďom pri hľadaní zmyslu života a kresťanských hodnôt. Odpovede na svoje otázky môžu nájsť v Biblii — základom našej práce je preto dôkladné oboznámenie sa s textami Písma.</p>
+          <p data-i18n="about.story.p2">Poznanie Božieho slova formuje priebeh našich stretnutí a veriacim dáva odpovede na otázky každodenného života, či už ide o rodinu, medziľudské vzťahy alebo prácu. Pomáhame aj ľuďom, ktorí sa dostali na okraj spoločnosti, vrátiť sa do plnohodnotného života.</p>
+          <p data-i18n="about.story.p3">Organizujeme verejné prednášky, a to aj s hosťami zo zahraničia, ktorí zastupujú podobné kresťanské hnutia. Premietame filmy s duchovnou tematikou pre širokú verejnosť a organizujeme koncerty a hudobné večery. Máme početné kontakty na cirkvi a organizácie v Česku, Poľsku, Maďarsku a na Slovensku.</p>
+          <p data-i18n="about.story.p4">Veríme, že návrat ku skutočným kresťanským hodnotám je prospešný celej spoločnosti — v súčasnej generácii aj v tej budúcej.</p>
+        </div>
+        <div class="media ratio-4-3" data-photo="assets/img/sbor-1.jpg" data-photo-alt-key="photos.about1" data-reveal="" data-done="1" style="transition-delay: 70ms;"><img alt="Pastor Petr Lysek hovorí k mladým ľuďom" loading="lazy" src="/assets/img/sbor-1.jpg"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------------------------- VIZE ---------------------------- -->
+  <section class="section section-cream">
+    <div class="wrap">
+      <div class="split reverse align-top">
+        <div class="media ratio-4-3" data-photo="assets/img/sbor-2.jpg" data-photo-alt-key="photos.about2" data-reveal="" data-done="1" style="transition-delay: 140ms;"><img alt="Zdvihnuté ruky pri chválach" loading="lazy" src="/assets/img/sbor-2.jpg"></div>
+        <div class="stack" data-reveal="" style="transition-delay: 210ms;">
+          <span class="eyebrow" data-i18n="about.vision.eyebrow">Naša vízia</span>
+          <h2 data-i18n="about.vision.h2">Kresťanské centrum pre naše mesto</h2>
+          <p class="lead" data-i18n="about.vision.p1">Túžime pozitívnym spôsobom ovplyvniť naše mesto tým, že tvoríme kresťanské centrum, v ktorom mnohí ľudia nájdu svoje miesto, posilnia nádej a zatúžia žiť pre Boha a pre druhých.</p>
+          <p data-i18n="about.vision.p2">Chceme tiež zmeniť obraz kresťanstva v Česku — ukázať, že Boh nemá nič spoločné so stredovekým náboženstvom, ale pôsobí medzi nami súčasným, fascinujúcim spôsobom. Cirkev nie je chrám ani skostnatené obrady, ale predovšetkým Jeho rodina. Ježiš netvoril organizáciu; dal nám možnosť osobného stretnutia s Bohom Otcom.</p>
+          <p data-i18n="about.vision.p3">Túžime, aby mladí ľudia, ktorí od života chcú niečo viac, stavali na Ňom a na Jeho slove.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------------------------- ČEMU VĚŘÍME ---------------------------- -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head center" data-reveal="" style="transition-delay: 280ms;">
+        <span class="eyebrow" data-i18n="about.believe.eyebrow">Čomu veríme</span>
+        <h2 data-i18n="about.believe.h2">Sedem bodov, na ktorých sa zhodneme</h2>
+        <p data-i18n="about.believe.p">Nejde o vyčerpávajúci teologický dokument, ale o jadro, ktoré nás drží pokope.</p>
+      </div>
+      <div class="grid g-3">
+        <article class="card" data-reveal="" style="transition-delay: 350ms;"><span class="card-icon" data-icon="book"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"></path></svg></span>
+          <h3 data-i18n="about.believe.b1t">Biblia</h3><p data-i18n="about.believe.b1d">Biblia je inšpirované Božie slovo a najvyššia autorita pre vieru aj každodenný život.</p></article>
+        <article class="card" data-reveal="" style="transition-delay: 0ms;"><span class="card-icon green" data-icon="spark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 14.2 9l6.5 2.2-6.5 2.2L12 20l-2.2-6.6L3.3 11.2 9.8 9Z"></path></svg></span>
+          <h3 data-i18n="about.believe.b2t">Boh</h3><p data-i18n="about.believe.b2d">Veríme v jedného Boha, ktorý sa zjavuje ako Otec, Syn a Duch Svätý.</p></article>
+        <article class="card" data-reveal="" style="transition-delay: 70ms;"><span class="card-icon" data-icon="heart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 5.6a5.4 5.4 0 0 0-7.7 0L12 6.7l-1.1-1.1a5.4 5.4 0 0 0-7.7 7.7l1.1 1.1L12 22l7.7-7.6 1.1-1.1a5.4 5.4 0 0 0 0-7.7Z"></path></svg></span>
+          <h3 data-i18n="about.believe.b3t">Ježiš Kristus</h3><p data-i18n="about.believe.b3d">Ježiš je Boží Syn. Zomrel za naše hriechy, bol vzkriesený a žije.</p></article>
+        <article class="card" data-reveal="" style="transition-delay: 140ms;"><span class="card-icon green" data-icon="hands"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 11V4.5a1.5 1.5 0 0 1 3 0V11"></path><path d="M14 10V3.5a1.5 1.5 0 0 1 3 0V13"></path><path d="M8 11.5V7a1.5 1.5 0 0 0-3 0v7.5a7 7 0 0 0 7 7h1.5a7 7 0 0 0 7-7V9a1.5 1.5 0 0 0-3 0"></path></svg></span>
+          <h3 data-i18n="about.believe.b4t">Záchrana</h3><p data-i18n="about.believe.b4d">Spasenie je Boží dar z milosti, ktorý prijímame vierou — nie je to odmena za naše výkony.</p></article>
+        <article class="card" data-reveal="" style="transition-delay: 210ms;"><span class="card-icon" data-icon="spark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 14.2 9l6.5 2.2-6.5 2.2L12 20l-2.2-6.6L3.3 11.2 9.8 9Z"></path></svg></span>
+          <h3 data-i18n="about.believe.b5t">Duch Svätý</h3><p data-i18n="about.believe.b5d">Duch Svätý dáva silu žiť kresťanský život a obdarúva cirkev pre službu druhým.</p></article>
+        <article class="card" data-reveal="" style="transition-delay: 280ms;"><span class="card-icon green" data-icon="users"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.9"></path><path d="M16 3.1a4 4 0 0 1 0 7.8"></path></svg></span>
+          <h3 data-i18n="about.believe.b6t">Cirkev</h3><p data-i18n="about.believe.b6d">Cirkev je rodina, nie budova. Je to spoločenstvo ľudí, ktorí patria Kristovi aj sebe navzájom.</p></article>
+        <article class="card" data-reveal="" style="transition-delay: 350ms;"><span class="card-icon" data-icon="smile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"></circle><path d="M8 14.5s1.5 2 4 2 4-2 4-2"></path><path d="M9 9.5h.01M15 9.5h.01"></path></svg></span>
+          <h3 data-i18n="about.believe.b7t">Nádej</h3><p data-i18n="about.believe.b7d">Ježiš sa vráti. Smrť nemá posledné slovo a to mení spôsob, akým žijeme dnes.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------------------------- VEDENÍ ---------------------------- -->
+  <section class="section section-dark">
+    <div class="wrap">
+      <div class="split align-top">
+        <div data-reveal="" style="transition-delay: 0ms;">
+          <span class="eyebrow on-dark" data-i18n="about.lead.eyebrow">Vedenie zboru</span>
+          <h2 class="mt-1" data-i18n="about.lead.h2">Pastor Petr Lysek</h2>
+          <div class="small" style="color:#FF7C74;margin-top:.6rem;font-weight:600" data-i18n="about.lead.role">Pastor a zakladateľ zboru</div>
+          <div class="stack mt-2" style="color:#9C948E">
+            <p data-i18n="about.lead.b1">Vedie kresťanské centrum Sbor Víry od jeho vzniku v roku 2002. Narodil sa v Třinci, povolaním je stavbár. Svoju vášeň a povolanie našiel v budovaní silnej a novodobej miestnej cirkvi.</p>
+            <p data-i18n="about.lead.b2">Obrátil sa v pätnástich rokoch na výjazde oldřichovickej evanjelickej mládeže, kde pôsobil až do roku 1989. Potom sa zapojil do charizmatického hnutia a od roku 1992 viedol Zbor Siloe pri Apoštolskej cirkvi. Ukázalo sa však, že ho Boh obdaril priekopníckou povahou a povolaním reformátora — túžba urobiť pre Boha a pre veriacich niečo, čo v okolí nikto predtým nevidel, ho priviedla k založeniu Sboru Víry.</p>
+            <p data-i18n="about.lead.b3">Je talentovaným rečníkom a inšpirátorom. Káže Slovo naplnené vierou a nadšením, ale aj s poriadnou dávkou humoru. Triezvosť mysle, múdra zmena života, poznanie Božích zásad a práca na charaktere — to sú hlavné témy, o ktorých hovorí.</p>
+            <p data-i18n="about.lead.b4">Dlhé roky slúžil spoločne s manželkou Marcelou, ktorá nečakane zomrela v januári 2024. Ich vytrvalosť, vernosť Slovu, angažovanosť a nekončiaci optimizmus pomohli mnohým ľuďom objaviť vieru v Boha a v Jeho slovo. Obaja verili v cirkev ako telo tvorené z ľudí — neusilovali sa o prílišnú popularitu, ale stavali na tímovej práci. Pracovať s ľuďmi a pre ľudí: v tom pastor Petr dodnes vidí zmysel svojej služby.</p>
+          </div>
+          <div class="btn-row mt-2">
+            <a class="btn btn-primary" data-page-link="contact" href="/sk/kontakt" data-i18n="cta.contact">Napíšte nám</a>
+          </div>
+        </div>
+        <div class="media ratio-3-4" data-photo="assets/img/pastor.jpg" data-photo-alt-key="photos.pastor" data-reveal="" style="max-width: 400px; transition-delay: 70ms;" data-done="1"><img alt="Pastor Petr Lysek so zdvihnutou Bibliou" loading="lazy" src="/assets/img/pastor.jpg"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------------------------- PRÁVNÍ ÚDAJE ---------------------------- -->
+  <section class="section">
+    <div class="wrap wrap-narrow">
+      <div class="section-head" data-reveal="" style="transition-delay: 140ms;">
+        <span class="eyebrow" data-i18n="about.legal.eyebrow">Údaje o organizácii</span>
+        <h2 data-i18n="about.legal.h2">Právne informácie</h2>
+      </div>
+      <div id="contact-info" data-reveal="" style="transition-delay: 210ms;"><dl class="info-list">
+      
+      <div>
+        <span class="card-icon ink" style="width:44px;height:44px;border-radius:13px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10.3c0 5.4-8 12-8 12s-8-6.6-8-12a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10.2" r="2.8"></circle></svg></span>
+        <div>
+          <dt>Kde sa stretávame</dt>
+          <dd>Hraniční 213, 739 61 Třinec</dd>
+        </div>
+      </div>
+      
+      <div>
+        <span class="card-icon ink" style="width:44px;height:44px;border-radius:13px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"></rect><path d="m3 7 8.2 5.7a1.5 1.5 0 0 0 1.6 0L21 7"></path></svg></span>
+        <div>
+          <dt>E-mail</dt>
+          <dd><a href="mailto:sborviry@gmail.com">sborviry@gmail.com</a></dd>
+        </div>
+      </div>
+      
+      <div>
+        <span class="card-icon ink" style="width:44px;height:44px;border-radius:13px"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.52 1.49-3.91 3.78-3.91 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.45 2.91h-2.33V22c4.78-.79 8.43-4.94 8.43-9.94z"></path></svg></span>
+        <div>
+          <dt>Napíšte nám na Facebooku</dt>
+          <dd><a href="https://www.facebook.com/sborviry.org/">facebook.com/sborviry.org</a></dd>
+        </div>
+      </div>
+      
+      
+      <div>
+        <span class="card-icon ink" style="width:44px;height:44px;border-radius:13px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></span>
+        <div>
+          <dt>Pastor</dt>
+          <dd>Petr Lysek</dd>
+        </div>
+      </div>
+      
+      <div>
+        <span class="card-icon ink" style="width:44px;height:44px;border-radius:13px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"></rect><path d="M7 15c.6-1.6 2-2.5 3.5-2.5S13.4 13.4 14 15"></path><circle cx="10.5" cy="9.5" r="1.8"></circle><path d="M17 9.5h2M17 12.5h2"></path></svg></span>
+        <div>
+          <dt>Názov</dt>
+          <dd>Sbor Víry, z. s. · IČO 26596865</dd>
+        </div>
+      </div>
+    </dl></div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="wrap">
+      <div class="cta-band" data-reveal="" style="transition-delay: 280ms;">
+        <h2 data-i18n="home.cta.h2">Uvidíme sa v nedeľu?</h2>
+        <p data-i18n="home.cta.p">Nemusíte sa hlásiť vopred, nemusíte nič prinášať a nemusíte nič vedieť. Stačí prísť.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" data-page-link="first" href="/sk/jsem-tu-poprve" data-i18n="cta.first">Som tu prvýkrát</a>
+          <a class="btn btn-light" data-page-link="sermons" href="/sk/kazani" data-i18n="cta.watch">Pozrieť kázne</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer">
+      <footer class="footer">
+        <div class="wrap">
+          <div class="footer-grid">
+            <div>
+              <a class="brand" href="/sk/" aria-label="Sbor Víry">
+                <img src="/assets/img/logo-light.png" alt="Sbor Víry" width="96" height="64">
+              </a>
+              <p class="footer-note">Kresťanský zbor v Třinci. Stretávame sa každú nedeľu a radi medzi sebou uvidíme aj vás.</p>
+              <div class="socials" style="margin-top:1.5rem">
+                <a href="https://www.youtube.com/@sborviry" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.9-.5-5.7c-.3-1-1.1-1.8-2.1-2.1C18.6 3.7 12 3.7 12 3.7s-6.6 0-8.4.5c-1 .3-1.8 1.1-2.1 2.1C1 8.1 1 12 1 12s0 3.9.5 5.7c.3 1 1.1 1.8 2.1 2.1 1.8.5 8.4.5 8.4.5s6.6 0 8.4-.5c1-.3 1.8-1.1 2.1-2.1.5-1.8.5-5.7.5-5.7zM9.9 15.4V8.6l5.6 3.4-5.6 3.4z"></path></svg></a>
+                <a href="https://www.facebook.com/sborviry.org/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.52 1.49-3.91 3.78-3.91 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.45 2.91h-2.33V22c4.78-.79 8.43-4.94 8.43-9.94z"></path></svg></a>
+                <a href="https://www.instagram.com/sborviryorg/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5.5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"></circle></svg></a>
+              </div>
+            </div>
+            <div>
+              <h4>Web</h4>
+              <ul><li><a href="/sk/">Domov</a></li><li><a href="/sk/o-nas">O nás</a></li><li><a href="/sk/jsem-tu-poprve">Prvýkrát u nás</a></li><li><a href="/sk/kazani">Kázne</a></li></ul>
+            </div>
+            <div>
+              <h4>Sledujte nás</h4>
+              <ul>
+                <li><a href="/sk/aktuality">Aktuality</a></li><li><a href="/sk/co-u-nas-najdete">Čo robíme</a></li><li><a href="/sk/podporte-nas">Podporte nás</a></li><li><a href="/sk/kontakt">Kontakt</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4>Navštívte nás</h4>
+              <ul>
+                <li>Hraniční 213, 739 61 Třinec</li>
+                <li><a href="mailto:sborviry@gmail.com">sborviry@gmail.com</a></li>
+                
+                <li style="margin-top:.5rem"><a class="link-arrow" href="/sk/kontakt">Zobraziť trasu</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <span>© 2026 Sbor Víry, z. s. · IČO 26596865 · Všetky práva vyhradené.</span>
+            <a href="/sk/ochrana-osobnich-udaju">Ochrana osobných údajov</a>
+          </div>
+        </div>
+      </footer></div>
+<script src="/assets/js/i18n.js"></script>
+<script src="/assets/js/content.js"></script>
+<script src="/assets/js/site.js"></script>
+
+
+</body></html>

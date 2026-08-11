@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pl"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- BEZPEČNOST: seznam níž určuje, odkud smí stránka načítat obsah — písma
+     z Googlu, náhledy z YouTube, mapu z OpenStreetMap. Cokoli jiného prohlížeč
+     odmítne, takže i kdyby se do stránky někdy dostal cizí kód, nemá odkud
+     stáhnout další ani kam poslat data.
+     Přidáváte-li na web cizí službu (jiné mapy, formulářový server, měření
+     návštěvnosti), musíte její adresu dopsat sem — jinak ji prohlížeč
+     zablokuje a služba se prostě nezobrazí. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://i.ytimg.com; frame-src https://www.youtube-nocookie.com https://www.openstreetmap.org; upgrade-insecure-requests">
+<!-- Cizí web se při odchodu dozví jen doménu, ze které návštěvník přišel,
+     ne konkrétní stránku. -->
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<!-- ÚKLID ADRESY: smaže z odkazu sledovací kódy sociálních sítí a newsletterů,
+     aby v adresním řádku zůstalo jen sborviry.org. Viz assets/js/start.js —
+     dřív byl tenhle úsek vepsaný v každé stránce zvlášť. -->
+<script src="/assets/js/start.js"></script>
+<title>Jestem tu pierwszy raz | Sbor Víry — Trzyniec</title>
+<meta name="description" content="Czego możesz się spodziewać podczas pierwszej wizyty. Praktyczne odpowiedzi na typowe pytania.">
+<meta name="theme-color" content="#FBF8F5">
+<link rel="canonical" href="https://sborviry.org/pl/jsem-tu-poprve">
+<link rel="alternate" hreflang="cs" href="https://sborviry.org/jsem-tu-poprve">
+<link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/jsem-tu-poprve">
+<link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/jsem-tu-poprve">
+<link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/jsem-tu-poprve">
+<link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/jsem-tu-poprve">
+<link rel="alternate" hreflang="de" href="https://sborviry.org/de/jsem-tu-poprve">
+<link rel="alternate" hreflang="en" href="https://sborviry.org/en/jsem-tu-poprve">
+<link rel="alternate" hreflang="es" href="https://sborviry.org/es/jsem-tu-poprve">
+<link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/jsem-tu-poprve">
+<link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/jsem-tu-poprve">
+<link rel="alternate" hreflang="x-default" href="https://sborviry.org/jsem-tu-poprve">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sbor Víry — Třinec">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:url" content="https://sborviry.org/pl/jsem-tu-poprve">
+<meta property="og:title" content="Jestem tu pierwszy raz | Sbor Víry — Trzyniec">
+<meta property="og:description" content="Czego możesz się spodziewać podczas pierwszej wizyty. Praktyczne odpowiedzi na typowe pytania.">
+<meta property="og:image" content="https://sborviry.org/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jestem tu pierwszy raz | Sbor Víry — Trzyniec">
+<meta name="twitter:description" content="Czego możesz się spodziewać podczas pierwszej wizyty. Praktyczne odpowiedzi na typowe pytania.">
+<meta name="twitter:image" content="https://sborviry.org/assets/img/og-image.jpg">
+<link rel="icon" href="/assets/img/favicon.png" sizes="96x96">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json" id="schema-org">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Church",
+      "@id": "https://sborviry.org/#organizace",
+      "name": "Sbor Víry",
+      "alternateName": [
+        "Sbor Víry Třinec",
+        "Sbor Víry, z. s."
+      ],
+      "legalName": "Sbor Víry, z. s.",
+      "url": "https://sborviry.org/",
+      "logo": "https://sborviry.org/assets/img/logo.png",
+      "image": "https://sborviry.org/assets/img/og-image.jpg",
+      "description": "Sbor Víry, z. s. — zbór chrześcijański w Trzyńcu. Nabożeństwa w każdą niedzielę przy ulicy Hraniční 213. Przyjdź taki, jaki jesteś.",
+      "inLanguage": "pl",
+      "email": "sborviry@gmail.com",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "IČO",
+        "value": "26596865"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Hraniční 213",
+        "postalCode": "739 61",
+        "addressLocality": "Třinec",
+        "addressRegion": "Moravskoslezský kraj",
+        "addressCountry": "CZ"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 49.6818592,
+        "longitude": 18.6510254
+      },
+      "sameAs": [
+        "https://www.youtube.com/@sborviry",
+        "https://www.facebook.com/sborviry.org/",
+        "https://www.instagram.com/sborviryorg/"
+      ],
+      "hasMap": "https://maps.google.com/?cid=5863197709849295835",
+      "foundingDate": "2002",
+      "employee": {
+        "@type": "Person",
+        "name": "Petr Lysek",
+        "jobTitle": "Pastor i założyciel zboru"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "https://schema.org/Sunday",
+          "opens": "11:00",
+          "name": "Nabożeństwo"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "https://schema.org/Monday",
+          "opens": "17:30",
+          "name": "Ewangelizacja"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "https://schema.org/Thursday",
+          "opens": "18:00",
+          "name": "Grupy domowe"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Sbor Víry",
+          "item": "https://sborviry.org/pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Jestem tu pierwszy raz",
+          "item": "https://sborviry.org/pl/jsem-tu-poprve"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Jak mam się ubrać?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak, jak Ci wygodnie. Spotkasz u nas zarówno bluzy, jak i koszule. Nikogo nie oceniamy po ubraniu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy muszę coś płacić albo dawać?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nie. Wstęp jest bezpłatny. Podczas nabożeństwa odbywa się dobrowolna zbiórka, ale nikt Cię nie obserwuje i niczego od Ciebie nie oczekuje."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Nie jestem wierzący. Czy mogę przyjść?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oczywiście. Wiele osób przychodziło do nas długo, zanim zdecydowało się w cokolwiek uwierzyć. Pytania i wątpliwości są u nas mile widziane."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Jak długo to wszystko trwa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nabożeństwo trwa około 90 minut. Po nim następuje niezobowiązujący czas na kawę i rozmowę."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Co zrobić z dziećmi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dzieci są mile widziane i mogą być na nabożeństwie razem z Tobą. Obecnie nie prowadzimy osobnego programu dla dzieci — zbór tworzą dziś głównie osoby dorosłe."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy muszę się wcześniej zarejestrować?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nie. Wystarczy po prostu przyjść."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "W jakim języku odbywa się nabożeństwo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nabożeństwa odbywają się po czesku. Ze względu na bliskość granicy spotkasz u nas również osoby mówiące po polsku. Jeśli potrzebujesz pomocy językowej, napisz do nas wcześniej, a na pewno się dogadamy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy budynek jest dostępny bez barier?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Przy wejściu znajduje się podjazd, którym bez trudu wjedziesz z wózkiem dziecięcym. Dla wózka inwalidzkiego jest jednak dość stromy, więc zalecamy asystę. Daj nam znać wcześniej, a chętnie pomożemy."
+          }
+        }
+      ]
+    }
+  ]
+}</script></head>
+<body data-page="first" class="nav-compact">
+<a class="skip" href="#main" data-i18n="ui.skip">Przejdź do treści głównej</a>
+<div id="site-header">
+      <header class="header" id="hdr">
+        <div class="wrap header-inner">
+          <a class="brand" href="/pl/" aria-label="Sbor Víry — Třinec">
+            <img src="/assets/img/logo.png" alt="Sbor Víry" width="78" height="52">
+            <span class="brand-city">Třinec</span>
+          </a>
+          <nav class="nav" id="mainnav" aria-label="Menu"><a href="/pl/o-nas">O nas</a><a href="/pl/jsem-tu-poprve" aria-current="page">Pierwszy raz</a><a href="/pl/kazani">Kazania</a><a href="/pl/co-u-nas-najdete">Co robimy</a><a href="/pl/aktuality">Aktualności</a><a href="/pl/podporte-nas">Wesprzyj nas</a><a href="/pl/kontakt">Kontakt</a></nav>
+          <div class="header-actions">
+            <div class="lang" id="langpick">
+              <button class="lang-btn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Język">PL <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+              <div class="lang-menu" role="listbox" aria-label="Język"><button type="button" data-set-lang="cs" role="option" aria-selected="false">
+         <i>CS</i><span>Čeština</span>
+       </button><button type="button" data-set-lang="sk" role="option" aria-selected="false">
+         <i>SK</i><span>Slovenčina</span>
+       </button><button type="button" data-set-lang="pl" role="option" aria-selected="true">
+         <i>PL</i><span>Polski</span>
+       </button><button type="button" data-set-lang="uk" role="option" aria-selected="false">
+         <i>UK</i><span>Українська</span>
+       </button><button type="button" data-set-lang="ru" role="option" aria-selected="false">
+         <i>RU</i><span>Русский</span>
+       </button><button type="button" data-set-lang="de" role="option" aria-selected="false">
+         <i>DE</i><span>Deutsch</span>
+       </button><button type="button" data-set-lang="en" role="option" aria-selected="false">
+         <i>EN</i><span>English</span>
+       </button><button type="button" data-set-lang="es" role="option" aria-selected="false">
+         <i>ES</i><span>Español</span>
+       </button><button type="button" data-set-lang="sv" role="option" aria-selected="false">
+         <i>SV</i><span>Svenska</span>
+       </button><button type="button" data-set-lang="hu" role="option" aria-selected="false">
+         <i>HU</i><span>Magyar</span>
+       </button></div>
+            </div>
+            <a class="btn btn-primary btn-sm header-cta" href="/pl/jsem-tu-poprve">Pierwszy raz</a>
+            <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mainnav"><span></span></button>
+          </div>
+        </div>
+      </header></div>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow" data-i18n="first.hero.eyebrow">Jesteś tu pierwszy raz?</span>
+      <h1 data-i18n="first.hero.h1">Nie musisz się niczego obawiać</h1>
+      <p data-i18n="first.hero.p">Wiemy, że przyjście pierwszy raz między nieznajomych nie jest łatwe. Oto uczciwy opis tego, co Cię czeka — bez niespodzianek.</p>
+      <div class="btn-row mt-2">
+        <a class="btn btn-primary" data-page-link="contact" href="/pl/kontakt" data-i18n="cta.contact">Napisz do nas</a>
+        <a class="btn btn-ghost" href="#faq" data-i18n="first.faq.eyebrow">Częste pytania</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------------------------- ČASY ---------------------------- -->
+  <section class="section-tight">
+    <div class="wrap" data-reveal="" style="transition-delay: 0ms;">
+      <div class="times" id="times">
+      <div class="time-row">
+        <span class="when">Niedziela 11:00</span>
+        <span class="what">Nabożeństwo</span>
+        <span class="where">Hraniční 213, Trzyniec</span>
+      </div>
+      <div class="time-row">
+        <span class="when">Poniedziałek 17:30</span>
+        <span class="what">Ewangelizacja</span>
+        <span class="where">Rynek T. G. Masaryka, Trzyniec</span>
+      </div>
+      <div class="time-row">
+        <span class="when">Czwartek 18:00</span>
+        <span class="what">Grupy domowe</span>
+        <span class="where"></span>
+      </div>
+      <div class="time-row">
+        <span class="when">Termin podamy wkrótce</span>
+        <span class="what">Spotkanie modlitewne</span>
+        <span class="where">Hraniční 213, Trzyniec</span>
+      </div></div>
+      <p class="small muted mt-1" data-i18n="home.times.note">Budynek jest otwarty od 10:30. W okresie świąt i podczas wydarzeń specjalnych godziny mogą ulec zmianie — najbardziej aktualne informacje znajdziesz zawsze na naszym Facebooku.</p>
+    </div>
+  </section>
+
+  <!-- ---------------------------- KROK ZA KROKEM ---------------------------- -->
+  <section class="section section-cream">
+    <div class="wrap">
+      <!-- Bez fotky: nadpis drží užší levý sloupec, kroky jdou vedle něj jako
+           časová osa. Sekce popisuje sled událostí, takže se čte odshora dolů —
+           mřížka karet by chronologii rozbila do zetka. -->
+      <div class="split wide-right align-top">
+        <div data-reveal="" style="transition-delay: 70ms;">
+          <span class="eyebrow" data-i18n="first.steps.eyebrow">Krok po kroku</span>
+          <h2 class="mt-1" data-i18n="first.steps.h2">Jak wygląda niedzielny poranek</h2>
+          <p class="lead muted mt-1" data-i18n="first.steps.p">Budynek otwieramy o 10:30, nabożeństwo zaczyna się o 11:00 i trwa około 90 minut. Potem jest czas na kawę — a wyjść możesz, kiedy tylko zechcesz.</p>
+        </div>
+        <ol class="numbered timeline" data-reveal="" style="transition-delay: 140ms;">
+          <li><div><h4 data-i18n="first.steps.s1t">Przyjeżdżasz i parkujesz</h4><p data-i18n="first.steps.s1d">Parkować można bezpośrednio przy budynku. Wejście jest wspólne z innymi najemcami — nasza część znajduje się zaraz po prawej stronie za drzwiami. Budynek jest otwarty od 10:30, więc możesz przyjść bez pośpiechu.</p></div></li>
+          <li><div><h4 data-i18n="first.steps.s2t">Ktoś Cię przywita</h4><p data-i18n="first.steps.s2d">Przy wejściu spotkasz kogoś z nas, kto Ci doradzi i odpowie na pytania. W przedsionku jest pomieszczenie z fotelami i stolikami, gdzie przed rozpoczęciem możesz napić się kawy lub herbaty, zjeść drobny poczęstunek i spokojnie kogoś poznać. Nigdzie się nie zapisujesz i niczego nie wypełniasz.</p></div></li>
+          <li><div><h4 data-i18n="first.steps.s3t">O 11:00 zaczyna się uwielbienie</h4><p data-i18n="first.steps.s3d">Przez pierwsze mniej więcej dwadzieścia pięć minut wspólnie śpiewamy. Możesz śpiewać, stać, siedzieć albo tylko słuchać — tak, jak Ci wygodnie.</p></div></li>
+          <li><div><h4 data-i18n="first.steps.s4t">Potem jest nauczanie</h4><p data-i18n="first.steps.s4d">Kazanie trwa około 35–45 minut. Mówimy zrozumiale i staramy się łączyć Biblię ze zwyczajnym życiem.</p></div></li>
+          <li><div><h4 data-i18n="first.steps.s5t">Zostajesz na kawę</h4><p data-i18n="first.steps.s5d">Po zakończeniu jest czas na rozmowę. Jeśli wolisz po prostu dyskretnie wyjść, to również jest zupełnie w porządku.</p></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------------------------- FAQ ---------------------------- -->
+  <section class="section" id="faq">
+    <div class="wrap wrap-narrow">
+      <div class="section-head" data-reveal="" style="transition-delay: 210ms;">
+        <span class="eyebrow" data-i18n="first.faq.eyebrow">Częste pytania</span>
+        <h2 data-i18n="first.faq.h2">O co ludzie pytają najczęściej</h2>
+      </div>
+      <div class="faq" data-reveal="" style="transition-delay: 280ms;">
+        <details open=""><summary data-i18n="first.faq.q1">Jak mam się ubrać?</summary><div data-i18n="first.faq.a1">Tak, jak Ci wygodnie. Spotkasz u nas zarówno bluzy, jak i koszule. Nikogo nie oceniamy po ubraniu.</div></details>
+        <details><summary data-i18n="first.faq.q2">Czy muszę coś płacić albo dawać?</summary><div data-i18n="first.faq.a2">Nie. Wstęp jest bezpłatny. Podczas nabożeństwa odbywa się dobrowolna zbiórka, ale nikt Cię nie obserwuje i niczego od Ciebie nie oczekuje.</div></details>
+        <details><summary data-i18n="first.faq.q3">Nie jestem wierzący. Czy mogę przyjść?</summary><div data-i18n="first.faq.a3">Oczywiście. Wiele osób przychodziło do nas długo, zanim zdecydowało się w cokolwiek uwierzyć. Pytania i wątpliwości są u nas mile widziane.</div></details>
+        <details><summary data-i18n="first.faq.q4">Jak długo to wszystko trwa?</summary><div data-i18n="first.faq.a4">Nabożeństwo trwa około 90 minut. Po nim następuje niezobowiązujący czas na kawę i rozmowę.</div></details>
+        <details><summary data-i18n="first.faq.q5">Co zrobić z dziećmi?</summary><div data-i18n="first.faq.a5">Dzieci są mile widziane i mogą być na nabożeństwie razem z Tobą. Obecnie nie prowadzimy osobnego programu dla dzieci — zbór tworzą dziś głównie osoby dorosłe.</div></details>
+        <details><summary data-i18n="first.faq.q6">Czy muszę się wcześniej zarejestrować?</summary><div data-i18n="first.faq.a6">Nie. Wystarczy po prostu przyjść.</div></details>
+        <details><summary data-i18n="first.faq.q7">W jakim języku odbywa się nabożeństwo?</summary><div data-i18n="first.faq.a7">Nabożeństwa odbywają się po czesku. Ze względu na bliskość granicy spotkasz u nas również osoby mówiące po polsku. Jeśli potrzebujesz pomocy językowej, napisz do nas wcześniej, a na pewno się dogadamy.</div></details>
+        <details><summary data-i18n="first.faq.q8">Czy budynek jest dostępny bez barier?</summary><div data-i18n="first.faq.a8">Przy wejściu znajduje się podjazd, którym bez trudu wjedziesz z wózkiem dziecięcym. Dla wózka inwalidzkiego jest jednak dość stromy, więc zalecamy asystę. Daj nam znać wcześniej, a chętnie pomożemy.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------------------------- MAPA ---------------------------- -->
+  <section class="section section-cream">
+    <div class="wrap">
+      <div class="split">
+        <div data-reveal="" style="transition-delay: 350ms;">
+          <span class="eyebrow" data-i18n="contact.hero.eyebrow">Kontakt</span>
+          <h2 class="mt-1" data-i18n="contact.map.h2">Gdzie nas znaleźć</h2>
+          <p class="lead muted mt-1" data-i18n="contact.map.p">Hraniční 213, 739 61 Trzyniec. Parkować można bezpośrednio przy budynku. Wejście do budynku jest wspólne z innymi najemcami; nasza część znajduje się zaraz po prawej stronie za drzwiami.</p>
+        </div>
+        <div id="map" data-reveal="" style="transition-delay: 0ms;">
+      <div class="media ratio-16-9">
+        <iframe title="Mapa" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=18.6470254%2C49.679859199999996%2C18.655025400000003%2C49.6838592&amp;layer=mapnik&amp;marker=49.6818592%2C18.6510254"></iframe>
+      </div>
+      <div class="btn-row" style="margin-top:1.25rem">
+        <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&amp;destination=49.6818592,18.6510254">Wyznacz trasę</a>
+        <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://maps.google.com/?cid=5863197709849295835">Google Maps</a>
+        <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://mapy.com/zakladni?x=18.6510254&amp;y=49.6818592&amp;z=18&amp;source=coor&amp;id=18.6510254%2C49.6818592">Mapy.cz</a>
+      </div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="wrap">
+      <div class="cta-band" data-reveal="" style="transition-delay: 70ms;">
+        <h2 data-i18n="first.cta.h2">Masz jeszcze pytanie?</h2>
+        <p data-i18n="first.cta.p">Napisz do nas. Zwykle odpowiadamy w ciągu dwóch dni i nikt nie będzie Cię do niczego popychał.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" data-page-link="contact" href="/pl/kontakt" data-i18n="cta.contact">Napisz do nas</a>
+          <a class="btn btn-light" data-page-link="sermons" href="/pl/kazani" data-i18n="cta.watch">Oglądaj kazania</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer">
+      <footer class="footer">
+        <div class="wrap">
+          <div class="footer-grid">
+            <div>
+              <a class="brand" href="/pl/" aria-label="Sbor Víry">
+                <img src="/assets/img/logo-light.png" alt="Sbor Víry" width="96" height="64">
+              </a>
+              <p class="footer-note">Zbór chrześcijański w Trzyńcu. Spotykamy się w każdą niedzielę i chętnie zobaczymy wśród nas również Ciebie.</p>
+              <div class="socials" style="margin-top:1.5rem">
+                <a href="https://www.youtube.com/@sborviry" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.9-.5-5.7c-.3-1-1.1-1.8-2.1-2.1C18.6 3.7 12 3.7 12 3.7s-6.6 0-8.4.5c-1 .3-1.8 1.1-2.1 2.1C1 8.1 1 12 1 12s0 3.9.5 5.7c.3 1 1.1 1.8 2.1 2.1 1.8.5 8.4.5 8.4.5s6.6 0 8.4-.5c1-.3 1.8-1.1 2.1-2.1.5-1.8.5-5.7.5-5.7zM9.9 15.4V8.6l5.6 3.4-5.6 3.4z"></path></svg></a>
+                <a href="https://www.facebook.com/sborviry.org/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.52 1.49-3.91 3.78-3.91 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.45 2.91h-2.33V22c4.78-.79 8.43-4.94 8.43-9.94z"></path></svg></a>
+                <a href="https://www.instagram.com/sborviryorg/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5.5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"></circle></svg></a>
+              </div>
+            </div>
+            <div>
+              <h4>Strona</h4>
+              <ul><li><a href="/pl/">Start</a></li><li><a href="/pl/o-nas">O nas</a></li><li><a href="/pl/jsem-tu-poprve">Pierwszy raz</a></li><li><a href="/pl/kazani">Kazania</a></li></ul>
+            </div>
+            <div>
+              <h4>Śledź nas</h4>
+              <ul>
+                <li><a href="/pl/aktuality">Aktualności</a></li><li><a href="/pl/co-u-nas-najdete">Co robimy</a></li><li><a href="/pl/podporte-nas">Wesprzyj nas</a></li><li><a href="/pl/kontakt">Kontakt</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4>Odwiedź nas</h4>
+              <ul>
+                <li>Hraniční 213, 739 61 Třinec</li>
+                <li><a href="mailto:sborviry@gmail.com">sborviry@gmail.com</a></li>
+                
+                <li style="margin-top:.5rem"><a class="link-arrow" href="/pl/kontakt">Wyznacz trasę</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <span>© 2026 Sbor Víry, z. s. · IČO 26596865 · Wszelkie prawa zastrzeżone.</span>
+            <a href="/pl/ochrana-osobnich-udaju">Ochrona danych osobowych</a>
+          </div>
+        </div>
+      </footer></div>
+<script src="/assets/js/i18n.js"></script>
+<script src="/assets/js/content.js"></script>
+<script src="/assets/js/site.js"></script>
+
+
+</body></html>

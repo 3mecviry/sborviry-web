@@ -4,8 +4,15 @@ Allow: /
 
 # Stránky, které do vyhledávání nepatří.
 # Zápis bez koncovky pokrývá obě podoby adresy — /404 i /404.html.
+# Hvězdička na začátku zabere i jazykové verze, tedy /sk/ochrana-osobnich-udaju.
 Disallow: /404
-Disallow: /ochrana-osobnich-udaju
+Disallow: /*ochrana-osobnich-udaju
+
+# Zdrojové kostry stránek a generátor. Hotové stránky vznikají z nich,
+# takže samy o sobě do vyhledávání nepatří — jinak by se stejný obsah
+# nabízel dvakrát.
+Disallow: /_sablony/
+Disallow: /nastroje/
 
 # Dokumentace k webu. GitHub Pages servíruje všechno z kořene repozitáře,
 # takže by se jinak dala najít i na sborviry.org — do výsledků vyhledávání

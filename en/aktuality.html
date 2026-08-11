@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- BEZPEČNOST: seznam níž určuje, odkud smí stránka načítat obsah — písma
+     z Googlu, náhledy z YouTube, mapu z OpenStreetMap. Cokoli jiného prohlížeč
+     odmítne, takže i kdyby se do stránky někdy dostal cizí kód, nemá odkud
+     stáhnout další ani kam poslat data.
+     Přidáváte-li na web cizí službu (jiné mapy, formulářový server, měření
+     návštěvnosti), musíte její adresu dopsat sem — jinak ji prohlížeč
+     zablokuje a služba se prostě nezobrazí. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://i.ytimg.com; frame-src https://www.youtube-nocookie.com https://www.openstreetmap.org; upgrade-insecure-requests">
+<!-- Cizí web se při odchodu dozví jen doménu, ze které návštěvník přišel,
+     ne konkrétní stránku. -->
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<!-- ÚKLID ADRESY: smaže z odkazu sledovací kódy sociálních sítí a newsletterů,
+     aby v adresním řádku zůstalo jen sborviry.org. Viz assets/js/start.js —
+     dřív byl tenhle úsek vepsaný v každé stránce zvlášť. -->
+<script src="/assets/js/start.js"></script>
+<title>News | Sbor Víry — Třinec</title>
+<meta name="description" content="Updates, events and announcements from the life of our church.">
+<meta name="theme-color" content="#FBF8F5">
+<link rel="canonical" href="https://sborviry.org/en/aktuality">
+<link rel="alternate" hreflang="cs" href="https://sborviry.org/aktuality">
+<link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/aktuality">
+<link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/aktuality">
+<link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/aktuality">
+<link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/aktuality">
+<link rel="alternate" hreflang="de" href="https://sborviry.org/de/aktuality">
+<link rel="alternate" hreflang="en" href="https://sborviry.org/en/aktuality">
+<link rel="alternate" hreflang="es" href="https://sborviry.org/es/aktuality">
+<link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/aktuality">
+<link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/aktuality">
+<link rel="alternate" hreflang="x-default" href="https://sborviry.org/aktuality">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sbor Víry — Třinec">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://sborviry.org/en/aktuality">
+<meta property="og:title" content="News | Sbor Víry — Třinec">
+<meta property="og:description" content="Updates, events and announcements from the life of our church.">
+<meta property="og:image" content="https://sborviry.org/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="News | Sbor Víry — Třinec">
+<meta name="twitter:description" content="Updates, events and announcements from the life of our church.">
+<meta name="twitter:image" content="https://sborviry.org/assets/img/og-image.jpg">
+<link rel="icon" href="/assets/img/favicon.png" sizes="96x96">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json" id="schema-org">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Church",
+      "@id": "https://sborviry.org/#organizace",
+      "name": "Sbor Víry",
+      "alternateName": [
+        "Sbor Víry Třinec",
+        "Sbor Víry, z. s."
+      ],
+      "legalName": "Sbor Víry, z. s.",
+      "url": "https://sborviry.org/",
+      "logo": "https://sborviry.org/assets/img/logo.png",
+      "image": "https://sborviry.org/assets/img/og-image.jpg",
+      "description": "Sbor Víry, z. s. — a Christian church in Třinec, Czechia. Services every Sunday at Hraniční 213. Come exactly as you are.",
+      "inLanguage": "en",
+      "email": "sborviry@gmail.com",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "IČO",
+        "value": "26596865"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Hraniční 213",
+        "postalCode": "739 61",
+        "addressLocality": "Třinec",
+        "addressRegion": "Moravskoslezský kraj",
+        "addressCountry": "CZ"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 49.6818592,
+        "longitude": 18.6510254
+      },
+      "sameAs": [
+        "https://www.youtube.com/@sborviry",
+        "https://www.facebook.com/sborviry.org/",
+        "https://www.instagram.com/sborviryorg/"
+      ],
+      "hasMap": "https://maps.google.com/?cid=5863197709849295835",
+      "foundingDate": "2002",
+      "employee": {
+        "@type": "Person",
+        "name": "Petr Lysek",
+        "jobTitle": "Pastor and founder of the church"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "https://schema.org/Sunday",
+          "opens": "11:00",
+          "name": "Service"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "https://schema.org/Monday",
+          "opens": "17:30",
+          "name": "Evangelism"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "https://schema.org/Thursday",
+          "opens": "18:00",
+          "name": "Home groups"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Sbor Víry",
+          "item": "https://sborviry.org/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "News",
+          "item": "https://sborviry.org/en/aktuality"
+        }
+      ]
+    }
+  ]
+}</script></head>
+<body data-page="news" class="nav-compact">
+<a class="skip" href="#main" data-i18n="ui.skip">Skip to main content</a>
+<div id="site-header">
+      <header class="header" id="hdr">
+        <div class="wrap header-inner">
+          <a class="brand" href="/en/" aria-label="Sbor Víry — Třinec">
+            <img src="/assets/img/logo.png" alt="Sbor Víry" width="78" height="52">
+            <span class="brand-city">Třinec</span>
+          </a>
+          <nav class="nav" id="mainnav" aria-label="Menu"><a href="/en/o-nas">About us</a><a href="/en/jsem-tu-poprve">First time</a><a href="/en/kazani">Sermons</a><a href="/en/co-u-nas-najdete">What we do</a><a href="/en/aktuality" aria-current="page">News</a><a href="/en/podporte-nas">Support us</a><a href="/en/kontakt">Contact</a></nav>
+          <div class="header-actions">
+            <div class="lang" id="langpick">
+              <button class="lang-btn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Language">EN <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+              <div class="lang-menu" role="listbox" aria-label="Language"><button type="button" data-set-lang="cs" role="option" aria-selected="false">
+         <i>CS</i><span>Čeština</span>
+       </button><button type="button" data-set-lang="sk" role="option" aria-selected="false">
+         <i>SK</i><span>Slovenčina</span>
+       </button><button type="button" data-set-lang="pl" role="option" aria-selected="false">
+         <i>PL</i><span>Polski</span>
+       </button><button type="button" data-set-lang="uk" role="option" aria-selected="false">
+         <i>UK</i><span>Українська</span>
+       </button><button type="button" data-set-lang="ru" role="option" aria-selected="false">
+         <i>RU</i><span>Русский</span>
+       </button><button type="button" data-set-lang="de" role="option" aria-selected="false">
+         <i>DE</i><span>Deutsch</span>
+       </button><button type="button" data-set-lang="en" role="option" aria-selected="true">
+         <i>EN</i><span>English</span>
+       </button><button type="button" data-set-lang="es" role="option" aria-selected="false">
+         <i>ES</i><span>Español</span>
+       </button><button type="button" data-set-lang="sv" role="option" aria-selected="false">
+         <i>SV</i><span>Svenska</span>
+       </button><button type="button" data-set-lang="hu" role="option" aria-selected="false">
+         <i>HU</i><span>Magyar</span>
+       </button></div>
+            </div>
+            <a class="btn btn-primary btn-sm header-cta" href="/en/jsem-tu-poprve">First time</a>
+            <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mainnav"><span></span></button>
+          </div>
+        </div>
+      </header></div>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow" data-i18n="news.hero.eyebrow">News</span>
+      <h1 data-i18n="news.hero.h1">What is happening</h1>
+      <p data-i18n="news.hero.p">Updates, events, conferences and announcements from the life of our church.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="grid g-3" data-news="" data-reveal="" style="transition-delay: 0ms;"><article class="post">
+      <div class="media ratio-16-9"><img src="/assets/img/logo-karta.jpg" alt="Street evangelism in Třinec" loading="lazy"></div>
+      <div>
+        <!-- U pravidelné akce dává datum zveřejnění špatnou informaci — proto smí
+             příspěvek v content.js místo něj nést vlastní popisek (dateLabel). -->
+        <span class="post-date">Every Monday at 17:30</span>
+         · <span class="tag">Evangelism</span>
+      </div>
+      <h3>Street evangelism in Třinec</h3>
+      <p class="muted">We meet regularly on T. G. Masaryk Square in Třinec, where we get into conversation with people and offer to pray with them. Anyone from the church is welcome to join — just turn up. We only skip it when it is pouring with rain.</p>
+      </article><a class="post" href="https://www.youtube.com/playlist?list=PLeGPPF1P4_e61nY4u_DCHjuFaD2oux-2w" target="_blank" rel="noopener">
+      <div class="media ratio-16-9"><img src="/assets/img/tomasz-kmiecik.jpg" alt="Divine healing seminar in Třinec with Pastor Tomasz Kmiecik" loading="lazy"></div>
+      <div>
+        <!-- U pravidelné akce dává datum zveřejnění špatnou informaci — proto smí
+             příspěvek v content.js místo něj nést vlastní popisek (dateLabel). -->
+        <span class="post-date">22 May 2026</span>
+         · <span class="tag">Seminar</span>
+      </div>
+      <h3>Divine healing seminar in Třinec with Pastor Tomasz Kmiecik</h3>
+      <p class="muted">On Friday 22 and Saturday 23 May 2026 Pastor Tomasz Kmiecik of Kościół Ducha Świętego – Shoreline in Częstochowa, Poland, led a seminar on divine healing at Sbor Víry in Třinec, Czechia; it was his first visit to the country. Over six sessions, interpreted into Czech, he spoke about receiving healing by faith, what God wills in it and what authority the believer has. He illustrated four levels of faith from his own story — his newborn daughter was healed of a sepsis the doctors had given up on. The recordings are in our playlist on YouTube.</p>
+      <span class="link-arrow">Read more</span></a><a class="post" href="https://www.rozsvittmu.cz/po-akci.html" target="_blank" rel="noopener">
+      <div class="media ratio-16-9"><img src="/assets/img/rozsvit-tmu.jpg" alt="Rozsviť tmu festival in Třinec — we helped put it on" loading="lazy"></div>
+      <div>
+        <!-- U pravidelné akce dává datum zveřejnění špatnou informaci — proto smí
+             příspěvek v content.js místo něj nést vlastní popisek (dateLabel). -->
+        <span class="post-date">7 May 2026</span>
+         · <span class="tag">Festival</span>
+      </div>
+      <h3>Rozsviť tmu festival in Třinec — we helped put it on</h3>
+      <p class="muted">From 7 to 9 May 2026 the Rozsviť tmu family festival took place on Svobody Square in Třinec. We prepared it together with other local churches. Music, a programme for children, people telling their own stories of a fresh start — with free admission. Over the same days the festival ran in ten towns across Czechia: 8,100 people heard the gospel and 1,074 of them made a decision for Jesus. Another edition is being prepared — we will announce the date here and on Facebook.</p>
+      <span class="link-arrow">Read more</span></a><article class="post">
+      <div class="media ratio-16-9"><img src="/assets/img/prorocka-sluzba-2025.jpg" alt="A prophetic evening in Třinec with guests from the United States" loading="lazy"></div>
+      <div>
+        <!-- U pravidelné akce dává datum zveřejnění špatnou informaci — proto smí
+             příspěvek v content.js místo něj nést vlastní popisek (dateLabel). -->
+        <span class="post-date">13 October 2025</span>
+         · <span class="tag">Visit</span>
+      </div>
+      <h3>A prophetic evening in Třinec with guests from the United States</h3>
+      <p class="muted">On Monday 13 October 2025 Hana D. brought a prophetic team from the United States to Sbor Víry in Třinec, Czechia — Raquel O. of Fearless Rock Ministries, Keyon B. of Kingdom Builders Ministries and Stephanie of Emerging Prophets. Worship was followed by teaching on our identity in Christ and by shared repentance from feeling unworthy and from unbelief. The evening closed with prayer and prophetic words for the church, for the worship team and for our leaders.</p>
+      </article></div>
+    </div>
+  </section>
+
+  <section class="section section-cream">
+    <div class="wrap wrap-narrow center" data-reveal="" style="transition-delay: 70ms;">
+      <h2 data-i18n="sermons.follow.h2">Follow us elsewhere too</h2>
+      <p class="lead muted mt-1" data-i18n="sermons.follow.p">We also share videos, photographs and quick announcements on Facebook and Instagram.</p>
+      <div class="btn-row mt-2" id="socials" style="justify-content:center">
+      <a class="btn btn-ghost" href="https://www.youtube.com/@sborviry" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.9-.5-5.7c-.3-1-1.1-1.8-2.1-2.1C18.6 3.7 12 3.7 12 3.7s-6.6 0-8.4.5c-1 .3-1.8 1.1-2.1 2.1C1 8.1 1 12 1 12s0 3.9.5 5.7c.3 1 1.1 1.8 2.1 2.1 1.8.5 8.4.5 8.4.5s6.6 0 8.4-.5c1-.3 1.8-1.1 2.1-2.1.5-1.8.5-5.7.5-5.7zM9.9 15.4V8.6l5.6 3.4-5.6 3.4z"></path></svg> YouTube</a>
+      <a class="btn btn-ghost" href="https://www.facebook.com/sborviry.org/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.52 1.49-3.91 3.78-3.91 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.45 2.91h-2.33V22c4.78-.79 8.43-4.94 8.43-9.94z"></path></svg> Facebook</a>
+      <a class="btn btn-ghost" href="https://www.instagram.com/sborviryorg/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5.5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"></circle></svg> Instagram</a></div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="wrap">
+      <div class="cta-band" data-reveal="" style="transition-delay: 140ms;">
+        <h2 data-i18n="home.cta.h2">See you on Sunday?</h2>
+        <p data-i18n="home.cta.p">You do not need to sign up in advance, bring anything or know anything. Just come.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" data-page-link="first" href="/en/jsem-tu-poprve" data-i18n="cta.first">First time here</a>
+          <a class="btn btn-light" data-page-link="contact" href="/en/kontakt" data-i18n="cta.contact">Write to us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer">
+      <footer class="footer">
+        <div class="wrap">
+          <div class="footer-grid">
+            <div>
+              <a class="brand" href="/en/" aria-label="Sbor Víry">
+                <img src="/assets/img/logo-light.png" alt="Sbor Víry" width="96" height="64">
+              </a>
+              <p class="footer-note">A Christian church in Třinec. We meet every Sunday and would love to see you among us.</p>
+              <div class="socials" style="margin-top:1.5rem">
+                <a href="https://www.youtube.com/@sborviry" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.9-.5-5.7c-.3-1-1.1-1.8-2.1-2.1C18.6 3.7 12 3.7 12 3.7s-6.6 0-8.4.5c-1 .3-1.8 1.1-2.1 2.1C1 8.1 1 12 1 12s0 3.9.5 5.7c.3 1 1.1 1.8 2.1 2.1 1.8.5 8.4.5 8.4.5s6.6 0 8.4-.5c1-.3 1.8-1.1 2.1-2.1.5-1.8.5-5.7.5-5.7zM9.9 15.4V8.6l5.6 3.4-5.6 3.4z"></path></svg></a>
+                <a href="https://www.facebook.com/sborviry.org/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.52 1.49-3.91 3.78-3.91 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.45 2.91h-2.33V22c4.78-.79 8.43-4.94 8.43-9.94z"></path></svg></a>
+                <a href="https://www.instagram.com/sborviryorg/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5.5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"></circle></svg></a>
+              </div>
+            </div>
+            <div>
+              <h4>Site</h4>
+              <ul><li><a href="/en/">Home</a></li><li><a href="/en/o-nas">About us</a></li><li><a href="/en/jsem-tu-poprve">First time</a></li><li><a href="/en/kazani">Sermons</a></li></ul>
+            </div>
+            <div>
+              <h4>Follow us</h4>
+              <ul>
+                <li><a href="/en/aktuality">News</a></li><li><a href="/en/co-u-nas-najdete">What we do</a></li><li><a href="/en/podporte-nas">Support us</a></li><li><a href="/en/kontakt">Contact</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4>Visit us</h4>
+              <ul>
+                <li>Hraniční 213, 739 61 Třinec</li>
+                <li><a href="mailto:sborviry@gmail.com">sborviry@gmail.com</a></li>
+                
+                <li style="margin-top:.5rem"><a class="link-arrow" href="/en/kontakt">Get directions</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <span>© 2026 Sbor Víry, z. s. · IČO 26596865 · All rights reserved.</span>
+            <a href="/en/ochrana-osobnich-udaju">Privacy notice</a>
+          </div>
+        </div>
+      </footer></div>
+<script src="/assets/js/i18n.js"></script>
+<script src="/assets/js/content.js"></script>
+<script src="/assets/js/site.js"></script>
+
+
+</body></html>

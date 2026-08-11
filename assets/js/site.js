@@ -23,22 +23,32 @@
   };
 
   /* ---------------------------------------------------------------- jazyk */
-  function detectLang() {
-    const fromUrl = new URLSearchParams(location.search).get('lang');
-    if (fromUrl && LANGS.includes(fromUrl)) return fromUrl;
-    try {
-      const saved = localStorage.getItem(STORE_KEY);
-      if (saved && LANGS.includes(saved)) return saved;
-    } catch (e) { /* localStorage nemusí být dostupné */ }
-    // Projdeme všechny jazyky nastavené v prohlížeči, ne jen ten první.
-    const prefs = (navigator.languages && navigator.languages.length)
-      ? navigator.languages : [navigator.language || ''];
-    for (const p of prefs) {
-      const code = String(p).slice(0, 2).toLowerCase();
-      if (LANGS.includes(code)) return code;
-      if (code === 'be') return 'uk';   // běloruština → nejbližší dostupná
-      if (code === 'at' || code === 'ch') return 'de';
+  /* Jazyk určuje ADRESA, ne nastavení prohlížeče:
+       sborviry.org/o-nas      → čeština (výchozí jazyk jede bez předpony)
+       sborviry.org/sk/o-nas   → slovenština
+     Každá jazyková verze tak má vlastní adresu, kterou vyhledávače i AI
+     vidí jako samostatnou stránku. Kdyby se jazyk bral z prohlížeče, měly
+     by všechny verze jednu adresu a do vyhledávání by se dostala jen jedna.
+     Volba z přepínače se ukládá jen proto, aby se návštěvník příště vrátil
+     do svého jazyka z rozcestí — obsah stránky nikdy nepřebíjí. */
+  function langZCesty() {
+    // Poslední dva úseky adresy stačí: /sk/o-nas i /sk/ i (z disku)
+    // …/sborviry-web/sk/o-nas.html.
+    const useky = location.pathname.split('/').filter(Boolean).slice(-2);
+    for (const usek of useky) {
+      const kod = usek.toLowerCase();
+      if (LANGS.includes(kod) && kod !== DEFAULT_LANG) return kod;
     }
+    return null;
+  }
+
+  function detectLang() {
+    const zCesty = langZCesty();
+    if (zCesty) return zCesty;
+    // Starý tvar odkazu (?lang=sk) — respektujeme ho a hned pod tímhle blokem
+    // návštěvníka přesměrujeme na vlastní adresu jazyka.
+    const zUrl = new URLSearchParams(location.search).get('lang');
+    if (zUrl && LANGS.includes(zUrl)) return zUrl;
     return DEFAULT_LANG;
   }
 
@@ -109,15 +119,34 @@
   // odkazy nikam nevedly. Stejné pravidlo hlídá i úsek "úklid adresy" v *.html.
   const CISTE_ADRESY = /(^|\.)sborviry\.org$|\.github\.io$/.test(location.hostname);
 
-  /** Ze jména souboru udělá adresu: 'o-nas.html' → 'o-nas', 'index.html' → './' */
-  const adresaStranky = (file) => {
-    if (!CISTE_ADRESY) return file;
-    return file === 'index.html' ? './' : file.replace(/\.html$/, '');
+  /** Ze jména souboru udělá adresu stránky v daném jazyce.
+      Na ostrém webu absolutní a bez koncovky ('/sk/o-nas'), z disku relativní
+      s koncovkou ('../sk/o-nas.html'), aby odkazy fungovaly i po otevření
+      složky ze souborů. */
+  const adresaStranky = (file, cilovyJazyk) => {
+    const cil = cilovyJazyk || LANG;
+    if (CISTE_ADRESY) {
+      const zaklad = cil === DEFAULT_LANG ? '/' : '/' + cil + '/';
+      return file === 'index.html' ? zaklad : zaklad + file.replace(/\.html$/, '');
+    }
+    // Z disku: pokud jsme v podsložce jazyka, musíme nejdřív o úroveň výš.
+    const ven = LANG === DEFAULT_LANG ? '' : '../';
+    const dovnitr = cil === DEFAULT_LANG ? '' : cil + '/';
+    return ven + dovnitr + file;
+  };
+
+  /** Cesta k obrázku či souboru v assets/ — funguje i z jazykové podsložky.
+      Hotová adresa (https://… nebo /…) se nechává, jak je. */
+  const asset = (cesta) => {
+    if (!cesta) return '';
+    if (/^(https?:)?\/\//.test(cesta) || cesta.charAt(0) === '/') return cesta;
+    if (CISTE_ADRESY) return '/' + cesta;
+    return (LANG === DEFAULT_LANG ? '' : '../') + cesta;
   };
 
   const href = (key) => {
     const p = PAGES.find((x) => x.key === key);
-    return adresaStranky(p ? p.file : 'index.html') + (LANG === DEFAULT_LANG ? '' : '?lang=' + LANG);
+    return adresaStranky(p ? p.file : 'index.html');
   };
 
   const PAGE = document.body.dataset.page || 'home';
@@ -140,7 +169,7 @@
       <header class="header" id="hdr">
         <div class="wrap header-inner">
           <a class="brand" href="${href('home')}" aria-label="Sbor Víry — Třinec">
-            <img src="assets/img/logo.png" alt="Sbor Víry" width="78" height="52">
+            <img src="${asset('assets/img/logo.png')}" alt="Sbor Víry" width="78" height="52">
             <span class="brand-city">Třinec</span>
           </a>
           <nav class="nav" id="mainnav" aria-label="${esc(t('ui.menu'))}">${nav}</nav>
@@ -258,7 +287,7 @@
           <div class="footer-grid">
             <div>
               <a class="brand" href="${href('home')}" aria-label="Sbor Víry">
-                <img src="assets/img/logo-light.png" alt="Sbor Víry" width="96" height="64">
+                <img src="${asset('assets/img/logo-light.png')}" alt="Sbor Víry" width="96" height="64">
               </a>
               <p class="footer-note">${esc(t('footer.tagline'))}</p>
               <div class="socials" style="margin-top:1.5rem">
@@ -289,7 +318,7 @@
           </div>
           <div class="footer-bottom">
             <span>© ${new Date().getFullYear()} ${esc(c.orgName)} · IČO ${esc(c.ico)} · ${esc(t('footer.rights'))}</span>
-            <a href="${adresaStranky('ochrana-osobnich-udaju.html')}${LANG === DEFAULT_LANG ? '' : '?lang=' + LANG}">${esc(t('footer.privacy'))}</a>
+            <a href="${adresaStranky('ochrana-osobnich-udaju.html')}">${esc(t('footer.privacy'))}</a>
           </div>
         </div>
       </footer>`;
@@ -351,7 +380,7 @@
 
   function newsCard(item) {
     const media = item.image
-      ? `<img src="${esc(item.image)}" alt="${esc(loc(item.title))}" loading="lazy">`
+      ? `<img src="${esc(asset(item.image))}" alt="${esc(loc(item.title))}" loading="lazy">`
       : `<div class="ph">${esc(t('ui.photoPlaceholder'))}</div>`;
     const inner = `
       <div class="media ratio-16-9">${media}</div>
@@ -402,11 +431,21 @@
       host.innerHTML = `
         <button class="media ratio-16-9 yt-facade" type="button" aria-label="${esc(t('sermons.playBtn'))}">
           ${thumb ? `<img src="${esc(thumb)}" alt="" loading="lazy"
-                          onerror="this.src='https://i.ytimg.com/vi/${esc(vid)}/hqdefault.jpg'">` : ''}
+                          data-nahradni="https://i.ytimg.com/vi/${esc(vid)}/hqdefault.jpg">` : ''}
           <span class="yt-play" aria-hidden="true">
             <svg viewBox="0 0 68 48"><path d="M66.5 7.7a8.6 8.6 0 0 0-6-6C55.2 0 34 0 34 0S12.8 0 7.5 1.7a8.6 8.6 0 0 0-6 6A90 90 0 0 0 0 24a90 90 0 0 0 1.5 16.3 8.6 8.6 0 0 0 6 6C12.8 48 34 48 34 48s21.2 0 26.5-1.7a8.6 8.6 0 0 0 6-6A90 90 0 0 0 68 24a90 90 0 0 0-1.5-16.3z" fill="#f00"/><path d="M27 34l17.5-10L27 14z" fill="#fff"/></svg>
           </span>
         </button>`;
+
+      // Náhled ve vysokém rozlišení nemá každé video. Když chybí, sáhneme po
+      // menší variantě — a to tady v kódu, ne atributem onerror přímo v HTML.
+      // Díky tomu smí pravidla Content-Security-Policy vkládaný kód zakázat.
+      const nahled = $('img[data-nahradni]', host);
+      if (nahled) {
+        nahled.addEventListener('error', function () {
+          this.src = this.dataset.nahradni;
+        }, { once: true });
+      }
 
       $('.yt-facade', host).addEventListener('click', function () {
         this.outerHTML = `<div class="media ratio-16-9">
@@ -511,7 +550,7 @@
     // kdyby se galerie překreslovala celá, obsluha kliknutí by se hromadila.
     if (track.dataset.built !== '1') {
       track.innerHTML = list.map((item) => {
-        const src = typeof item === 'string' ? item : item.src;
+        const src = asset(typeof item === 'string' ? item : item.src);
         return `<figure class="media ratio-1-1" role="group" data-photo="${esc(src)}"></figure>`;
       }).join('');
       track.dataset.built = '1';
@@ -676,10 +715,16 @@
   /* Strukturovaná data (Schema.org) — pomáhají vyhledávačům i AI asistentům
      jednoznačně rozpoznat, o kterou organizaci jde. Klíčové je IČO
      a odkazy na oficiální profily; podle nich nás nespletou s jinými sbory. */
+  /** Úplná adresa stránky pro strukturovaná data. Ta musí být absolutní
+      a vždy stejná, ať se web zrovna prohlíží z disku, nebo z ostré domény —
+      proto se nespoléhá na adresaStranky(). */
+  const plnaAdresa = (file) => SITE_URL
+    + (LANG === DEFAULT_LANG ? '/' : '/' + LANG + '/')
+    + (file === 'index.html' ? '' : file.replace(/\.html$/, ''));
+
   function renderSchema() {
     const c = DATA.contact, s = DATA.social;
-    const data = {
-      '@context': 'https://schema.org',
+    const organizace = {
       '@type': 'Church',
       '@id': SITE_URL + '/#organizace',
       name: 'Sbor Víry',
@@ -703,10 +748,56 @@
       geo: { '@type': 'GeoCoordinates', latitude: c.lat, longitude: c.lon },
       sameAs: [s.youtube, s.facebook, s.instagram].filter(Boolean)
     };
-    if (c.phone) data.telephone = c.phone;
-    if (c.googleMapsUrl) data.hasMap = c.googleMapsUrl;
-    if (DATA.founded) data.foundingDate = DATA.founded;
-    if (c.pastor) data.employee = { '@type': 'Person', name: c.pastor, jobTitle: t('about.lead.role') };
+    if (c.phone) organizace.telephone = c.phone;
+    if (c.googleMapsUrl) organizace.hasMap = c.googleMapsUrl;
+    if (DATA.founded) organizace.foundingDate = DATA.founded;
+    if (c.pastor) organizace.employee = { '@type': 'Person', name: c.pastor, jobTitle: t('about.lead.role') };
+
+    // Časy setkání strojově. Podle nich dokáže vyhledávač i AI asistent
+    // odpovědět na otázku „kdy má Sbor Víry bohoslužby“ rovnou, aniž by
+    // musely luštit text stránky. Berou se z content.js → times (den, cas).
+    const hodiny = (DATA.times || [])
+      .filter((r) => r.den && r.cas)
+      .map((r) => ({
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: 'https://schema.org/' + r.den,
+        opens: r.cas,
+        name: loc(r.what)
+      }));
+    if (hodiny.length) organizace.openingHoursSpecification = hodiny;
+
+    const graf = [organizace];
+
+    // Cesta ke stránce — vyhledávač ji umí zobrazit místo holé adresy.
+    if (PAGE !== 'home') {
+      const p = PAGES.find((x) => x.key === PAGE);
+      const nazev = (document.title.split('|')[0] || '').trim();
+      if (p && nazev) {
+        graf.push({
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Sbor Víry', item: plnaAdresa('index.html') },
+            { '@type': 'ListItem', position: 2, name: nazev, item: plnaAdresa(p.file) }
+          ]
+        });
+      }
+    }
+
+    // Časté dotazy. Vyhledávače i AI z nich berou přímé odpovědi — právě
+    // tyhle otázky lidé hledají („co si vzít na sebe“, „musím něco platit“).
+    // Čtou se rovnou ze stránky, takže se nemůžou rozejít s tím, co je vidět.
+    if (PAGE === 'first') {
+      const otazky = $$('.faq details').map((d) => {
+        const q = $('summary', d), a = $('div', d);
+        return q && a && q.textContent.trim() && a.textContent.trim()
+          ? { '@type': 'Question', name: q.textContent.trim(),
+              acceptedAnswer: { '@type': 'Answer', text: a.textContent.trim() } }
+          : null;
+      }).filter(Boolean);
+      if (otazky.length) graf.push({ '@type': 'FAQPage', mainEntity: otazky });
+    }
+
+    const data = { '@context': 'https://schema.org', '@graph': graf };
 
     let el = $('#schema-org');
     if (!el) {
@@ -804,16 +895,14 @@
   }
 
   /* ---------------------------------------------------------- přepnutí jazyka */
+  /* Každý jazyk má vlastní adresu, takže se na ni přejde. Stránka se načte
+     znovu — návštěvník i vyhledávač pak vidí tutéž adresu se stejným obsahem
+     a odkaz se dá poslat dál. */
   function setLang(lang) {
     if (!LANGS.includes(lang) || lang === LANG) return;
-    LANG = lang;
     try { localStorage.setItem(STORE_KEY, lang); } catch (e) {}
-    const url = new URL(location.href);
-    if (lang === DEFAULT_LANG) url.searchParams.delete('lang');
-    else url.searchParams.set('lang', lang);
-    history.replaceState({}, '', url);
-    renderAll();
-    document.dispatchEvent(new CustomEvent('langchange', { detail: { lang } }));
+    const p = PAGES.find((x) => x.key === PAGE);
+    location.href = adresaStranky(p ? p.file : 'index.html', lang);
   }
 
   function renderAll() {
@@ -838,6 +927,16 @@
   }
 
   /* --------------------------------------------------------------- start */
+  // Dřív měl každý jazyk tvar …?lang=sk. Takové odkazy mohou být rozeslané
+  // nebo uložené v záložkách, proto je pošleme na novou adresu jazyka.
+  (function presmerujStaryTvarOdkazu() {
+    if (!CISTE_ADRESY || langZCesty()) return;
+    const zUrl = new URLSearchParams(location.search).get('lang');
+    if (!zUrl || !LANGS.includes(zUrl) || zUrl === DEFAULT_LANG) return;
+    const p = PAGES.find((x) => x.key === PAGE);
+    location.replace(adresaStranky(p ? p.file : 'index.html', zUrl));
+  })();
+
   try { localStorage.setItem(STORE_KEY, LANG); } catch (e) {}
   document.addEventListener('DOMContentLoaded', renderAll);
 

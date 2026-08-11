@@ -2,7 +2,12 @@
 
 Statický web v **deseti jazycích** (čeština, slovenština, polština, ukrajinština,
 ruština, němčina, angličtina, španělština, švédština, maďarština).
-Žádná databáze, žádný build, žádné placené služby — stačí soubory nahrát na hosting.
+Žádná databáze, žádné placené služby — stačí soubory nahrát na hosting.
+
+Texty se upravují na jednom místě (`assets/js/i18n.js`) a hotové stránky se z nich
+vyrobí jedním příkazem — viz [kapitola 3](#3-generování-stránek). Díky tomu je text
+přímo v HTML, takže web najde nejen Google, ale i Bing, Seznam a vyhledávače
+umělé inteligence.
 
 ---
 
@@ -58,10 +63,14 @@ přetáhnout do prohlížeče na jejich stránce.
 | Číslo účtu pro dary | `assets/js/content.js` → `giving` |
 | **Jakýkoli text na webu** | `assets/js/i18n.js` |
 | Barvy, velikosti, zaoblení | `assets/css/style.css` → sekce `:root` nahoře |
-| Rozložení stránky, pořadí sekcí | příslušný `*.html` soubor |
+| Rozložení stránky, pořadí sekcí | `_sablony/` → příslušný `*.html` soubor |
 
 Soubor `assets/js/site.js` obsahuje logiku (přepínání jazyků, menu, mapa).
 Ten měnit nemusíte.
+
+> **Po každé úpravě spusťte `node nastroje/generator.mjs`.** Stránky v kořeni
+> (`index.html`, složky `sk/`, `pl/` …) se tím vyrobí znovu — ručně se do nich
+> nezasahuje, při dalším spuštění by se změny ztratily. Podrobnosti v kapitole 3.
 
 ### Adresy bez koncovky `.html`
 
@@ -81,8 +90,9 @@ nechává — bez serveru by odkazy bez koncovky nikam nevedly. Pozná se to pod
 adresy: pravidlo v `site.js` (`CISTE_ADRESY`) i v hlavičce stránek reaguje jen
 na `sborviry.org` a `*.github.io`.
 
-**Přidáváte-li novou stránku,** odkazujte na ni bez koncovky a nezapomeňte ji
-dopsat do `sitemap.xml` — také bez `.html`.
+**Přidáváte-li novou stránku,** založte ji v `_sablony/` a dopište ji do seznamu
+`STRANKY` v `nastroje/generator.mjs`. Vygeneruje se pak sama ve všech jazycích
+a rovnou se dostane i do `sitemap.xml` — ten se už ručně needituje.
 
 ### Úklid adresy ze sociálních sítí
 
@@ -95,8 +105,9 @@ Smaže tyhle kódy hned na začátku načítání, ještě než se stránka vykr
 Odstraňuje značky Facebooku, Instagramu, Googlu, Microsoftu, TikToku, X, LinkedInu,
 Yandexu, Mailchimpu, YouTube a všechny parametry začínající `utm_`.
 
-**Vlastní parametr `?lang=` zůstává nedotčený** — na něm stojí přepínání jazyků.
 Maže se jen to, co je vyjmenované v seznamu `smeti`; cokoli neznámého zůstává.
+Jazyk se dnes pozná z adresy (`sborviry.org/sk/o-nas`), takže žádný vlastní
+parametr chránit nepotřebujeme.
 
 Kdyby některá síť zavedla nový sledovací kód, dopište ho do seznamu `smeti`
 a stejnou úpravu zkopírujte do zbylých devíti stránek — úsek je ve všech totožný.
@@ -121,7 +132,78 @@ Pozor na čárky mezi bloky — jsou povinné.
 
 ---
 
-## 3. Fotografie
+## 3. Generování stránek
+
+### Proč to je potřeba
+
+Web si celý text vykresluje JavaScriptem. Google si s tím poradí, ale **Bing
+(a s ním Microsoft Edge i Copilot), Seznam ani vyhledávače umělé inteligence**
+(ChatGPT, Claude, Perplexity) JavaScript nespouštějí — viděly by prázdnou stránku.
+Proto se stránky jednou dopředu vykreslí a text se uloží přímo do HTML.
+Návštěvník dostane přesně totéž co dřív, roboti navíc uvidí obsah.
+
+### Jak se to používá
+
+```
+node nastroje/generator.mjs
+```
+
+Potřebujete jen **Node.js** ([nodejs.org](https://nodejs.org), stačí verze 18 a vyšší)
+a **Chrome** nebo **Edge** — ten už v počítači je. Nic se neinstaluje, žádné
+`node_modules`. Generování 91 stránek trvá necelou minutu.
+
+Je-li Chrome jinde než obvykle, cestu k němu předáte proměnnou `CHROME_PATH`.
+
+### Co je zdroj a co výsledek
+
+| Složka | Co v ní je | Upravovat ručně? |
+|---|---|---|
+| `_sablony/` | kostry stránek — rozložení, pořadí sekcí | **ano** |
+| `assets/js/i18n.js` | všechny texty | **ano** |
+| `assets/js/content.js` | kontakty, časy, aktuality, dary | **ano** |
+| `index.html`, `o-nas.html`, … | hotová česká verze | ne — vygeneruje se |
+| `sk/`, `pl/`, `uk/`, … | hotové jazykové verze | ne — vygeneruje se |
+| `sitemap.xml` | seznam adres pro vyhledávače | ne — vygeneruje se |
+
+Do souborů v kořeni a v jazykových složkách se **nezasahuje**. Při dalším
+spuštění by se změny přepsaly. Chcete-li upravit rozložení stránky, sáhněte
+do `_sablony/`; chcete-li text, do `i18n.js`.
+
+### Běžný postup při úpravě
+
+1. Upravte text v `assets/js/i18n.js` (nebo údaj v `content.js`).
+2. Spusťte `node nastroje/generator.mjs`.
+3. Otevřete některou stránku a zkontrolujte ji.
+4. Změny nahrajte na GitHub — projeví se do minuty.
+
+### Co generátor vyrobí navíc
+
+Kromě samotných stránek vzniká i to, podle čeho si web najdou vyhledávače
+a nástroje s umělou inteligencí:
+
+- **Strukturovaná data** (schema.org) přímo v HTML každé stránky — kdo sbor je,
+  kde sídlí, IČO, odkazy na profily a **časy setkání ve strojovém tvaru**.
+  Díky nim umí asistent odpovědět na „kdy má Sbor Víry bohoslužby“ rovnou.
+  Časy se berou z `content.js` → `times`, z políček `den` a `cas`.
+  Na stránce *Jsem tu poprvé* se navíc přidají **časté dotazy** — čtou se
+  rovnou ze stránky, takže se nikdy nerozejdou s tím, co je vidět.
+- **`sitemap.xml`** — všech 80 adres včetně jazykových verzí.
+- **`llms.txt`** — stručný rozcestník pro AI nástroje: adresa, časy setkání,
+  kontakt a seznam stránek na jednom místě.
+
+Nic z toho se needituje ručně; vzniká to z `i18n.js` a `content.js`.
+
+### Když se generování nepovede
+
+Generátor si po sobě kontroluje, že stránka opravdu vznikla, že je ve správném
+jazyce a že text nezůstal skrytý. Když něco nesedí, vypíše to a **soubor neuloží** —
+na webu tedy zůstane poslední funkční verze. Nejčastější příčina je překlep
+v `i18n.js` nebo `content.js`, kvůli kterému se soubor nenačte; chybu ukáže
+prohlížeč v konzoli (F12).
+
+---
+
+## 4. Fotografie
 
 Na webu jsou už **připravená místa s konkrétními názvy souborů**. Stačí fotku
 pojmenovat a nakopírovat do složky `assets/img/` — nic v kódu se upravovat nemusí.
@@ -173,7 +255,7 @@ Stáhněte je v co největším rozlišení, zmenšete (např. na
 
 ---
 
-## 4. Logo
+## 5. Logo
 
 Web používá **vaše originální logo** (`logo_bez_pozadi.png`), zpracované do těchto variant:
 
@@ -191,7 +273,7 @@ změňte `logo.png` na `logo.svg` (řádek s hlavičkou).
 
 ---
 
-## 5. YouTube — video na webu
+## 6. YouTube — video na webu
 
 Na úvodní stránce i na stránce Kázání je náhled videa. Přehrávač YouTube se
 vloží **až po kliknutí** — díky tomu se stránka načte rychleji a YouTube do té
@@ -240,7 +322,7 @@ napište si o jeho vrácení — jde o jedno tlačítko a jeden text v deseti ja
 
 ---
 
-## 6. Telefon a kontaktní formulář
+## 7. Telefon a kontaktní formulář
 
 Telefonní číslo se na webu **záměrně neuvádí** — jako kontakt slouží e-mail a zpráva
 na Facebooku (obojí je na stránce Kontakt). Kdybyste číslo někdy chtěli zveřejnit,
@@ -264,7 +346,7 @@ Chcete-li zprávy dostávat přímo do e-mailu bez otevírání klienta:
 
 ---
 
-## 7. Odlišení od podobných názvů
+## 8. Odlišení od podobných názvů
 
 V Třinci působí i **Církev Víry**, která patří do jiné skupiny. Aby nedocházelo k záměně,
 web dělá tři věci:
@@ -285,28 +367,37 @@ Web nikde konkurenční sbor nezmiňuje — odlišení stojí čistě na vlastn�
 
 ---
 
-## 8. Jazyky
+## 9. Jazyky
 
-Web je v **deseti jazycích**. Přepínač je vpravo v hlavičce; volba se ukládá do
-prohlížeče a lze ji předat i odkazem:
+Web je v **deseti jazycích**. Přepínač je vpravo v hlavičce. **Každý jazyk má
+vlastní adresu** — čeština běží v kořeni, ostatní ve své složce:
 
 | Kód | Jazyk | Odkaz |
 |---|---|---|
 | `cs` | čeština (výchozí) | `sborviry.org/` |
-| `sk` | slovenština | `sborviry.org/?lang=sk` |
-| `pl` | polština | `sborviry.org/?lang=pl` |
-| `uk` | ukrajinština | `sborviry.org/?lang=uk` |
-| `ru` | ruština | `sborviry.org/?lang=ru` |
-| `de` | němčina | `sborviry.org/?lang=de` |
-| `en` | angličtina | `sborviry.org/?lang=en` |
-| `es` | španělština | `sborviry.org/?lang=es` |
-| `sv` | švédština | `sborviry.org/?lang=sv` |
-| `hu` | maďarština | `sborviry.org/?lang=hu` |
+| `sk` | slovenština | `sborviry.org/sk/` |
+| `pl` | polština | `sborviry.org/pl/` |
+| `uk` | ukrajinština | `sborviry.org/uk/` |
+| `ru` | ruština | `sborviry.org/ru/` |
+| `de` | němčina | `sborviry.org/de/` |
+| `en` | angličtina | `sborviry.org/en/` |
+| `es` | španělština | `sborviry.org/es/` |
+| `sv` | švédština | `sborviry.org/sv/` |
+| `hu` | maďarština | `sborviry.org/hu/` |
 
-Stejně to funguje na kterékoli stránce — `sborviry.org/o-nas?lang=pl`.
+Stejně to funguje na kterékoli stránce — `sborviry.org/pl/o-nas`.
 
-Při první návštěvě se jazyk vybere podle nastavení prohlížeče (prochází se celý
-seznam preferovaných jazyků, ne jen první). Běloruština se mapuje na ukrajinštinu.
+**Proč vlastní adresy.** Dokud měly všechny jazyky jednu adresu a lišily se jen
+parametrem `?lang=`, uměl je rozeznat pouze Google. Pro ostatní vyhledávače
+existovala jedna česká stránka. Teď má každá verze svou adresu, svůj obsah
+v HTML a značky `hreflang`, které je propojují — takže se dá najít i polská
+nebo ukrajinská verze.
+
+Staré odkazy s `?lang=sk` fungují dál: stránka je sama přesměruje na
+`sborviry.org/sk/`. Odkazy rozeslané dřív tedy nikam nespadnou.
+
+Jazyk se vždy řídí adresou, ne nastavením prohlížeče — návštěvník i vyhledávač
+tak na jedné adrese vidí vždy totéž. Volba z přepínače se ukládá do prohlížeče.
 
 **Pozor na písmo u azbuky.** Nadpisový font Bricolage Grotesque azbuku neobsahuje,
 proto se v ukrajinštině a ruštině nadpisy sázejí Interem — ten ji má. Řídí to
@@ -329,16 +420,19 @@ tedy nikdy nerozbije, jen bude na daném místě česky.
    (např. `it`) a přeložte hodnoty.
 2. V `assets/js/site.js` doplňte kód do pole `LANGS` a do `DATE_LOCALE`.
 3. V `assets/js/content.js` doplňte nový jazyk do polí `times`, `gallery` a `news`.
+4. V `nastroje/generator.mjs` doplňte kód do pole `JAZYKY` a do `LOCALE`.
+   Pak spusťte `node nastroje/generator.mjs` — vznikne nová složka `it/`
+   se všemi stránkami a jazyk se sám přidá do `sitemap.xml`.
 
 Než web zveřejníte, projděte si v novém jazyce všechny stránky — nejrychleji
-přes odkazy `sborviry.org/?lang=xx`, `sborviry.org/o-nas?lang=xx` a tak dál. Hlídejte
+přes odkazy `sborviry.org/xx/`, `sborviry.org/xx/o-nas` a tak dál. Hlídejte
 hlavně délku položek v menu: když se nevejdou, hlavička se sama přepne na
 tlačítko s nabídkou. Nejdelší menu má zatím španělština (79 znaků) — pokud se
 pod ní vejdete, je to v pořádku.
 
 ---
 
-## 9. Co ještě doplnit (TODO)
+## 10. Co ještě doplnit (TODO)
 
 - [ ] Den a čas modlitebního setkání (`content.js` → `times`, poslední položka)
 - [ ] Odkaz na záznam prorockého večeru na YouTube — vložte URL do pole `link`
@@ -365,27 +459,83 @@ pod ní vejdete, je to v pořádku.
 
 ---
 
-## 10. Struktura souborů
+## 11. Struktura souborů
 
 Jde o názvy souborů na disku. Na webu se stránky ukazují bez koncovky —
 `o-nas.html` je na adrese `sborviry.org/o-nas` (viz *Adresy bez koncovky `.html`*).
 
+Hvězdičkou jsou označené soubory, které **vyrábí generátor** — ručně se do nich
+nezasahuje (viz [kapitola 3](#3-generování-stránek)).
+
 ```
-index.html                    Úvodní stránka
-o-nas.html                    O nás — historie, vize, čemu věříme
-jsem-tu-poprve.html           Pro nové návštěvníky + FAQ
-kazani.html                   Kázání a YouTube archiv
-aktuality.html                Aktuality
-co-u-nas-najdete.html         Bohoslužby, chvály, evangelizace, modlitba
-podporte-nas.html             Dary
-kontakt.html                  Kontakt, formulář, mapa
-ochrana-osobnich-udaju.html   Zásady zpracování údajů
-404.html                      Chybová stránka
-sitemap.xml                   Mapa webu pro vyhledávače (8 stránek × 11 jazykových variant)
+_sablony/                     ZDROJ — kostry stránek, tady se upravuje rozložení
+  index.html                    Úvodní stránka
+  o-nas.html                    O nás — historie, vize, čemu věříme
+  jsem-tu-poprve.html           Pro nové návštěvníky + FAQ
+  kazani.html                   Kázání a YouTube archiv
+  aktuality.html                Aktuality
+  co-u-nas-najdete.html         Bohoslužby, chvály, evangelizace, modlitba
+  podporte-nas.html             Dary
+  kontakt.html                  Kontakt, formulář, mapa
+  ochrana-osobnich-udaju.html   Zásady zpracování údajů
+  404.html                      Chybová stránka
+
+nastroje/generator.mjs        Generátor stránek — spouští se ručně
+
+*.html                      * Hotová česká verze (stejné názvy jako v _sablony/)
+sk/  pl/  uk/  ru/  de/     * Hotové jazykové verze
+en/  es/  sv/  hu/          *
+sitemap.xml                 * Mapa webu (8 stránek × 10 jazyků = 80 adres)
+llms.txt                    * Rozcestník pro nástroje s umělou inteligencí
+
 robots.txt                    Pravidla pro roboty vyhledávačů
+CNAME                         Doména pro GitHub Pages
 assets/css/style.css          Vzhled
-assets/js/i18n.js             Texty ve 4 jazycích
+assets/js/i18n.js             Texty v deseti jazycích
 assets/js/content.js          Kontakty, časy, aktuality, dary
 assets/js/site.js             Logika webu
+assets/js/start.js            Úklid adresy — běží jako první v hlavičce
 assets/img/                   Logo, favicon, fotografie
 ```
+
+---
+
+## 12. Bezpečnost
+
+Statický web nemá server, databázi ani administraci, takže odpadá většina
+běžných útoků — není kam se přihlásit ani co podstrčit. Co je přesto zařízené:
+
+| Opatření | Kde |
+|---|---|
+| Pravidla, odkud smí stránka načítat obsah (CSP) | hlavička každé stránky |
+| Zákaz vkládaného kódu (`script-src 'self'`) | tamtéž — generátor to i kontroluje |
+| Cizí web se dozví jen doménu, ne konkrétní stránku | `meta name="referrer"` |
+| Odkazy ven nemají přístup k naší stránce | `rel="noopener"` |
+| Formulář nikam neukládá data — otevře e-mail | `assets/js/site.js` |
+| Video se načte z YouTube až po kliknutí | tamtéž |
+
+**Přidáváte-li na web cizí službu** (jiné mapy, formulářový server, měření
+návštěvnosti), musíte její adresu dopsat do CSP v hlavičce stránek — jinak ji
+prohlížeč zablokuje a služba se prostě nezobrazí. Chyba se vypíše v konzoli
+prohlížeče (F12).
+
+### Co ještě zapnout na Cloudflare
+
+Tři ochrany se z HTML nastavit nedají, protože musí přijít jako hlavička od
+serveru. GitHub Pages to neumí, Cloudflare ano a zdarma — *Rules → Transform
+Rules → Modify Response Header → Set static*:
+
+| Hlavička | Hodnota | Proti čemu |
+|---|---|---|
+| `X-Frame-Options` | `SAMEORIGIN` | vložení webu do cizí stránky a vydávání za svůj |
+| `X-Content-Type-Options` | `nosniff` | podvržení typu souboru |
+| `Strict-Transport-Security` | `max-age=31536000; includeSubDomains` | vynucení HTTPS i při prvním příchodu |
+
+Je to práce na pět minut a web bez nich funguje normálně — jen je o něco
+zranitelnější vůči zneužití v cizím rámu.
+
+### Účty
+
+Největší riziko není v kódu, ale v přístupech: kdo se dostane do repozitáře na
+GitHubu nebo na účet Cloudflare, přepíše web nebo přesměruje doménu. Mějte
+u obou zapnuté **dvoufázové ověření** a hlídejte, kdo další má právo zápisu.

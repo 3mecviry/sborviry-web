@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="hu"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- BEZPEČNOST: seznam níž určuje, odkud smí stránka načítat obsah — písma
+     z Googlu, náhledy z YouTube, mapu z OpenStreetMap. Cokoli jiného prohlížeč
+     odmítne, takže i kdyby se do stránky někdy dostal cizí kód, nemá odkud
+     stáhnout další ani kam poslat data.
+     Přidáváte-li na web cizí službu (jiné mapy, formulářový server, měření
+     návštěvnosti), musíte její adresu dopsat sem — jinak ji prohlížeč
+     zablokuje a služba se prostě nezobrazí. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://i.ytimg.com; frame-src https://www.youtube-nocookie.com https://www.openstreetmap.org; upgrade-insecure-requests">
+<!-- Cizí web se při odchodu dozví jen doménu, ze které návštěvník přišel,
+     ne konkrétní stránku. -->
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<!-- ÚKLID ADRESY: smaže z odkazu sledovací kódy sociálních sítí a newsletterů,
+     aby v adresním řádku zůstalo jen sborviry.org. Viz assets/js/start.js —
+     dřív byl tenhle úsek vepsaný v každé stránce zvlášť. -->
+<script src="/assets/js/start.js"></script>
+<title>Rólunk | Sbor Víry — Třinec</title>
+<meta name="description" content="Kik vagyunk, mit hiszünk, és hogyan jött létre a gyülekezet. Sbor Víry, z. s., Hraniční 213, Třinec.">
+<meta name="theme-color" content="#FBF8F5">
+<link rel="canonical" href="https://sborviry.org/hu/o-nas">
+<link rel="alternate" hreflang="cs" href="https://sborviry.org/o-nas">
+<link rel="alternate" hreflang="sk" href="https://sborviry.org/sk/o-nas">
+<link rel="alternate" hreflang="pl" href="https://sborviry.org/pl/o-nas">
+<link rel="alternate" hreflang="uk" href="https://sborviry.org/uk/o-nas">
+<link rel="alternate" hreflang="ru" href="https://sborviry.org/ru/o-nas">
+<link rel="alternate" hreflang="de" href="https://sborviry.org/de/o-nas">
+<link rel="alternate" hreflang="en" href="https://sborviry.org/en/o-nas">
+<link rel="alternate" hreflang="es" href="https://sborviry.org/es/o-nas">
+<link rel="alternate" hreflang="sv" href="https://sborviry.org/sv/o-nas">
+<link rel="alternate" hreflang="hu" href="https://sborviry.org/hu/o-nas">
+<link rel="alternate" hreflang="x-default" href="https://sborviry.org/o-nas">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sbor Víry — Třinec">
+<meta property="og:locale" content="hu_HU">
+<meta property="og:url" content="https://sborviry.org/hu/o-nas">
+<meta property="og:title" content="Rólunk | Sbor Víry — Třinec">
+<meta property="og:description" content="Kik vagyunk, mit hiszünk, és hogyan jött létre a gyülekezet. Sbor Víry, z. s., Hraniční 213, Třinec.">
+<meta property="og:image" content="https://sborviry.org/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Rólunk | Sbor Víry — Třinec">
+<meta name="twitter:description" content="Kik vagyunk, mit hiszünk, és hogyan jött létre a gyülekezet. Sbor Víry, z. s., Hraniční 213, Třinec.">
+<meta name="twitter:image" content="https://sborviry.org/assets/img/og-image.jpg">
+<link rel="icon" href="/assets/img/favicon.png" sizes="96x96">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json" id="schema-org">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Church",
+      "@id": "https://sborviry.org/#organizace",
+      "name": "Sbor Víry",
+      "alternateName": [
+        "Sbor Víry Třinec",
+        "Sbor Víry, z. s."
+      ],
+      "legalName": "Sbor Víry, z. s.",
+      "url": "https://sborviry.org/",
+      "logo": "https://sborviry.org/assets/img/logo.png",
+      "image": "https://sborviry.org/assets/img/og-image.jpg",
+      "description": "Sbor Víry, z. s. — keresztény gyülekezet a csehországi Třinecben. Istentisztelet minden vasárnap a Hraniční 213. szám alatt. Gyere úgy, ahogy vagy.",
+      "inLanguage": "hu",
+      "email": "sborviry@gmail.com",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "IČO",
+        "value": "26596865"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Hraniční 213",
+        "postalCode": "739 61",
+        "addressLocality": "Třinec",
+        "addressRegion": "Moravskoslezský kraj",
+        "addressCountry": "CZ"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 49.6818592,
+        "longitude": 18.6510254
+      },
+      "sameAs": [
+        "https://www.youtube.com/@sborviry",
+        "https://www.facebook.com/sborviry.org/",
+        "https://www.instagram.com/sborviryorg/"
+      ],
+      "hasMap": "https://maps.google.com/?cid=5863197709849295835",
+      "foundingDate": "2002",
+      "employee": {
+        "@type": "Person",
+        "name": "Petr Lysek",
+        "jobTitle": "Pásztor és a gyülekezet alapítója"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "https://schema.org/Sunday",
+          "opens": "11:00",
+          "name": "Istentisztelet"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "https://schema.org/Monday",
+          "opens": "17:30",
+          "name": "Evangelizáció"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "https://schema.org/Thursday",
+          "opens": "18:00",
+          "name": "Házicsoportok"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Sbor Víry",
+          "item": "https://sborviry.org/hu/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Rólunk",
+          "item": "https://sborviry.org/hu/o-nas"
+        }
+      ]
+    }
+  ]
+}</script></head>
+<body data-page="about" class="nav-compact">
+<a class="skip" href="#main" data-i18n="ui.skip">Ugrás a fő tartalomra</a>
+<div id="site-header">
+      <header class="header" id="hdr">
+        <div class="wrap header-inner">
+          <a class="brand" href="/hu/" aria-label="Sbor Víry — Třinec">
+            <img src="/assets/img/logo.png" alt="Sbor Víry" width="78" height="52">
+            <span class="brand-city">Třinec</span>
+          </a>
+          <nav class="nav" id="mainnav" aria-label="Menü"><a href="/hu/o-nas" aria-current="page">Rólunk</a><a href="/hu/jsem-tu-poprve">Először itt</a><a href="/hu/kazani">Igehirdetések</a><a href="/hu/co-u-nas-najdete">Amit teszünk</a><a href="/hu/aktuality">Hírek</a><a href="/hu/podporte-nas">Támogatás</a><a href="/hu/kontakt">Kapcsolat</a></nav>
+          <div class="header-actions">
+            <div class="lang" id="langpick">
+              <button class="lang-btn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Nyelv">HU <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+              <div class="lang-menu" role="listbox" aria-label="Nyelv"><button type="button" data-set-lang="cs" role="option" aria-selected="false">
+         <i>CS</i><span>Čeština</span>
+       </button><button type="button" data-set-lang="sk" role="option" aria-selected="false">
+         <i>SK</i><span>Slovenčina</span>
+       </button><button type="button" data-set-lang="pl" role="option" aria-selected="false">
+         <i>PL</i><span>Polski</span>
+       </button><button type="button" data-set-lang="uk" role="option" aria-selected="false">
+         <i>UK</i><span>Українська</span>
+       </button><button type="button" data-set-lang="ru" role="option" aria-selected="false">
+         <i>RU</i><span>Русский</span>
+       </button><button type="button" data-set-lang="de" role="option" aria-selected="false">
+         <i>DE</i><span>Deutsch</span>
+       </button><button type="button" data-set-lang="en" role="option" aria-selected="false">
+         <i>EN</i><span>English</span>
+       </button><button type="button" data-set-lang="es" role="option" aria-selected="false">
+         <i>ES</i><span>Español</span>
+       </button><button type="button" data-set-lang="sv" role="option" aria-selected="false">
+         <i>SV</i><span>Svenska</span>
+       </button><button type="button" data-set-lang="hu" role="option" aria-selected="true">
+         <i>HU</i><span>Magyar</span>
+       </button></div>
+            </div>
+            <a class="btn btn-primary btn-sm header-cta" href="/hu/jsem-tu-poprve">Először itt</a>
+            <button class="burger" type="button" aria-label="Menü" aria-expanded="false" aria-controls="mainnav"><span></span></button>
+          </div>
+        </div>
+      </header></div>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow" data-i18n="about.hero.eyebrow">Rólunk</span>
+      <h1 data-i18n="about.hero.h1">Gyülekezet, amely emberekre épül</h1>
+      <p data-i18n="about.hero.p">Keresztények közössége vagyunk Třinecben. Hisszük, hogy a kereszténység nem szabályok gyűjteménye, hanem élő kapcsolat, amely átformálja a hétköznapokat.</p>
+    </div>
+  </section>
+
+  <!-- ---------------------------- PŘÍBĚH ---------------------------- -->
+  <section class="section">
+    <div class="wrap">
+      <div class="split align-top">
+        <div class="stack" data-reveal="" style="transition-delay: 0ms;">
+          <span class="eyebrow" data-i18n="about.story.eyebrow">A mi utunk</span>
+          <h2 data-i18n="about.story.h2">Kik vagyunk, és hol kezdtük</h2>
+          <p data-i18n="about.story.p1">A Sbor Víry gyülekezet 2002-ben jött létre Třinecben. Segíteni szeretnénk az embereknek az élet értelmének és a keresztény értékeknek a keresésében. A kérdéseikre a Bibliában találhatnak választ — munkánk alapja ezért az Írás szövegeinek alapos megismerése.</p>
+          <p data-i18n="about.story.p2">Isten igéjének ismerete formálja az alkalmaink menetét, és választ ad a hívőknek a mindennapi élet kérdéseire, legyen szó családról, emberi kapcsolatokról vagy munkáról. Azoknak is segítünk visszatérni a teljes értékű életbe, akik a társadalom peremére kerültek.</p>
+          <p data-i18n="about.story.p3">Nyilvános előadásokat szervezünk, külföldi vendégekkel is, akik hasonló keresztény mozgalmakat képviselnek. Lelki témájú filmeket vetítünk a nagyközönségnek, valamint koncerteket és zenés esteket rendezünk. Számos kapcsolatunk van csehországi, lengyelországi, magyarországi és szlovákiai gyülekezetekkel és szervezetekkel.</p>
+          <p data-i18n="about.story.p4">Hisszük, hogy a valódi keresztény értékekhez való visszatérés az egész társadalom javát szolgálja — a mai és a jövő nemzedékét egyaránt.</p>
+        </div>
+        <div class="media ratio-4-3" data-photo="assets/img/sbor-1.jpg" data-photo-alt-key="photos.about1" data-reveal="" data-done="1" style="transition-delay: 70ms;"><img alt="Petr Lysek pásztor fiatalokhoz szól" loading="lazy" src="/assets/img/sbor-1.jpg"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------------------------- VIZE ---------------------------- -->
+  <section class="section section-cream">
+    <div class="wrap">
+      <div class="split reverse align-top">
+        <div class="media ratio-4-3" data-photo="assets/img/sbor-2.jpg" data-photo-alt-key="photos.about2" data-reveal="" data-done="1" style="transition-delay: 140ms;"><img alt="Felemelt kezek a dicséret közben" loading="lazy" src="/assets/img/sbor-2.jpg"></div>
+        <div class="stack" data-reveal="" style="transition-delay: 210ms;">
+          <span class="eyebrow" data-i18n="about.vision.eyebrow">A víziónk</span>
+          <h2 data-i18n="about.vision.h2">Keresztény központ a városunkért</h2>
+          <p class="lead" data-i18n="about.vision.p1">Vágyunk arra, hogy jó irányban befolyásoljuk a városunkat: olyan keresztény központot építünk, amelyben sokan megtalálják a helyüket, megerősödik a reménységük, és vágyat éreznek arra, hogy Istenért és másokért éljenek.</p>
+          <p data-i18n="about.vision.p2">Szeretnénk megváltoztatni a kereszténység képét is Csehországban — megmutatni, hogy Istennek semmi köze a középkori valláshoz, hanem mai, lenyűgöző módon munkálkodik közöttünk. Az egyház nem templom és nem megkövesedett szertartások sora, hanem mindenekelőtt az Ő családja. Jézus nem szervezetet alapított; lehetőséget adott arra, hogy személyesen találkozzunk az Atyával.</p>
+          <p data-i18n="about.vision.p3">Vágyunk arra, hogy a fiatalok, akik többet várnak az élettől, Rá és az Ő igéjére építsenek.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------------------------- ČEMU VĚŘÍME ---------------------------- -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head center" data-reveal="" style="transition-delay: 280ms;">
+        <span class="eyebrow" data-i18n="about.believe.eyebrow">Mit hiszünk</span>
+        <h2 data-i18n="about.believe.h2">Hét pont, amelyben egyetértünk</h2>
+        <p data-i18n="about.believe.p">Ez nem kimerítő teológiai dokumentum, hanem az a mag, amely összetart minket.</p>
+      </div>
+      <div class="grid g-3">
+        <article class="card" data-reveal="" style="transition-delay: 350ms;"><span class="card-icon" data-icon="book"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"></path></svg></span>
+          <h3 data-i18n="about.believe.b1t">A Biblia</h3><p data-i18n="about.believe.b1d">A Biblia Isten ihletett igéje, és a legfőbb tekintély a hit és a mindennapi élet számára.</p></article>
+        <article class="card" data-reveal="" style="transition-delay: 0ms;"><span class="card-icon green" data-icon="spark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 14.2 9l6.5 2.2-6.5 2.2L12 20l-2.2-6.6L3.3 11.2 9.8 9Z"></path></svg></span>
+          <h3 data-i18n="about.believe.b2t">Isten</h3><p data-i18n="about.believe.b2d">Egy Istenben hiszünk, aki Atyaként, Fiúként és Szentlélekként jelenti ki magát.</p></article>
+        <article class="card" data-reveal="" style="transition-delay: 70ms;"><span class="card-icon" data-icon="heart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 5.6a5.4 5.4 0 0 0-7.7 0L12 6.7l-1.1-1.1a5.4 5.4 0 0 0-7.7 7.7l1.1 1.1L12 22l7.7-7.6 1.1-1.1a5.4 5.4 0 0 0 0-7.7Z"></path></svg></span>
+          <h3 data-i18n="about.believe.b3t">Jézus Krisztus</h3><p data-i18n="about.believe.b3d">Jézus Isten Fia. Meghalt a bűneinkért, feltámadt, és él.</p></article>
+        <article class="card" data-reveal="" style="transition-delay: 140ms;"><span class="card-icon green" data-icon="hands"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 11V4.5a1.5 1.5 0 0 1 3 0V11"></path><path d="M14 10V3.5a1.5 1.5 0 0 1 3 0V13"></path><path d="M8 11.5V7a1.5 1.5 0 0 0-3 0v7.5a7 7 0 0 0 7 7h1.5a7 7 0 0 0 7-7V9a1.5 1.5 0 0 0-3 0"></path></svg></span>
+          <h3 data-i18n="about.believe.b4t">Üdvösség</h3><p data-i18n="about.believe.b4d">Az üdvösség Isten kegyelmi ajándéka, amelyet hit által fogadunk el — nem a teljesítményünk jutalma.</p></article>
+        <article class="card" data-reveal="" style="transition-delay: 210ms;"><span class="card-icon" data-icon="spark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 14.2 9l6.5 2.2-6.5 2.2L12 20l-2.2-6.6L3.3 11.2 9.8 9Z"></path></svg></span>
+          <h3 data-i18n="about.believe.b5t">A Szentlélek</h3><p data-i18n="about.believe.b5d">A Szentlélek erőt ad a keresztény élethez, és felkészíti a gyülekezetet a mások felé való szolgálatra.</p></article>
+        <article class="card" data-reveal="" style="transition-delay: 280ms;"><span class="card-icon green" data-icon="users"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.9"></path><path d="M16 3.1a4 4 0 0 1 0 7.8"></path></svg></span>
+          <h3 data-i18n="about.believe.b6t">Az egyház</h3><p data-i18n="about.believe.b6d">Az egyház család, nem épület. Olyan emberek közössége, akik Krisztushoz és egymáshoz tartoznak.</p></article>
+        <article class="card" data-reveal="" style="transition-delay: 350ms;"><span class="card-icon" data-icon="smile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"></circle><path d="M8 14.5s1.5 2 4 2 4-2 4-2"></path><path d="M9 9.5h.01M15 9.5h.01"></path></svg></span>
+          <h3 data-i18n="about.believe.b7t">Reménység</h3><p data-i18n="about.believe.b7d">Jézus visszajön. Nem a halálé az utolsó szó, és ez megváltoztatja, hogyan élünk ma.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------------------------- VEDENÍ ---------------------------- -->
+  <section class="section section-dark">
+    <div class="wrap">
+      <div class="split align-top">
+        <div data-reveal="" style="transition-delay: 0ms;">
+          <span class="eyebrow on-dark" data-i18n="about.lead.eyebrow">A gyülekezet vezetése</span>
+          <h2 class="mt-1" data-i18n="about.lead.h2">Petr Lysek pásztor</h2>
+          <div class="small" style="color:#FF7C74;margin-top:.6rem;font-weight:600" data-i18n="about.lead.role">Pásztor és a gyülekezet alapítója</div>
+          <div class="stack mt-2" style="color:#9C948E">
+            <p data-i18n="about.lead.b1">A Sbor Víry keresztény központot annak 2002-es megalapítása óta vezeti. Třinecben született, foglalkozását tekintve az építőiparban dolgozik. Szenvedélyét és elhívását egy erős, mai kor emberéhez szóló helyi gyülekezet építésében találta meg.</p>
+            <p data-i18n="about.lead.b2">Tizenöt évesen tért meg az oldřichovicei evangélikus ifjúság egyik kirándulásán, ahol 1989-ig szolgált. Ezután bekapcsolódott a karizmatikus mozgalomba, 1992-től pedig az Apostoli Egyházhoz tartozó Siloe gyülekezetet vezette. Kiderült azonban, hogy Isten úttörő természettel és reformátori elhívással ajándékozta meg — az a vágy, hogy Istenért és a hívőkért olyat tegyen, amit a környéken addig senki nem látott, elvezette a Sbor Víry megalapításához.</p>
+            <p data-i18n="about.lead.b3">Tehetséges szónok, aki másokat is lelkesít. Hittel és lendülettel telve hirdeti az igét, de jó adag humorral is. A józan gondolkodás, a bölcs életváltozás, Isten alapelveinek megismerése és a jellem formálása — ezek a fő témái.</p>
+            <p data-i18n="about.lead.b4">Hosszú éveken át a feleségével, Marcelával együtt szolgált, aki 2024 januárjában váratlanul elhunyt. Kitartásuk, az igéhez való hűségük, elkötelezettségük és véget nem érő derűlátásuk sok embernek segített megtalálni az Istenbe és az igéjébe vetett hitet. Mindketten olyan egyházban hittek, amely emberekből álló test — nem a népszerűséget keresték, hanem a csapatmunkára építettek. Emberekkel és emberekért dolgozni: Petr pásztor ma is ebben látja a szolgálata értelmét.</p>
+          </div>
+          <div class="btn-row mt-2">
+            <a class="btn btn-primary" data-page-link="contact" href="/hu/kontakt" data-i18n="cta.contact">Írj nekünk</a>
+          </div>
+        </div>
+        <div class="media ratio-3-4" data-photo="assets/img/pastor.jpg" data-photo-alt-key="photos.pastor" data-reveal="" style="max-width: 400px; transition-delay: 70ms;" data-done="1"><img alt="Petr Lysek pásztor felemelt Bibliával" loading="lazy" src="/assets/img/pastor.jpg"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------------------------- PRÁVNÍ ÚDAJE ---------------------------- -->
+  <section class="section">
+    <div class="wrap wrap-narrow">
+      <div class="section-head" data-reveal="" style="transition-delay: 140ms;">
+        <span class="eyebrow" data-i18n="about.legal.eyebrow">A szervezet adatai</span>
+        <h2 data-i18n="about.legal.h2">Jogi információk</h2>
+      </div>
+      <div id="contact-info" data-reveal="" style="transition-delay: 210ms;"><dl class="info-list">
+      
+      <div>
+        <span class="card-icon ink" style="width:44px;height:44px;border-radius:13px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10.3c0 5.4-8 12-8 12s-8-6.6-8-12a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10.2" r="2.8"></circle></svg></span>
+        <div>
+          <dt>Itt találkozunk</dt>
+          <dd>Hraniční 213, 739 61 Třinec</dd>
+        </div>
+      </div>
+      
+      <div>
+        <span class="card-icon ink" style="width:44px;height:44px;border-radius:13px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"></rect><path d="m3 7 8.2 5.7a1.5 1.5 0 0 0 1.6 0L21 7"></path></svg></span>
+        <div>
+          <dt>E-mail</dt>
+          <dd><a href="mailto:sborviry@gmail.com">sborviry@gmail.com</a></dd>
+        </div>
+      </div>
+      
+      <div>
+        <span class="card-icon ink" style="width:44px;height:44px;border-radius:13px"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.52 1.49-3.91 3.78-3.91 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.45 2.91h-2.33V22c4.78-.79 8.43-4.94 8.43-9.94z"></path></svg></span>
+        <div>
+          <dt>Írj nekünk a Facebookon</dt>
+          <dd><a href="https://www.facebook.com/sborviry.org/">facebook.com/sborviry.org</a></dd>
+        </div>
+      </div>
+      
+      
+      <div>
+        <span class="card-icon ink" style="width:44px;height:44px;border-radius:13px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></span>
+        <div>
+          <dt>Pásztor</dt>
+          <dd>Petr Lysek</dd>
+        </div>
+      </div>
+      
+      <div>
+        <span class="card-icon ink" style="width:44px;height:44px;border-radius:13px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"></rect><path d="M7 15c.6-1.6 2-2.5 3.5-2.5S13.4 13.4 14 15"></path><circle cx="10.5" cy="9.5" r="1.8"></circle><path d="M17 9.5h2M17 12.5h2"></path></svg></span>
+        <div>
+          <dt>Név</dt>
+          <dd>Sbor Víry, z. s. · IČO 26596865</dd>
+        </div>
+      </div>
+    </dl></div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="wrap">
+      <div class="cta-band" data-reveal="" style="transition-delay: 280ms;">
+        <h2 data-i18n="home.cta.h2">Találkozunk vasárnap?</h2>
+        <p data-i18n="home.cta.p">Nem kell előre jelentkezned, nem kell hoznod semmit, és nem kell tudnod semmit. Elég, ha eljössz.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" data-page-link="first" href="/hu/jsem-tu-poprve" data-i18n="cta.first">Először vagyok itt</a>
+          <a class="btn btn-light" data-page-link="sermons" href="/hu/kazani" data-i18n="cta.watch">Igehirdetések megtekintése</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer">
+      <footer class="footer">
+        <div class="wrap">
+          <div class="footer-grid">
+            <div>
+              <a class="brand" href="/hu/" aria-label="Sbor Víry">
+                <img src="/assets/img/logo-light.png" alt="Sbor Víry" width="96" height="64">
+              </a>
+              <p class="footer-note">Keresztény gyülekezet Třinecben. Minden vasárnap összejövünk, és szeretettel várunk téged is.</p>
+              <div class="socials" style="margin-top:1.5rem">
+                <a href="https://www.youtube.com/@sborviry" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.9-.5-5.7c-.3-1-1.1-1.8-2.1-2.1C18.6 3.7 12 3.7 12 3.7s-6.6 0-8.4.5c-1 .3-1.8 1.1-2.1 2.1C1 8.1 1 12 1 12s0 3.9.5 5.7c.3 1 1.1 1.8 2.1 2.1 1.8.5 8.4.5 8.4.5s6.6 0 8.4-.5c1-.3 1.8-1.1 2.1-2.1.5-1.8.5-5.7.5-5.7zM9.9 15.4V8.6l5.6 3.4-5.6 3.4z"></path></svg></a>
+                <a href="https://www.facebook.com/sborviry.org/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.52 1.49-3.91 3.78-3.91 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.45 2.91h-2.33V22c4.78-.79 8.43-4.94 8.43-9.94z"></path></svg></a>
+                <a href="https://www.instagram.com/sborviryorg/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5.5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"></circle></svg></a>
+              </div>
+            </div>
+            <div>
+              <h4>Weboldal</h4>
+              <ul><li><a href="/hu/">Főoldal</a></li><li><a href="/hu/o-nas">Rólunk</a></li><li><a href="/hu/jsem-tu-poprve">Először itt</a></li><li><a href="/hu/kazani">Igehirdetések</a></li></ul>
+            </div>
+            <div>
+              <h4>Kövess minket</h4>
+              <ul>
+                <li><a href="/hu/aktuality">Hírek</a></li><li><a href="/hu/co-u-nas-najdete">Amit teszünk</a></li><li><a href="/hu/podporte-nas">Támogatás</a></li><li><a href="/hu/kontakt">Kapcsolat</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4>Látogass el hozzánk</h4>
+              <ul>
+                <li>Hraniční 213, 739 61 Třinec</li>
+                <li><a href="mailto:sborviry@gmail.com">sborviry@gmail.com</a></li>
+                
+                <li style="margin-top:.5rem"><a class="link-arrow" href="/hu/kontakt">Útvonal megjelenítése</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <span>© 2026 Sbor Víry, z. s. · IČO 26596865 · Minden jog fenntartva.</span>
+            <a href="/hu/ochrana-osobnich-udaju">Adatvédelem</a>
+          </div>
+        </div>
+      </footer></div>
+<script src="/assets/js/i18n.js"></script>
+<script src="/assets/js/content.js"></script>
+<script src="/assets/js/site.js"></script>
+
+
+</body></html>

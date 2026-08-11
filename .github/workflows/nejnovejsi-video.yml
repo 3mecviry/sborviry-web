@@ -83,12 +83,27 @@ jobs:
           print('Nastaveno nejnovější video: ' + nove)
           PY
 
+      # Text webu je od jara 2026 přímo v HTML, aby ho viděly i vyhledávače,
+      # které nespouštějí JavaScript. Změna v content.js se proto musí promítnout
+      # do hotových stránek — jinak by na webu zůstalo viset staré kázání.
+      - name: Přegenerovat stránky
+        run: |
+          if [ -z "$(git status --porcelain assets/js/content.js)" ]; then
+            echo "Video se nezměnilo, generovat není co."
+            exit 0
+          fi
+          node nastroje/generator.mjs
+        env:
+          # Chrome je na runneru GitHubu předinstalovaný. Kdyby se cesta někdy
+          # změnila, generátor si projde další obvyklá umístění sám.
+          CHROME_PATH: /usr/bin/google-chrome
+
       - name: Uložit změnu
         run: |
-          if [ -n "$(git status --porcelain assets/js/content.js)" ]; then
+          if [ -n "$(git status --porcelain)" ]; then
             git config user.name  "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add assets/js/content.js
+            git add -A
             git commit -m "Aktualizace nejnovějšího videa z YouTube"
             git push
           else
