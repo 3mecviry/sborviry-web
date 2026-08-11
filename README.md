@@ -263,9 +263,31 @@ Web používá **vaše originální logo** (`logo_bez_pozadi.png`), zpracované 
 |---|---|
 | `logo.png` | hlavička webu — originál oříznutý, průhledné pozadí |
 | `logo-light.png` | patička na tmavém pozadí — nápis je bílý, srdce a vlna světlejší |
-| `icon.png` | samotné srdce s křížem, průhledné pozadí (pro sociální sítě apod.) |
-| `favicon.png` | ikona v záložce prohlížeče |
-| `apple-touch-icon.png` | ikona po přidání webu na plochu telefonu |
+| `logo_zmena.png` | **samotný symbol** srdce s křížem, bez nápisu — předloha pro ikony |
+| `icon.png` | ikona 256 × 256 (záloha ve větší velikosti) |
+| `favicon.png` | ikona v záložce prohlížeče, 192 × 192 |
+| `apple-touch-icon.png` | ikona po přidání webu na plochu telefonu, 180 × 180 |
+
+### Ikony se vyrábějí příkazem
+
+```
+node nastroje/ikony.mjs
+```
+
+Ze souboru `logo_zmena.png` vzniknou naráz všechny tři velikosti — symbol se
+v obrázku najde sám a vycentruje, takže se nic neořezává ručně.
+
+**Proč se ikony nedělají z `logo.png`:** v logu je nápis „Sbor Víry" napsaný
+přes spodní část srdce. Čtvercový výřez by tedy buď usekl písmena (což byl
+stav do léta 2026 — v záložce visel nečitelný útržek „or Ví"), nebo by celý
+znak zdrobnil. Proto je symbol uložený zvlášť.
+
+**Měníte-li logo:** nahraďte `logo_zmena.png` novým symbolem (nejlépe
+s průhledným pozadím) a příkaz spusťte znovu.
+
+> Velikost favicony musí zůstat **násobkem 48 px** (48, 96, 144, 192 …), jinak
+> ji Google ve výsledcích vyhledávání neukáže. Měnili-li byste ji, přepište
+> i `sizes="…"` v `_sablony/*.html`.
 
 Máte-li logo i ve vektoru (`.svg`, `.ai`, `.eps`), vyplatí se ho použít: zůstane ostré
 na jakémkoli displeji. Uložte ho jako `assets/img/logo.svg` a v `assets/js/site.js`
@@ -481,6 +503,7 @@ _sablony/                     ZDROJ — kostry stránek, tady se upravuje rozlo�
   404.html                      Chybová stránka
 
 nastroje/generator.mjs        Generátor stránek — spouští se ručně
+nastroje/ikony.mjs            Výroba ikon ze symbolu (viz kapitola 5)
 
 *.html                      * Hotová česká verze (stejné názvy jako v _sablony/)
 sk/  pl/  uk/  ru/  de/     * Hotové jazykové verze
