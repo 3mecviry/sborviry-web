@@ -542,20 +542,39 @@ návštěvnosti), musíte její adresu dopsat do CSP v hlavičce stránek — ji
 prohlížeč zablokuje a služba se prostě nezobrazí. Chyba se vypíše v konzoli
 prohlížeče (F12).
 
-### Co ještě zapnout na Cloudflare
+### Hlavičky nastavené na Cloudflare
 
-Tři ochrany se z HTML nastavit nedají, protože musí přijít jako hlavička od
-serveru. GitHub Pages to neumí, Cloudflare ano a zdarma — *Rules → Transform
-Rules → Modify Response Header → Set static*:
+Některé ochrany se z HTML nastavit nedají — musí přijít jako hlavička od
+serveru. GitHub Pages to neumí, Cloudflare ano a zdarma. **Nastaveno v srpnu
+2026**, web je posílá u každé stránky i u souborů:
 
 | Hlavička | Hodnota | Proti čemu |
 |---|---|---|
-| `X-Frame-Options` | `SAMEORIGIN` | vložení webu do cizí stránky a vydávání za svůj |
-| `X-Content-Type-Options` | `nosniff` | podvržení typu souboru |
 | `Strict-Transport-Security` | `max-age=31536000; includeSubDomains` | vynucení HTTPS i při prvním příchodu |
+| `X-Content-Type-Options` | `nosniff` | podvržení typu souboru |
+| `X-Frame-Options` | `SAMEORIGIN` | vložení webu do cizí stránky a vydávání za svůj |
+| `Content-Security-Policy` | `frame-ancestors 'self'` | totéž pro novější prohlížeče |
+| `Permissions-Policy` | `camera=(), microphone=(), geolocation=()` | přístup ke kameře, mikrofonu a poloze |
 
-Je to práce na pět minut a web bez nich funguje normálně — jen je o něco
-zranitelnější vůči zneužití v cizím rámu.
+Kde se to spravuje:
+
+- **HSTS a nosniff** → *SSL/TLS → Edge Certificates → HTTP Strict Transport
+  Security*. Volba *Preload* je schválně vypnutá: zapsala by doménu přímo do
+  prohlížečů a zpět se to bere jen žádostí s několikaměsíční prodlevou.
+- **Zbylé tři** → *Rules → Overview → Create rule → Response Header Transform
+  Rule*, pravidlo se jmenuje „Bezpečnostní hlavičky" a platí na všechny
+  požadavky.
+
+> **Pozor při stěhování webu.** Kvůli HSTS si prohlížeče rok pamatují, že na
+> `sborviry.org` mají chodit jen po HTTPS. Nový hosting proto musí mít HTTPS
+> od prvního dne. U GitHub Pages i Cloudflare je to samozřejmost, riziko by
+> nastalo jen u hostingu bez certifikátu.
+
+Ověřit, že hlavičky opravdu chodí, jde příkazem:
+
+```
+curl -sI https://sborviry.org/ | findstr /I "strict-transport x-frame x-content permissions content-security"
+```
 
 ### Účty
 
