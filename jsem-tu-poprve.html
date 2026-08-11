@@ -45,8 +45,8 @@
 <meta name="twitter:title" content="Jsem tu poprvé | Sbor Víry — Třinec">
 <meta name="twitter:description" content="Co vás čeká, když k nám přijdete poprvé. Praktické odpovědi na běžné otázky.">
 <meta name="twitter:image" content="https://sborviry.org/assets/img/og-image.jpg">
-<link rel="icon" href="assets/img/favicon.png" sizes="96x96">
-<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="icon" href="assets/img/favicon.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" sizes="180x180">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -119,6 +119,72 @@
           "name": "Domácí skupinky"
         }
       ]
+    },
+    {
+      "@type": "Event",
+      "name": "Bohoslužba",
+      "description": "Bohoslužba — Hraniční 213, Třinec",
+      "eventSchedule": {
+        "@type": "Schedule",
+        "byDay": "https://schema.org/Sunday",
+        "startTime": "11:00",
+        "repeatFrequency": "P1W",
+        "scheduleTimezone": "Europe/Prague"
+      },
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "isAccessibleForFree": true,
+      "inLanguage": "cs",
+      "location": {
+        "@type": "Place",
+        "name": "Sbor Víry",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Hraniční 213",
+          "postalCode": "739 61",
+          "addressLocality": "Třinec",
+          "addressRegion": "Moravskoslezský kraj",
+          "addressCountry": "CZ"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 49.6818592,
+          "longitude": 18.6510254
+        }
+      },
+      "organizer": {
+        "@id": "https://sborviry.org/#organizace"
+      },
+      "image": "https://sborviry.org/assets/img/og-image.jpg"
+    },
+    {
+      "@type": "Event",
+      "name": "Evangelizace",
+      "description": "Evangelizace — nám. T. G. Masaryka, Třinec",
+      "eventSchedule": {
+        "@type": "Schedule",
+        "byDay": "https://schema.org/Monday",
+        "startTime": "17:30",
+        "repeatFrequency": "P1W",
+        "scheduleTimezone": "Europe/Prague"
+      },
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "isAccessibleForFree": true,
+      "inLanguage": "cs",
+      "location": {
+        "@type": "Place",
+        "name": "nám. T. G. Masaryka, Třinec",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Třinec",
+          "addressCountry": "CZ"
+        }
+      },
+      "organizer": {
+        "@id": "https://sborviry.org/#organizace"
+      },
+      "image": "https://sborviry.org/assets/img/og-image.jpg"
     },
     {
       "@type": "BreadcrumbList",

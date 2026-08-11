@@ -768,6 +768,47 @@
 
     const graf = [organizace];
 
+    /* Pravidelná setkání ještě jednou, tentokrát jako události. Otevírací doba
+       výš říká „kdy je otevřeno“, tohle říká „co se koná“ — vyhledávač i AI to
+       pak umí nabídnout jako konkrétní akci i s místem.
+       Zapisuje se opakování (Schedule), ne konkrétní datum: stránky jsou
+       statické, takže by jednou zapsané datum brzy zastaralo.
+       Setkání bez uvedeného místa (domácí skupinky) se vynechávají — událost
+       bez místa by nebyla platná a adresy domácností se nezveřejňují. */
+    const adresaSboru = {
+      '@type': 'PostalAddress',
+      streetAddress: 'Hraniční 213', postalCode: '739 61',
+      addressLocality: 'Třinec', addressRegion: 'Moravskoslezský kraj', addressCountry: 'CZ'
+    };
+    for (const r of DATA.times || []) {
+      const misto = loc(r.where);
+      if (!r.den || !r.cas || !misto) continue;
+      const uSboru = /Hraniční/i.test(misto);
+      graf.push({
+        '@type': 'Event',
+        name: loc(r.what),
+        description: loc(r.what) + ' — ' + misto,
+        eventSchedule: {
+          '@type': 'Schedule',
+          byDay: 'https://schema.org/' + r.den,
+          startTime: r.cas,
+          repeatFrequency: 'P1W',
+          scheduleTimezone: 'Europe/Prague'
+        },
+        eventStatus: 'https://schema.org/EventScheduled',
+        eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+        isAccessibleForFree: true,
+        inLanguage: LANG,
+        location: uSboru
+          ? { '@type': 'Place', name: 'Sbor Víry', address: adresaSboru,
+              geo: { '@type': 'GeoCoordinates', latitude: c.lat, longitude: c.lon } }
+          : { '@type': 'Place', name: misto,
+              address: { '@type': 'PostalAddress', addressLocality: 'Třinec', addressCountry: 'CZ' } },
+        organizer: { '@id': SITE_URL + '/#organizace' },
+        image: SITE_URL + '/assets/img/og-image.jpg'
+      });
+    }
+
     // Cesta ke stránce — vyhledávač ji umí zobrazit místo holé adresy.
     if (PAGE !== 'home') {
       const p = PAGES.find((x) => x.key === PAGE);
