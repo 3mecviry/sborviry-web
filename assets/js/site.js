@@ -159,10 +159,15 @@
       `<a href="${href(k)}"${k === PAGE ? ' aria-current="page"' : ''}>${esc(t('nav.' + k))}</a>`
     ).join('');
 
+    // Skutečné odkazy, ne tlačítka: vyhledávač po nich přejde na jazykové
+    // verze i bez JavaScriptu a mezi verzemi teče odkazová síla. Obsluha
+    // kliknutí níž jen navíc uloží volbu do prohlížeče.
+    const stranka = PAGES.find((x) => x.key === PAGE);
     const langItems = LANGS.map((l) =>
-      `<button type="button" data-set-lang="${l}" role="option" aria-selected="${l === LANG}">
+      `<a href="${adresaStranky(stranka ? stranka.file : 'index.html', l)}" hreflang="${l}" lang="${l}"
+          data-set-lang="${l}"${l === LANG ? ' aria-current="true"' : ''}>
          <i>${l.toUpperCase()}</i><span>${esc(I18N[l].langName)}</span>
-       </button>`
+       </a>`
     ).join('');
 
     host.innerHTML = `
@@ -175,9 +180,9 @@
           <nav class="nav" id="mainnav" aria-label="${esc(t('ui.menu'))}">${nav}</nav>
           <div class="header-actions">
             <div class="lang" id="langpick">
-              <button class="lang-btn" type="button" aria-haspopup="listbox" aria-expanded="false"
-                      aria-label="${esc(t('ui.language'))}">${LANG.toUpperCase()} ${ICON.chevron}</button>
-              <div class="lang-menu" role="listbox" aria-label="${esc(t('ui.language'))}">${langItems}</div>
+              <button class="lang-btn" type="button" aria-expanded="false">
+                <span class="sr-only">${esc(t('ui.language'))}: </span>${LANG.toUpperCase()} ${ICON.chevron}</button>
+              <div class="lang-menu">${langItems}</div>
             </div>
             <a class="btn btn-primary btn-sm header-cta" href="${href('first')}">${esc(t('nav.first'))}</a>
             <button class="burger" type="button" aria-label="${esc(t('ui.menu'))}" aria-expanded="false"
@@ -206,30 +211,61 @@
 
     // mobilní menu
     const burger = $('.burger', host);
-    burger.addEventListener('click', () => {
-      const open = document.body.classList.toggle('menu-open');
+    const mainnav = $('#mainnav', host);
+    // Otevření i zavření jde jedním místem: přepne třídu, ohlásí stav čtečce,
+    // přesune fokus (dovnitř při otevření, zpět na tlačítko při zavření)
+    // a zbytek stránky po dobu otevření vyřadí z tabování (inert).
+    const setMenu = (open) => {
+      document.body.classList.toggle('menu-open', open);
       burger.setAttribute('aria-expanded', String(open));
-    });
-    $$('#mainnav a', host).forEach((a) => a.addEventListener('click', () => {
-      document.body.classList.remove('menu-open');
-      burger.setAttribute('aria-expanded', 'false');
-    }));
+      ['#main', '#site-footer'].forEach((sel) => {
+        const el = $(sel);
+        if (el) el.inert = open;
+      });
+      if (open) {
+        const prvni = $('a', mainnav);
+        if (prvni) prvni.focus();
+      } else if (mainnav.contains(document.activeElement)) {
+        burger.focus();
+      }
+    };
+    burger.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
+    $$('#mainnav a', host).forEach((a) => a.addEventListener('click', () => setMenu(false)));
 
     // přepínač jazyků
     const pick = $('#langpick', host);
     const btn = $('.lang-btn', pick);
+    const zavriJazyky = () => {
+      pick.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    };
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
       const open = pick.classList.toggle('open');
       btn.setAttribute('aria-expanded', String(open));
     });
-    document.addEventListener('click', () => {
-      pick.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
-    });
+    document.addEventListener('click', zavriJazyky);
+    // Odkaz by přešel na jinou adresu i sám; tady se navíc uloží volba
+    // jazyka do prohlížeče, proto se výchozí přechod ruší a řeší v setLang.
     $$('[data-set-lang]', pick).forEach((b) =>
-      b.addEventListener('click', () => setLang(b.dataset.setLang))
+      b.addEventListener('click', (e) => {
+        e.preventDefault();
+        setLang(b.dataset.setLang);
+      })
     );
+
+    // Esc zavře menu i nabídku jazyků a vrátí fokus na ovládací tlačítko.
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape') return;
+      if (document.body.classList.contains('menu-open')) {
+        setMenu(false);
+        burger.focus();
+      }
+      if (pick.classList.contains('open')) {
+        zavriJazyky();
+        btn.focus();
+      }
+    });
   }
 
   /* Rozhodne, jestli se hlavní menu vejde vedle loga, nebo se má schovat
@@ -247,6 +283,11 @@
     }
     hdr.classList.add('measuring');           // po dobu měření skryjeme menu
     document.body.classList.remove('nav-compact', 'nav-tight', 'menu-open');
+    // Menu se tu zavírá napřímo, tak ať nezůstane viset inert z jeho otevření.
+    ['#main', '#site-footer'].forEach((sel) => {
+      const el = $(sel);
+      if (el) el.inert = false;
+    });
 
     const nextFrame = window.requestAnimationFrame || ((fn) => setTimeout(fn, 16));
     nextFrame(() => {
@@ -448,11 +489,21 @@
       }
 
       $('.yt-facade', host).addEventListener('click', function () {
-        this.outerHTML = `<div class="media ratio-16-9">
-          <iframe src="${esc(src)}" title="Sbor Víry — YouTube" allowfullscreen
-            referrerpolicy="strict-origin-when-cross-origin"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-        </div>`;
+        // Prvek se staví programem a vyměňuje přes replaceWith: přepsání
+        // outerHTML by odstranilo právě zaostřené tlačítko a fokus by spadl
+        // na začátek stránky — uživatel klávesnice či čtečky by se
+        // k přehrávači musel protabovat celou hlavičkou znovu.
+        const box = document.createElement('div');
+        box.className = 'media ratio-16-9';
+        const f = document.createElement('iframe');
+        f.src = src;
+        f.title = 'Sbor Víry — YouTube';
+        f.setAttribute('allowfullscreen', '');
+        f.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+        f.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+        box.appendChild(f);
+        this.replaceWith(box);
+        f.focus();
       });
     } else {
       host.innerHTML = `<a class="media ratio-16-9" href="${esc(DATA.social.youtube)}" target="_blank" rel="noopener"
@@ -747,10 +798,23 @@
       },
       geo: { '@type': 'GeoCoordinates', latitude: c.lat, longitude: c.lon },
       /* Oficiální profily. Podle nich si vyhledávače a AI ověří, že jde
-         pořád o tutéž organizaci. Poslední v řadě je archivní podcast
-         z roku 2020 — na webu na něj neodkazujeme, ale přiznat se k němu
-         se vyplatí, jinak by mohl vyjít jako cizí subjekt (content.js). */
-      sameAs: [s.youtube, s.facebook, s.instagram, DATA.podcastArchiv].filter(Boolean)
+         pořád o tutéž organizaci. Kanál YouTube je tu dvakrát schválně:
+         jednou pod jménem (@sborviry) a jednou pod neměnným ID kanálu —
+         jméno se dá kdykoli přejmenovat, ID ne. ARES je státní rejstřík,
+         nejsilnější nezávislé potvrzení, že spolek existuje. Firemní profil
+         na Googlu sem patří taky, samotné hasMap níž je jen odkaz na mapu.
+         Poslední v řadě je archivní podcast z roku 2020 — na webu na něj
+         neodkazujeme, ale přiznat se k němu se vyplatí, jinak by mohl vyjít
+         jako cizí subjekt (content.js). */
+      sameAs: [
+        s.youtube,
+        DATA.youtubeChannelId ? 'https://www.youtube.com/channel/' + DATA.youtubeChannelId : '',
+        s.facebook,
+        s.instagram,
+        c.googleMapsUrl,
+        c.ico ? 'https://ares.gov.cz/ekonomicke-subjekty?ico=' + c.ico : '',
+        DATA.podcastArchiv
+      ].filter(Boolean)
     };
     /* Krátké představení, které sbor odliší od podobně znějících organizací
        jinde v republice. Vyhledávače i AI podle něj poznají, o koho jde —
@@ -770,18 +834,21 @@
     if (DATA.founded) organizace.foundingDate = DATA.founded;
     if (c.pastor) organizace.employee = { '@type': 'Person', name: c.pastor, jobTitle: t('about.lead.role') };
 
-    // Časy setkání strojově. Podle nich dokáže vyhledávač i AI asistent
-    // odpovědět na otázku „kdy má Sbor Víry bohoslužby“ rovnou, aniž by
-    // musely luštit text stránky. Berou se z content.js → times (den, cas).
-    const hodiny = (DATA.times || [])
-      .filter((r) => r.den && r.cas)
-      .map((r) => ({
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: 'https://schema.org/' + r.den,
-        opens: r.cas,
-        name: loc(r.what)
-      }));
-    if (hodiny.length) organizace.openingHoursSpecification = hodiny;
+    // Otevírací doba popisuje budovu na Hraniční 213, proto sem patří jen
+    // nedělní bohoslužba. Evangelizace je na náměstí a skupinky po
+    // domácnostech — kdyby tu byly, web by tvrdil, že je budova otevřená,
+    // a kdo by přišel, našel by zavřeno. Ostatní setkání jsou níž jako
+    // události (Event), i s vlastním místem konání.
+    // Budova se otevírá v 10:30, půl hodiny před bohoslužbou — stejný údaj
+    // je i v textu stránky „Jsem tu poprvé“.
+    const nedele = (DATA.times || []).find((r) => r.den === 'Sunday' && r.cas);
+    if (nedele) organizace.openingHoursSpecification = [{
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: 'https://schema.org/Sunday',
+      opens: '10:30',
+      closes: '13:00',
+      name: loc(nedele.what)
+    }];
 
     const graf = [organizace];
 

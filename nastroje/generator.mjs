@@ -175,6 +175,11 @@ function vykresli(chrome, port, url) {
     '--no-sandbox',
     '--disable-extensions',
     '--hide-scrollbars',
+    // Bez udané velikosti běží headless Chrome v okně 800 × 600 — stránka by
+    // se vykreslila v mobilním režimu a do HTML by se všem uložila třída
+    // nav-compact. Desktopovému návštěvníkovi by pak před doběhnutím skriptů
+    // probliklo tlačítko menu místo plné navigace.
+    '--window-size=1400,900',
     // Fonty z Googlu při generování nepotřebujeme — na vzhled uloženého HTML
     // nemají vliv a jen by se na ně čekalo. Na hotovém webu se načtou normálně.
     // Náhled videa z i.ytimg.com naopak blokovat nesmíme: stránka si při

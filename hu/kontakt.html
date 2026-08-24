@@ -13,6 +13,9 @@
 <!-- Cizí web se při odchodu dozví jen doménu, ze které návštěvník přišel,
      ne konkrétní stránku. -->
 <meta name="referrer" content="strict-origin-when-cross-origin">
+<!-- Délka úryvku ve výsledcích: bez téhle značky si Google volí sám a bývá
+     skoupý. Plná délka znamená víc našeho textu ve vyhledávání i v odpovědích AI. -->
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <!-- ÚKLID ADRESY: smaže z odkazu sledovací kódy sociálních sítí a newsletterů,
      aby v adresním řádku zůstalo jen sborviry.org. Viz assets/js/start.js —
      dřív byl tenhle úsek vepsaný v každé stránce zvlášť. -->
@@ -89,8 +92,11 @@
       },
       "sameAs": [
         "https://www.youtube.com/@sborviry",
+        "https://www.youtube.com/channel/UCjtt9_ez5UzekptGN_88xhA",
         "https://www.facebook.com/sborviry.org/",
         "https://www.instagram.com/sborviryorg/",
+        "https://maps.google.com/?cid=5863197709849295835",
+        "https://ares.gov.cz/ekonomicke-subjekty?ico=26596865",
         "https://podcasts.apple.com/cz/podcast/sbor-v%C3%ADry/id1525580706"
       ],
       "disambiguatingDescription": "Keresztény gyülekezet Třinecben, Hraniční 213. Bejegyzett egyesület, nyilvántartási szám 26596865, 2002 óta működik.",
@@ -113,20 +119,9 @@
         {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": "https://schema.org/Sunday",
-          "opens": "11:00",
+          "opens": "10:30",
+          "closes": "13:00",
           "name": "Istentisztelet"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "https://schema.org/Monday",
-          "opens": "17:30",
-          "name": "Evangelizáció"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "https://schema.org/Thursday",
-          "opens": "18:00",
-          "name": "Házicsoportok"
         }
       ]
     },
@@ -225,10 +220,10 @@
     }
   ]
 }</script></head>
-<body data-page="contact" class="nav-compact">
+<body data-page="contact">
 <a class="skip" href="#main" data-i18n="ui.skip">Ugrás a fő tartalomra</a>
 <div id="site-header">
-      <header class="header" id="hdr">
+      <header class="header measuring" id="hdr">
         <div class="wrap header-inner">
           <a class="brand" href="/hu/" aria-label="Sbor Víry — Třinec">
             <img src="/assets/img/logo.png" alt="Sbor Víry" width="78" height="52">
@@ -237,28 +232,29 @@
           <nav class="nav" id="mainnav" aria-label="Menü"><a href="/hu/o-nas">Rólunk</a><a href="/hu/jsem-tu-poprve">Először itt</a><a href="/hu/kazani">Igehirdetések</a><a href="/hu/co-u-nas-najdete">Amit teszünk</a><a href="/hu/aktuality">Hírek</a><a href="/hu/podporte-nas">Támogatás</a><a href="/hu/kontakt" aria-current="page">Kapcsolat</a></nav>
           <div class="header-actions">
             <div class="lang" id="langpick">
-              <button class="lang-btn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Nyelv">HU <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-              <div class="lang-menu" role="listbox" aria-label="Nyelv"><button type="button" data-set-lang="cs" role="option" aria-selected="false">
+              <button class="lang-btn" type="button" aria-expanded="false">
+                <span class="sr-only">Nyelv: </span>HU <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+              <div class="lang-menu"><a href="/kontakt" hreflang="cs" lang="cs" data-set-lang="cs">
          <i>CS</i><span>Čeština</span>
-       </button><button type="button" data-set-lang="sk" role="option" aria-selected="false">
+       </a><a href="/sk/kontakt" hreflang="sk" lang="sk" data-set-lang="sk">
          <i>SK</i><span>Slovenčina</span>
-       </button><button type="button" data-set-lang="pl" role="option" aria-selected="false">
+       </a><a href="/pl/kontakt" hreflang="pl" lang="pl" data-set-lang="pl">
          <i>PL</i><span>Polski</span>
-       </button><button type="button" data-set-lang="uk" role="option" aria-selected="false">
+       </a><a href="/uk/kontakt" hreflang="uk" lang="uk" data-set-lang="uk">
          <i>UK</i><span>Українська</span>
-       </button><button type="button" data-set-lang="ru" role="option" aria-selected="false">
+       </a><a href="/ru/kontakt" hreflang="ru" lang="ru" data-set-lang="ru">
          <i>RU</i><span>Русский</span>
-       </button><button type="button" data-set-lang="de" role="option" aria-selected="false">
+       </a><a href="/de/kontakt" hreflang="de" lang="de" data-set-lang="de">
          <i>DE</i><span>Deutsch</span>
-       </button><button type="button" data-set-lang="en" role="option" aria-selected="false">
+       </a><a href="/en/kontakt" hreflang="en" lang="en" data-set-lang="en">
          <i>EN</i><span>English</span>
-       </button><button type="button" data-set-lang="es" role="option" aria-selected="false">
+       </a><a href="/es/kontakt" hreflang="es" lang="es" data-set-lang="es">
          <i>ES</i><span>Español</span>
-       </button><button type="button" data-set-lang="sv" role="option" aria-selected="false">
+       </a><a href="/sv/kontakt" hreflang="sv" lang="sv" data-set-lang="sv">
          <i>SV</i><span>Svenska</span>
-       </button><button type="button" data-set-lang="hu" role="option" aria-selected="true">
+       </a><a href="/hu/kontakt" hreflang="hu" lang="hu" data-set-lang="hu" aria-current="true">
          <i>HU</i><span>Magyar</span>
-       </button></div>
+       </a></div>
             </div>
             <a class="btn btn-primary btn-sm header-cta" href="/hu/jsem-tu-poprve">Először itt</a>
             <button class="burger" type="button" aria-label="Menü" aria-expanded="false" aria-controls="mainnav"><span></span></button>
@@ -335,7 +331,7 @@
         </div>
 
         <!-- formulář -->
-        <div data-reveal="" style="transition-delay: 70ms;">
+        <div data-reveal="" class="in" style="transition-delay: 70ms;">
           <h2 data-i18n="contact.form.h2">Írj nekünk</h2>
           <p class="muted mt-1" data-i18n="contact.form.p">Általában két munkanapon belül válaszolunk.</p>
 
@@ -345,8 +341,17 @@
             zdarma účet na formspree.io a upravte tento <form> takto:
               <form id="contact-form" data-mode="endpoint"
                     action="https://formspree.io/f/VAS_KOD" method="POST">
+            POZOR: zároveň musíte v hlavičce VŠECH šablon rozšířit pravidlo CSP
+            z „form-action 'self'“ na „form-action 'self' https://formspree.io“
+            a spustit generátor — jinak prohlížeč odeslání tiše zablokuje
+            a chyba se ukáže jen v konzoli (F12).
+
+            method="post" a action="#" níž jsou pojistka: kdyby JavaScript
+            neproběhl, prohlížeč by jinak formulář odeslal metodou GET — a jméno,
+            e-mail i text zprávy by skončily v adresním řádku a v přístupových
+            záznamech serverů. Takhle se data do adresy nedostanou nikdy.
           -->
-          <form id="contact-form" class="mt-2">
+          <form id="contact-form" class="mt-2" method="post" action="#">
             <div class="grid" style="grid-template-columns:1fr">
               <div class="grid g-2">
                 <div class="field">

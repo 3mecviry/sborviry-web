@@ -29,8 +29,12 @@
 <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body data-page="notfound">
+<a class="skip" href="#main" data-i18n="ui.skip">Přejít na hlavní obsah</a>
+<div id="site-header"></div>
 <main id="main">
-  <section class="hero" style="min-height:100dvh;align-items:center">
+  <!-- 70dvh místo 100dvh: nad sekcí je teď hlavička a pod ní patička,
+       na celou výšku by vznikl zbytečný prázdný přetok. -->
+  <section class="hero" style="min-height:70dvh;align-items:center">
     <div class="hero-glow"></div>
     <div class="hero-glow-2"></div>
     <div class="wrap center">
@@ -44,6 +48,7 @@
     </div>
   </section>
 </main>
+<div id="site-footer"></div>
 <script src="/assets/js/i18n.js"></script>
 <script src="/assets/js/content.js"></script>
 <script src="/assets/js/site.js"></script>

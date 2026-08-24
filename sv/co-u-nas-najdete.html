@@ -13,6 +13,9 @@
 <!-- Cizí web se při odchodu dozví jen doménu, ze které návštěvník přišel,
      ne konkrétní stránku. -->
 <meta name="referrer" content="strict-origin-when-cross-origin">
+<!-- Délka úryvku ve výsledcích: bez téhle značky si Google volí sám a bývá
+     skoupý. Plná délka znamená víc našeho textu ve vyhledávání i v odpovědích AI. -->
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <!-- ÚKLID ADRESY: smaže z odkazu sledovací kódy sociálních sítí a newsletterů,
      aby v adresním řádku zůstalo jen sborviry.org. Viz assets/js/start.js —
      dřív byl tenhle úsek vepsaný v každé stránce zvlášť. -->
@@ -89,8 +92,11 @@
       },
       "sameAs": [
         "https://www.youtube.com/@sborviry",
+        "https://www.youtube.com/channel/UCjtt9_ez5UzekptGN_88xhA",
         "https://www.facebook.com/sborviry.org/",
         "https://www.instagram.com/sborviryorg/",
+        "https://maps.google.com/?cid=5863197709849295835",
+        "https://ares.gov.cz/ekonomicke-subjekty?ico=26596865",
         "https://podcasts.apple.com/cz/podcast/sbor-v%C3%ADry/id1525580706"
       ],
       "disambiguatingDescription": "Kristen församling i Třinec på Hraniční 213, Tjeckien. Registrerad förening, org.nr 26596865, verksam sedan 2002.",
@@ -113,20 +119,9 @@
         {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": "https://schema.org/Sunday",
-          "opens": "11:00",
+          "opens": "10:30",
+          "closes": "13:00",
           "name": "Gudstjänst"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "https://schema.org/Monday",
-          "opens": "17:30",
-          "name": "Evangelisation"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "https://schema.org/Thursday",
-          "opens": "18:00",
-          "name": "Hemgrupper"
         }
       ]
     },
@@ -225,7 +220,7 @@
     }
   ]
 }</script></head>
-<body data-page="ministries" class="nav-compact">
+<body data-page="ministries">
 <a class="skip" href="#main" data-i18n="ui.skip">Gå till huvudinnehållet</a>
 <div id="site-header">
       <header class="header" id="hdr">
@@ -237,28 +232,29 @@
           <nav class="nav" id="mainnav" aria-label="Meny"><a href="/sv/o-nas">Om oss</a><a href="/sv/jsem-tu-poprve">Första gången</a><a href="/sv/kazani">Predikningar</a><a href="/sv/co-u-nas-najdete" aria-current="page">Vad vi gör</a><a href="/sv/aktuality">Aktuellt</a><a href="/sv/podporte-nas">Stöd oss</a><a href="/sv/kontakt">Kontakt</a></nav>
           <div class="header-actions">
             <div class="lang" id="langpick">
-              <button class="lang-btn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Språk">SV <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-              <div class="lang-menu" role="listbox" aria-label="Språk"><button type="button" data-set-lang="cs" role="option" aria-selected="false">
+              <button class="lang-btn" type="button" aria-expanded="false">
+                <span class="sr-only">Språk: </span>SV <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+              <div class="lang-menu"><a href="/co-u-nas-najdete" hreflang="cs" lang="cs" data-set-lang="cs">
          <i>CS</i><span>Čeština</span>
-       </button><button type="button" data-set-lang="sk" role="option" aria-selected="false">
+       </a><a href="/sk/co-u-nas-najdete" hreflang="sk" lang="sk" data-set-lang="sk">
          <i>SK</i><span>Slovenčina</span>
-       </button><button type="button" data-set-lang="pl" role="option" aria-selected="false">
+       </a><a href="/pl/co-u-nas-najdete" hreflang="pl" lang="pl" data-set-lang="pl">
          <i>PL</i><span>Polski</span>
-       </button><button type="button" data-set-lang="uk" role="option" aria-selected="false">
+       </a><a href="/uk/co-u-nas-najdete" hreflang="uk" lang="uk" data-set-lang="uk">
          <i>UK</i><span>Українська</span>
-       </button><button type="button" data-set-lang="ru" role="option" aria-selected="false">
+       </a><a href="/ru/co-u-nas-najdete" hreflang="ru" lang="ru" data-set-lang="ru">
          <i>RU</i><span>Русский</span>
-       </button><button type="button" data-set-lang="de" role="option" aria-selected="false">
+       </a><a href="/de/co-u-nas-najdete" hreflang="de" lang="de" data-set-lang="de">
          <i>DE</i><span>Deutsch</span>
-       </button><button type="button" data-set-lang="en" role="option" aria-selected="false">
+       </a><a href="/en/co-u-nas-najdete" hreflang="en" lang="en" data-set-lang="en">
          <i>EN</i><span>English</span>
-       </button><button type="button" data-set-lang="es" role="option" aria-selected="false">
+       </a><a href="/es/co-u-nas-najdete" hreflang="es" lang="es" data-set-lang="es">
          <i>ES</i><span>Español</span>
-       </button><button type="button" data-set-lang="sv" role="option" aria-selected="true">
+       </a><a href="/sv/co-u-nas-najdete" hreflang="sv" lang="sv" data-set-lang="sv" aria-current="true">
          <i>SV</i><span>Svenska</span>
-       </button><button type="button" data-set-lang="hu" role="option" aria-selected="false">
+       </a><a href="/hu/co-u-nas-najdete" hreflang="hu" lang="hu" data-set-lang="hu">
          <i>HU</i><span>Magyar</span>
-       </button></div>
+       </a></div>
             </div>
             <a class="btn btn-primary btn-sm header-cta" href="/sv/jsem-tu-poprve">Första gången</a>
             <button class="burger" type="button" aria-label="Meny" aria-expanded="false" aria-controls="mainnav"><span></span></button>
@@ -279,11 +275,11 @@
   <section class="section">
     <div class="wrap">
       <div class="grid g-3">
-        <article class="card" data-reveal="" style="transition-delay: 0ms;"><span class="card-icon" data-icon="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"></path><path d="M9 22V12h6v10"></path></svg></span>
+        <article class="card in" data-reveal="" style="transition-delay: 0ms;"><span class="card-icon" data-icon="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"></path><path d="M9 22V12h6v10"></path></svg></span>
           <h3 data-i18n="ministries.m1t">Gudstjänst på söndagar</h3><p data-i18n="ministries.m1d">Hela församlingens huvudsamling. Kl. 11.00 börjar vi med lovsång, sedan följer undervisning ur Bibeln, bön och tid för varandra.</p></article>
-        <article class="card" data-reveal="" style="transition-delay: 70ms;"><span class="card-icon green" data-icon="music"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg></span>
+        <article class="card in" data-reveal="" style="transition-delay: 70ms;"><span class="card-icon green" data-icon="music"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg></span>
           <h3 data-i18n="ministries.m2t">Lovsång och musik</h3><p data-i18n="ministries.m2d">Gruppen som förbereder gudstjänstens musikaliska del. Vi välkomnar gärna nya musiker.</p></article>
-        <article class="card" data-reveal="" style="transition-delay: 140ms;"><span class="card-icon" data-icon="users"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.9"></path><path d="M16 3.1a4 4 0 0 1 0 7.8"></path></svg></span>
+        <article class="card in" data-reveal="" style="transition-delay: 140ms;"><span class="card-icon" data-icon="users"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.9"></path><path d="M16 3.1a4 4 0 0 1 0 7.8"></path></svg></span>
           <h3 data-i18n="ministries.m3t">Evangelisation i staden</h3><p data-i18n="ministries.m3d">Varje måndag eftermiddag står vi på T. G. Masaryks torg, samtalar med människor och erbjuder förbön.</p></article>
         <article class="card" data-reveal="" style="transition-delay: 210ms;"><span class="card-icon green" data-icon="hands"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 11V4.5a1.5 1.5 0 0 1 3 0V11"></path><path d="M14 10V3.5a1.5 1.5 0 0 1 3 0V13"></path><path d="M8 11.5V7a1.5 1.5 0 0 0-3 0v7.5a7 7 0 0 0 7 7h1.5a7 7 0 0 0 7-7V9a1.5 1.5 0 0 0-3 0"></path></svg></span>
           <h3 data-i18n="ministries.m4t">Bön</h3><p data-i18n="ministries.m4d">Bönesamlingar under veckan. Vi ber för församlingen, för enskilda människor och för Třinec.</p></article>

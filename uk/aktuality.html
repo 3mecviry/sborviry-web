@@ -13,6 +13,9 @@
 <!-- Cizí web se při odchodu dozví jen doménu, ze které návštěvník přišel,
      ne konkrétní stránku. -->
 <meta name="referrer" content="strict-origin-when-cross-origin">
+<!-- Délka úryvku ve výsledcích: bez téhle značky si Google volí sám a bývá
+     skoupý. Plná délka znamená víc našeho textu ve vyhledávání i v odpovědích AI. -->
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <!-- ÚKLID ADRESY: smaže z odkazu sledovací kódy sociálních sítí a newsletterů,
      aby v adresním řádku zůstalo jen sborviry.org. Viz assets/js/start.js —
      dřív byl tenhle úsek vepsaný v každé stránce zvlášť. -->
@@ -89,8 +92,11 @@
       },
       "sameAs": [
         "https://www.youtube.com/@sborviry",
+        "https://www.youtube.com/channel/UCjtt9_ez5UzekptGN_88xhA",
         "https://www.facebook.com/sborviry.org/",
         "https://www.instagram.com/sborviryorg/",
+        "https://maps.google.com/?cid=5863197709849295835",
+        "https://ares.gov.cz/ekonomicke-subjekty?ico=26596865",
         "https://podcasts.apple.com/cz/podcast/sbor-v%C3%ADry/id1525580706"
       ],
       "disambiguatingDescription": "Християнська церква у Тршинці на вулиці Hraniční 213. Зареєстроване товариство, IČO 26596865, діє з 2002 року.",
@@ -113,20 +119,9 @@
         {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": "https://schema.org/Sunday",
-          "opens": "11:00",
+          "opens": "10:30",
+          "closes": "13:00",
           "name": "Богослужіння"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "https://schema.org/Monday",
-          "opens": "17:30",
-          "name": "Євангелізація"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "https://schema.org/Thursday",
-          "opens": "18:00",
-          "name": "Домашні групи"
         }
       ]
     },
@@ -225,7 +220,7 @@
     }
   ]
 }</script></head>
-<body data-page="news" class="nav-compact">
+<body data-page="news">
 <a class="skip" href="#main" data-i18n="ui.skip">Перейти до основного вмісту</a>
 <div id="site-header">
       <header class="header" id="hdr">
@@ -237,28 +232,29 @@
           <nav class="nav" id="mainnav" aria-label="Меню"><a href="/uk/o-nas">Про нас</a><a href="/uk/jsem-tu-poprve">Уперше в нас</a><a href="/uk/kazani">Проповіді</a><a href="/uk/co-u-nas-najdete">Що ми робимо</a><a href="/uk/aktuality" aria-current="page">Новини</a><a href="/uk/podporte-nas">Підтримати</a><a href="/uk/kontakt">Контакти</a></nav>
           <div class="header-actions">
             <div class="lang" id="langpick">
-              <button class="lang-btn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Мова">UK <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-              <div class="lang-menu" role="listbox" aria-label="Мова"><button type="button" data-set-lang="cs" role="option" aria-selected="false">
+              <button class="lang-btn" type="button" aria-expanded="false">
+                <span class="sr-only">Мова: </span>UK <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+              <div class="lang-menu"><a href="/aktuality" hreflang="cs" lang="cs" data-set-lang="cs">
          <i>CS</i><span>Čeština</span>
-       </button><button type="button" data-set-lang="sk" role="option" aria-selected="false">
+       </a><a href="/sk/aktuality" hreflang="sk" lang="sk" data-set-lang="sk">
          <i>SK</i><span>Slovenčina</span>
-       </button><button type="button" data-set-lang="pl" role="option" aria-selected="false">
+       </a><a href="/pl/aktuality" hreflang="pl" lang="pl" data-set-lang="pl">
          <i>PL</i><span>Polski</span>
-       </button><button type="button" data-set-lang="uk" role="option" aria-selected="true">
+       </a><a href="/uk/aktuality" hreflang="uk" lang="uk" data-set-lang="uk" aria-current="true">
          <i>UK</i><span>Українська</span>
-       </button><button type="button" data-set-lang="ru" role="option" aria-selected="false">
+       </a><a href="/ru/aktuality" hreflang="ru" lang="ru" data-set-lang="ru">
          <i>RU</i><span>Русский</span>
-       </button><button type="button" data-set-lang="de" role="option" aria-selected="false">
+       </a><a href="/de/aktuality" hreflang="de" lang="de" data-set-lang="de">
          <i>DE</i><span>Deutsch</span>
-       </button><button type="button" data-set-lang="en" role="option" aria-selected="false">
+       </a><a href="/en/aktuality" hreflang="en" lang="en" data-set-lang="en">
          <i>EN</i><span>English</span>
-       </button><button type="button" data-set-lang="es" role="option" aria-selected="false">
+       </a><a href="/es/aktuality" hreflang="es" lang="es" data-set-lang="es">
          <i>ES</i><span>Español</span>
-       </button><button type="button" data-set-lang="sv" role="option" aria-selected="false">
+       </a><a href="/sv/aktuality" hreflang="sv" lang="sv" data-set-lang="sv">
          <i>SV</i><span>Svenska</span>
-       </button><button type="button" data-set-lang="hu" role="option" aria-selected="false">
+       </a><a href="/hu/aktuality" hreflang="hu" lang="hu" data-set-lang="hu">
          <i>HU</i><span>Magyar</span>
-       </button></div>
+       </a></div>
             </div>
             <a class="btn btn-primary btn-sm header-cta" href="/uk/jsem-tu-poprve">Уперше в нас</a>
             <button class="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="mainnav"><span></span></button>
@@ -278,7 +274,7 @@
 
   <section class="section">
     <div class="wrap">
-      <div class="grid g-3" data-news="" data-reveal="" style="transition-delay: 0ms;"><article class="post">
+      <div class="grid g-3 in" data-news="" data-reveal="" style="transition-delay: 0ms;"><article class="post">
       <div class="media ratio-16-9"><img src="/assets/img/logo-karta.jpg" alt="Євангелізація у Тршинці" loading="lazy"></div>
       <div>
         <!-- U pravidelné akce dává datum zveřejnění špatnou informaci — proto smí

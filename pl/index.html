@@ -34,6 +34,9 @@
 <!-- Cizí web se při odchodu dozví jen doménu, ze které návštěvník přišel,
      ne konkrétní stránku. -->
 <meta name="referrer" content="strict-origin-when-cross-origin">
+<!-- Délka úryvku ve výsledcích: bez téhle značky si Google volí sám a bývá
+     skoupý. Plná délka znamená víc našeho textu ve vyhledávání i v odpovědích AI. -->
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <!-- ÚKLID ADRESY: smaže z odkazu sledovací kódy sociálních sítí a newsletterů,
      aby v adresním řádku zůstalo jen sborviry.org. Viz assets/js/start.js —
      dřív byl tenhle úsek vepsaný v každé stránce zvlášť. -->
@@ -111,8 +114,11 @@
       },
       "sameAs": [
         "https://www.youtube.com/@sborviry",
+        "https://www.youtube.com/channel/UCjtt9_ez5UzekptGN_88xhA",
         "https://www.facebook.com/sborviry.org/",
         "https://www.instagram.com/sborviryorg/",
+        "https://maps.google.com/?cid=5863197709849295835",
+        "https://ares.gov.cz/ekonomicke-subjekty?ico=26596865",
         "https://podcasts.apple.com/cz/podcast/sbor-v%C3%ADry/id1525580706"
       ],
       "disambiguatingDescription": "Zbór chrześcijański w Trzyńcu przy ulicy Hraniční 213. Stowarzyszenie rejestrowe, IČO 26596865, działa od 2002 roku.",
@@ -135,20 +141,9 @@
         {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": "https://schema.org/Sunday",
-          "opens": "11:00",
+          "opens": "10:30",
+          "closes": "13:00",
           "name": "Nabożeństwo"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "https://schema.org/Monday",
-          "opens": "17:30",
-          "name": "Ewangelizacja"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "https://schema.org/Thursday",
-          "opens": "18:00",
-          "name": "Grupy domowe"
         }
       ]
     },
@@ -230,7 +225,7 @@
     }
   ]
 }</script></head>
-<body data-page="home" class="nav-compact">
+<body data-page="home">
 <a class="skip" href="#main" data-i18n="ui.skip">Przejdź do treści głównej</a>
 <div id="site-header">
       <header class="header" id="hdr">
@@ -242,28 +237,29 @@
           <nav class="nav" id="mainnav" aria-label="Menu"><a href="/pl/o-nas">O nas</a><a href="/pl/jsem-tu-poprve">Pierwszy raz</a><a href="/pl/kazani">Kazania</a><a href="/pl/co-u-nas-najdete">Co robimy</a><a href="/pl/aktuality">Aktualności</a><a href="/pl/podporte-nas">Wesprzyj nas</a><a href="/pl/kontakt">Kontakt</a></nav>
           <div class="header-actions">
             <div class="lang" id="langpick">
-              <button class="lang-btn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Język">PL <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-              <div class="lang-menu" role="listbox" aria-label="Język"><button type="button" data-set-lang="cs" role="option" aria-selected="false">
+              <button class="lang-btn" type="button" aria-expanded="false">
+                <span class="sr-only">Język: </span>PL <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+              <div class="lang-menu"><a href="/" hreflang="cs" lang="cs" data-set-lang="cs">
          <i>CS</i><span>Čeština</span>
-       </button><button type="button" data-set-lang="sk" role="option" aria-selected="false">
+       </a><a href="/sk/" hreflang="sk" lang="sk" data-set-lang="sk">
          <i>SK</i><span>Slovenčina</span>
-       </button><button type="button" data-set-lang="pl" role="option" aria-selected="true">
+       </a><a href="/pl/" hreflang="pl" lang="pl" data-set-lang="pl" aria-current="true">
          <i>PL</i><span>Polski</span>
-       </button><button type="button" data-set-lang="uk" role="option" aria-selected="false">
+       </a><a href="/uk/" hreflang="uk" lang="uk" data-set-lang="uk">
          <i>UK</i><span>Українська</span>
-       </button><button type="button" data-set-lang="ru" role="option" aria-selected="false">
+       </a><a href="/ru/" hreflang="ru" lang="ru" data-set-lang="ru">
          <i>RU</i><span>Русский</span>
-       </button><button type="button" data-set-lang="de" role="option" aria-selected="false">
+       </a><a href="/de/" hreflang="de" lang="de" data-set-lang="de">
          <i>DE</i><span>Deutsch</span>
-       </button><button type="button" data-set-lang="en" role="option" aria-selected="false">
+       </a><a href="/en/" hreflang="en" lang="en" data-set-lang="en">
          <i>EN</i><span>English</span>
-       </button><button type="button" data-set-lang="es" role="option" aria-selected="false">
+       </a><a href="/es/" hreflang="es" lang="es" data-set-lang="es">
          <i>ES</i><span>Español</span>
-       </button><button type="button" data-set-lang="sv" role="option" aria-selected="false">
+       </a><a href="/sv/" hreflang="sv" lang="sv" data-set-lang="sv">
          <i>SV</i><span>Svenska</span>
-       </button><button type="button" data-set-lang="hu" role="option" aria-selected="false">
+       </a><a href="/hu/" hreflang="hu" lang="hu" data-set-lang="hu">
          <i>HU</i><span>Magyar</span>
-       </button></div>
+       </a></div>
             </div>
             <a class="btn btn-primary btn-sm header-cta" href="/pl/jsem-tu-poprve">Pierwszy raz</a>
             <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mainnav"><span></span></button>
@@ -452,7 +448,7 @@
       <button class="carousel-btn" type="button" data-go="-1" aria-label="Poprzednie zdjęcia">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
       </button>
-      <div class="carousel-dots" id="gallery-dots" role="tablist" aria-label="Galeria"><button type="button" role="tab" data-dot="0" aria-label="Grupa zdjęć 1 z 6" aria-current="true"></button><button type="button" role="tab" data-dot="1" aria-label="Grupa zdjęć 2 z 6" aria-current="false"></button><button type="button" role="tab" data-dot="2" aria-label="Grupa zdjęć 3 z 6" aria-current="false"></button><button type="button" role="tab" data-dot="3" aria-label="Grupa zdjęć 4 z 6" aria-current="false"></button><button type="button" role="tab" data-dot="4" aria-label="Grupa zdjęć 5 z 6" aria-current="false"></button><button type="button" role="tab" data-dot="5" aria-label="Grupa zdjęć 6 z 6" aria-current="false"></button></div>
+      <div class="carousel-dots" id="gallery-dots" role="tablist" aria-label="Galeria"><button type="button" role="tab" data-dot="0" aria-label="Grupa zdjęć 1 z 4" aria-current="true"></button><button type="button" role="tab" data-dot="1" aria-label="Grupa zdjęć 2 z 4" aria-current="false"></button><button type="button" role="tab" data-dot="2" aria-label="Grupa zdjęć 3 z 4" aria-current="false"></button><button type="button" role="tab" data-dot="3" aria-label="Grupa zdjęć 4 z 4" aria-current="false"></button></div>
       <button class="carousel-btn" type="button" data-go="1" aria-label="Następne zdjęcia">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
       </button>

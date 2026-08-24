@@ -12,3 +12,8 @@ desktop.ini
 *~
 *.swp
 *.bak
+
+# Náhledy rozpracovaných návrhů. GitHub Pages servíruje celý repozitář,
+# takže cokoli tady by bylo hned veřejné na sborviry.org — proto to ven
+# nepouštíme. Až se návrh schválí, přesune se do _sablony/ a nastroje/.
+_nahledy/

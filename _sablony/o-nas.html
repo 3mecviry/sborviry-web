@@ -14,6 +14,9 @@
 <!-- Cizí web se při odchodu dozví jen doménu, ze které návštěvník přišel,
      ne konkrétní stránku. -->
 <meta name="referrer" content="strict-origin-when-cross-origin">
+<!-- Délka úryvku ve výsledcích: bez téhle značky si Google volí sám a bývá
+     skoupý. Plná délka znamená víc našeho textu ve vyhledávání i v odpovědích AI. -->
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <!-- ÚKLID ADRESY: smaže z odkazu sledovací kódy sociálních sítí a newsletterů,
      aby v adresním řádku zůstalo jen sborviry.org. Viz assets/js/start.js —
      dřív byl tenhle úsek vepsaný v každé stránce zvlášť. -->

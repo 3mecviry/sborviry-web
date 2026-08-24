@@ -398,12 +398,18 @@ zprávou. Funguje všude a nevyžaduje žádnou službu.
 Chcete-li zprávy dostávat přímo do e-mailu bez otevírání klienta:
 
 1. Zaregistrujte se zdarma na [formspree.io](https://formspree.io) a vytvořte formulář.
-2. V `kontakt.html` upravte řádek `<form id="contact-form" class="mt-2">` na:
+2. V `_sablony/kontakt.html` upravte řádek `<form id="contact-form" class="mt-2" method="post" action="#">` na:
 
 ```html
 <form id="contact-form" class="mt-2" data-mode="endpoint"
       action="https://formspree.io/f/VAS_KOD" method="POST">
 ```
+
+3. **Zároveň rozšiřte bezpečnostní pravidlo CSP** v hlavičce všech šablon
+   v `_sablony/` z `form-action 'self'` na `form-action 'self' https://formspree.io`
+   a spusťte `node nastroje/generator.mjs`. Bez toho prohlížeč odeslání
+   tiše zablokuje — formulář vypadá funkčně, ale nic neodejde a chyba
+   se ukáže jen v konzoli (F12).
 
 ---
 

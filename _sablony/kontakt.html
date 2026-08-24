@@ -14,6 +14,9 @@
 <!-- Cizí web se při odchodu dozví jen doménu, ze které návštěvník přišel,
      ne konkrétní stránku. -->
 <meta name="referrer" content="strict-origin-when-cross-origin">
+<!-- Délka úryvku ve výsledcích: bez téhle značky si Google volí sám a bývá
+     skoupý. Plná délka znamená víc našeho textu ve vyhledávání i v odpovědích AI. -->
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <!-- ÚKLID ADRESY: smaže z odkazu sledovací kódy sociálních sítí a newsletterů,
      aby v adresním řádku zůstalo jen sborviry.org. Viz assets/js/start.js —
      dřív byl tenhle úsek vepsaný v každé stránce zvlášť. -->
@@ -92,8 +95,17 @@
             zdarma účet na formspree.io a upravte tento <form> takto:
               <form id="contact-form" data-mode="endpoint"
                     action="https://formspree.io/f/VAS_KOD" method="POST">
+            POZOR: zároveň musíte v hlavičce VŠECH šablon rozšířit pravidlo CSP
+            z „form-action 'self'“ na „form-action 'self' https://formspree.io“
+            a spustit generátor — jinak prohlížeč odeslání tiše zablokuje
+            a chyba se ukáže jen v konzoli (F12).
+
+            method="post" a action="#" níž jsou pojistka: kdyby JavaScript
+            neproběhl, prohlížeč by jinak formulář odeslal metodou GET — a jméno,
+            e-mail i text zprávy by skončily v adresním řádku a v přístupových
+            záznamech serverů. Takhle se data do adresy nedostanou nikdy.
           -->
-          <form id="contact-form" class="mt-2">
+          <form id="contact-form" class="mt-2" method="post" action="#">
             <div class="grid" style="grid-template-columns:1fr">
               <div class="grid g-2">
                 <div class="field">

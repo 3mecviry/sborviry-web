@@ -1,12 +1,25 @@
+# ============================================================================
 # Sbor Víry — https://sborviry.org
+# ----------------------------------------------------------------------------
+# ZÁMĚR: web má být co nejlépe vidět — v klasickém vyhledávání i v odpovědích
+# AI asistentů. Sbor obsah neprodává; jeho cílem je, aby se sdělení šířilo.
+# Proto NEBLOKUJEME nikoho, ani roboty, kteří sbírají data pro trénink modelů.
+#
+# Pravidla AI robotů níž jsou schválně vypsaná jménem, i když by stačil
+# blok „*“. Dva důvody:
+#   1) Je na první pohled vidět, že jde o vědomé rozhodnutí, ne o opomenutí.
+#   2) Kdyby se v budoucnu blok „*“ zpřísnil, tyhle roboty to nezasáhne.
+#
+# Aktualizováno: srpen 2026. Jména robotů se mění — před další úpravou
+# zkontrolujte dokumentaci dodavatelů.
+# ============================================================================
+
 User-agent: *
 Allow: /
 
 # Stránky, které do vyhledávání nepatří.
 # Zápis bez koncovky pokrývá obě podoby adresy — /404 i /404.html.
-# Hvězdička na začátku zabere i jazykové verze, tedy /sk/ochrana-osobnich-udaju.
 Disallow: /404
-Disallow: /*ochrana-osobnich-udaju
 
 # Zdrojové kostry stránek a generátor. Hotové stránky vznikají z nich,
 # takže samy o sobě do vyhledávání nepatří — jinak by se stejný obsah
@@ -14,11 +27,89 @@ Disallow: /*ochrana-osobnich-udaju
 Disallow: /_sablony/
 Disallow: /nastroje/
 
+# Rozpracované návrhy. Složka je sice v .gitignore, ale kdyby se někdy
+# omylem dostala do repozitáře, GitHub Pages ji hned zveřejní.
+Disallow: /_nahledy/
+
 # Dokumentace k webu. GitHub Pages servíruje všechno z kořene repozitáře,
 # takže by se jinak dala najít i na sborviry.org — do výsledků vyhledávání
 # ale nepatří, je určená správci webu, ne návštěvníkům.
+# Znaky „*“ a „$“ jsou součástí standardu RFC 9309 (sekce 2.2.3),
+# takže je respektuje Google, Bing, Seznam i doložení AI roboti; explicitní
+# řádky pod tím jsou pojistka pro roboty, kteří zástupné znaky neumí.
 Disallow: /*.md$
 Disallow: /README.md
 Disallow: /KONTROLA-JAZYKU.md
 
+# POZNÁMKA KE STRÁNCE O OCHRANĚ OSOBNÍCH ÚDAJŮ:
+# Dřív tu stálo „Disallow: /*ochrana-osobnich-udaju“. Zákaz v tomhle souboru
+# ale indexaci nezabrání — vyhledávač smí adresu zařadit i bez obsahu, takže
+# se ukáže jako holý odkaz bez popisku, což je horší než celá stránka.
+# Navíc bránil robotům přečíst si značku noindex, která je přímo na stránce
+# a která ji z výsledků odstraní spolehlivě — a přitom dovolí robotům
+# i AI přečíst si právní údaje o sboru.
+
+# ---------------------------------------------------------------------------
+# VYHLEDÁVACÍ ROBOTY AI ASISTENTŮ
+# Sbírají obsah pro odpovědi S ODKAZEM na zdroj — přivádějí návštěvníky.
+# ---------------------------------------------------------------------------
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+# ---------------------------------------------------------------------------
+# ROBOTY VYVOLANÉ UŽIVATELEM
+# Někdo se právě v chatu ptá na náš web. Blokovat je nedává smysl nikdy.
+# ---------------------------------------------------------------------------
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+# ---------------------------------------------------------------------------
+# TRÉNINKOVÉ ROBOTY — VĚDOMĚ POVOLENO
+# Co se model naučí, to ví i bez připojení k internetu, pro spoustu lidí
+# a na roky dopředu. Kdyby se sbor rozhodl jinak, stačí u konkrétního
+# robota vyměnit „Allow: /“ za „Disallow: /“.
+# ---------------------------------------------------------------------------
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# ---------------------------------------------------------------------------
 Sitemap: https://sborviry.org/sitemap.xml

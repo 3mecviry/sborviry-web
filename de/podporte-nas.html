@@ -13,6 +13,9 @@
 <!-- Cizí web se při odchodu dozví jen doménu, ze které návštěvník přišel,
      ne konkrétní stránku. -->
 <meta name="referrer" content="strict-origin-when-cross-origin">
+<!-- Délka úryvku ve výsledcích: bez téhle značky si Google volí sám a bývá
+     skoupý. Plná délka znamená víc našeho textu ve vyhledávání i v odpovědích AI. -->
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <!-- ÚKLID ADRESY: smaže z odkazu sledovací kódy sociálních sítí a newsletterů,
      aby v adresním řádku zůstalo jen sborviry.org. Viz assets/js/start.js —
      dřív byl tenhle úsek vepsaný v každé stránce zvlášť. -->
@@ -89,8 +92,11 @@
       },
       "sameAs": [
         "https://www.youtube.com/@sborviry",
+        "https://www.youtube.com/channel/UCjtt9_ez5UzekptGN_88xhA",
         "https://www.facebook.com/sborviry.org/",
         "https://www.instagram.com/sborviryorg/",
+        "https://maps.google.com/?cid=5863197709849295835",
+        "https://ares.gov.cz/ekonomicke-subjekty?ico=26596865",
         "https://podcasts.apple.com/cz/podcast/sbor-v%C3%ADry/id1525580706"
       ],
       "disambiguatingDescription": "Christliche Gemeinde in Třinec, Hraniční 213. Eingetragener Verein, IČO 26596865, besteht seit 2002.",
@@ -113,20 +119,9 @@
         {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": "https://schema.org/Sunday",
-          "opens": "11:00",
+          "opens": "10:30",
+          "closes": "13:00",
           "name": "Gottesdienst"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "https://schema.org/Monday",
-          "opens": "17:30",
-          "name": "Evangelisation"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "https://schema.org/Thursday",
-          "opens": "18:00",
-          "name": "Hauskreise"
         }
       ]
     },
@@ -225,7 +220,7 @@
     }
   ]
 }</script></head>
-<body data-page="give" class="nav-compact">
+<body data-page="give">
 <a class="skip" href="#main" data-i18n="ui.skip">Zum Hauptinhalt springen</a>
 <div id="site-header">
       <header class="header" id="hdr">
@@ -237,28 +232,29 @@
           <nav class="nav" id="mainnav" aria-label="Menü"><a href="/de/o-nas">Über uns</a><a href="/de/jsem-tu-poprve">Erster Besuch</a><a href="/de/kazani">Predigten</a><a href="/de/co-u-nas-najdete">Was wir tun</a><a href="/de/aktuality">Aktuelles</a><a href="/de/podporte-nas" aria-current="page">Unterstützen</a><a href="/de/kontakt">Kontakt</a></nav>
           <div class="header-actions">
             <div class="lang" id="langpick">
-              <button class="lang-btn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Sprache">DE <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-              <div class="lang-menu" role="listbox" aria-label="Sprache"><button type="button" data-set-lang="cs" role="option" aria-selected="false">
+              <button class="lang-btn" type="button" aria-expanded="false">
+                <span class="sr-only">Sprache: </span>DE <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+              <div class="lang-menu"><a href="/podporte-nas" hreflang="cs" lang="cs" data-set-lang="cs">
          <i>CS</i><span>Čeština</span>
-       </button><button type="button" data-set-lang="sk" role="option" aria-selected="false">
+       </a><a href="/sk/podporte-nas" hreflang="sk" lang="sk" data-set-lang="sk">
          <i>SK</i><span>Slovenčina</span>
-       </button><button type="button" data-set-lang="pl" role="option" aria-selected="false">
+       </a><a href="/pl/podporte-nas" hreflang="pl" lang="pl" data-set-lang="pl">
          <i>PL</i><span>Polski</span>
-       </button><button type="button" data-set-lang="uk" role="option" aria-selected="false">
+       </a><a href="/uk/podporte-nas" hreflang="uk" lang="uk" data-set-lang="uk">
          <i>UK</i><span>Українська</span>
-       </button><button type="button" data-set-lang="ru" role="option" aria-selected="false">
+       </a><a href="/ru/podporte-nas" hreflang="ru" lang="ru" data-set-lang="ru">
          <i>RU</i><span>Русский</span>
-       </button><button type="button" data-set-lang="de" role="option" aria-selected="true">
+       </a><a href="/de/podporte-nas" hreflang="de" lang="de" data-set-lang="de" aria-current="true">
          <i>DE</i><span>Deutsch</span>
-       </button><button type="button" data-set-lang="en" role="option" aria-selected="false">
+       </a><a href="/en/podporte-nas" hreflang="en" lang="en" data-set-lang="en">
          <i>EN</i><span>English</span>
-       </button><button type="button" data-set-lang="es" role="option" aria-selected="false">
+       </a><a href="/es/podporte-nas" hreflang="es" lang="es" data-set-lang="es">
          <i>ES</i><span>Español</span>
-       </button><button type="button" data-set-lang="sv" role="option" aria-selected="false">
+       </a><a href="/sv/podporte-nas" hreflang="sv" lang="sv" data-set-lang="sv">
          <i>SV</i><span>Svenska</span>
-       </button><button type="button" data-set-lang="hu" role="option" aria-selected="false">
+       </a><a href="/hu/podporte-nas" hreflang="hu" lang="hu" data-set-lang="hu">
          <i>HU</i><span>Magyar</span>
-       </button></div>
+       </a></div>
             </div>
             <a class="btn btn-primary btn-sm header-cta" href="/de/jsem-tu-poprve">Erster Besuch</a>
             <button class="burger" type="button" aria-label="Menü" aria-expanded="false" aria-controls="mainnav"><span></span></button>
@@ -291,7 +287,7 @@
           </ul>
           <p class="small muted mt-2" data-i18n="give.why.note">Kein Betrag ist zu klein, und niemand wird bei uns danach beurteilt, wie viel er gibt. Jede Spende ist völlig freiwillig.</p>
         </div>
-        <div data-reveal="" style="transition-delay: 70ms;">
+        <div data-reveal="" class="in" style="transition-delay: 70ms;">
           <span class="eyebrow" data-i18n="give.bank.eyebrow">Bankverbindung</span>
           <h2 class="mt-1" data-i18n="give.bank.h2">So können Sie spenden</h2>
           <div class="mt-2" id="giving"><div class="data-rows">

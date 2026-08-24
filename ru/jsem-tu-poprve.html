@@ -13,6 +13,9 @@
 <!-- Cizí web se při odchodu dozví jen doménu, ze které návštěvník přišel,
      ne konkrétní stránku. -->
 <meta name="referrer" content="strict-origin-when-cross-origin">
+<!-- Délka úryvku ve výsledcích: bez téhle značky si Google volí sám a bývá
+     skoupý. Plná délka znamená víc našeho textu ve vyhledávání i v odpovědích AI. -->
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <!-- ÚKLID ADRESY: smaže z odkazu sledovací kódy sociálních sítí a newsletterů,
      aby v adresním řádku zůstalo jen sborviry.org. Viz assets/js/start.js —
      dřív byl tenhle úsek vepsaný v každé stránce zvlášť. -->
@@ -89,8 +92,11 @@
       },
       "sameAs": [
         "https://www.youtube.com/@sborviry",
+        "https://www.youtube.com/channel/UCjtt9_ez5UzekptGN_88xhA",
         "https://www.facebook.com/sborviry.org/",
         "https://www.instagram.com/sborviryorg/",
+        "https://maps.google.com/?cid=5863197709849295835",
+        "https://ares.gov.cz/ekonomicke-subjekty?ico=26596865",
         "https://podcasts.apple.com/cz/podcast/sbor-v%C3%ADry/id1525580706"
       ],
       "disambiguatingDescription": "Христианская церковь в Тршинце на улице Hraniční 213. Зарегистрированное объединение, IČO 26596865, действует с 2002 года.",
@@ -113,20 +119,9 @@
         {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": "https://schema.org/Sunday",
-          "opens": "11:00",
+          "opens": "10:30",
+          "closes": "13:00",
           "name": "Богослужение"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "https://schema.org/Monday",
-          "opens": "17:30",
-          "name": "Евангелизация"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "https://schema.org/Thursday",
-          "opens": "18:00",
-          "name": "Домашние группы"
         }
       ]
     },
@@ -294,7 +289,7 @@
     }
   ]
 }</script></head>
-<body data-page="first" class="nav-compact">
+<body data-page="first">
 <a class="skip" href="#main" data-i18n="ui.skip">Перейти к основному содержанию</a>
 <div id="site-header">
       <header class="header" id="hdr">
@@ -306,28 +301,29 @@
           <nav class="nav" id="mainnav" aria-label="Меню"><a href="/ru/o-nas">О нас</a><a href="/ru/jsem-tu-poprve" aria-current="page">Впервые у нас</a><a href="/ru/kazani">Проповеди</a><a href="/ru/co-u-nas-najdete">Чем занимаемся</a><a href="/ru/aktuality">Новости</a><a href="/ru/podporte-nas">Поддержать</a><a href="/ru/kontakt">Контакты</a></nav>
           <div class="header-actions">
             <div class="lang" id="langpick">
-              <button class="lang-btn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Язык">RU <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-              <div class="lang-menu" role="listbox" aria-label="Язык"><button type="button" data-set-lang="cs" role="option" aria-selected="false">
+              <button class="lang-btn" type="button" aria-expanded="false">
+                <span class="sr-only">Язык: </span>RU <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+              <div class="lang-menu"><a href="/jsem-tu-poprve" hreflang="cs" lang="cs" data-set-lang="cs">
          <i>CS</i><span>Čeština</span>
-       </button><button type="button" data-set-lang="sk" role="option" aria-selected="false">
+       </a><a href="/sk/jsem-tu-poprve" hreflang="sk" lang="sk" data-set-lang="sk">
          <i>SK</i><span>Slovenčina</span>
-       </button><button type="button" data-set-lang="pl" role="option" aria-selected="false">
+       </a><a href="/pl/jsem-tu-poprve" hreflang="pl" lang="pl" data-set-lang="pl">
          <i>PL</i><span>Polski</span>
-       </button><button type="button" data-set-lang="uk" role="option" aria-selected="false">
+       </a><a href="/uk/jsem-tu-poprve" hreflang="uk" lang="uk" data-set-lang="uk">
          <i>UK</i><span>Українська</span>
-       </button><button type="button" data-set-lang="ru" role="option" aria-selected="true">
+       </a><a href="/ru/jsem-tu-poprve" hreflang="ru" lang="ru" data-set-lang="ru" aria-current="true">
          <i>RU</i><span>Русский</span>
-       </button><button type="button" data-set-lang="de" role="option" aria-selected="false">
+       </a><a href="/de/jsem-tu-poprve" hreflang="de" lang="de" data-set-lang="de">
          <i>DE</i><span>Deutsch</span>
-       </button><button type="button" data-set-lang="en" role="option" aria-selected="false">
+       </a><a href="/en/jsem-tu-poprve" hreflang="en" lang="en" data-set-lang="en">
          <i>EN</i><span>English</span>
-       </button><button type="button" data-set-lang="es" role="option" aria-selected="false">
+       </a><a href="/es/jsem-tu-poprve" hreflang="es" lang="es" data-set-lang="es">
          <i>ES</i><span>Español</span>
-       </button><button type="button" data-set-lang="sv" role="option" aria-selected="false">
+       </a><a href="/sv/jsem-tu-poprve" hreflang="sv" lang="sv" data-set-lang="sv">
          <i>SV</i><span>Svenska</span>
-       </button><button type="button" data-set-lang="hu" role="option" aria-selected="false">
+       </a><a href="/hu/jsem-tu-poprve" hreflang="hu" lang="hu" data-set-lang="hu">
          <i>HU</i><span>Magyar</span>
-       </button></div>
+       </a></div>
             </div>
             <a class="btn btn-primary btn-sm header-cta" href="/ru/jsem-tu-poprve">Впервые у нас</a>
             <button class="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="mainnav"><span></span></button>
@@ -351,7 +347,7 @@
 
   <!-- ---------------------------- ČASY ---------------------------- -->
   <section class="section-tight">
-    <div class="wrap" data-reveal="" style="transition-delay: 0ms;">
+    <div class="wrap in" data-reveal="" style="transition-delay: 0ms;">
       <div class="times" id="times">
       <div class="time-row">
         <span class="when">Воскресенье 11:00</span>
