@@ -319,6 +319,14 @@ function absolutniCesty(html, jazyk, jeChybova) {
   return html.replace(/(href|src)="assets\//g, '$1="/assets/');
 }
 
+/* Přechodný stav hlavičky do uloženého HTML nepatří. Třídu „measuring“ si
+   stránka nasazuje jen na okamžik, kdy měří šířku menu (a CSS po tu dobu menu
+   skrývá) — Chrome ale občas vypíše DOM přesně uprostřed měření. Kdyby třída
+   ve snímku zůstala, návštěvník bez JavaScriptu by menu neviděl vůbec. */
+function uklidPrechodnehoStavu(html) {
+  return html.replace('class="header measuring"', 'class="header"');
+}
+
 /* --------------------------------------------------------------- sitemap */
 /* --- Datum poslední změny --------------------------------------------------
    V sitemapě má <lastmod> říkat, kdy se stránka naposledy opravdu změnila.
@@ -550,6 +558,7 @@ async function main() {
       zkontrolujVykresleni(html, ukol.jazyk);
       html = upravHlavicku(html, ukol.jazyk, ukol.soubor, ukol.jeChybova);
       html = absolutniCesty(html, ukol.jazyk, ukol.jeChybova);
+      html = uklidPrechodnehoStavu(html);
       html = vratCSP(html);
       zkontrolujBezpecnost(html);
 
