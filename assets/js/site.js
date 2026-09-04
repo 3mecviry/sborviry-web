@@ -840,13 +840,15 @@
     // a kdo by přišel, našel by zavřeno.
     // Budova se otevírá v 10:30, půl hodiny před bohoslužbou — stejný údaj
     // je i v textu stránky „Jsem tu poprvé“.
+    // Blok se schválně nepojmenovává „Bohoslužba“: popisoval by časem 10:30
+    // začátek bohoslužby, která je až v 11:00, a vyhledávače i AI by pak
+    // posílaly lidi o půl hodiny dřív. Je to otevírací doba budovy, nic víc.
     const nedele = (DATA.times || []).find((r) => r.den === 'Sunday' && r.cas);
     if (nedele) organizace.openingHoursSpecification = [{
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: 'https://schema.org/Sunday',
       opens: '10:30',
-      closes: '13:00',
-      name: loc(nedele.what)
+      closes: '13:00'
     }];
 
     const graf = [organizace];

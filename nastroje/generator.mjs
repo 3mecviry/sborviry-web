@@ -32,8 +32,9 @@
 import { createServer } from 'node:http';
 import { execFile, execFileSync } from 'node:child_process';
 import { readFile, writeFile, mkdir, readdir } from 'node:fs/promises';
-import { existsSync, statSync } from 'node:fs';
+import { existsSync, statSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
+import { runInNewContext } from 'node:vm';
 import path from 'node:path';
 
 const KOREN   = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -408,12 +409,27 @@ ${zaznamy.join('\n')}
 `;
 }
 
+/* ------------------------------------------------------- údaje z content.js */
+/* Časy setkání se čtou přímo z content.js. Ze strukturovaných dat se vzít
+   nedají: openingHoursSpecification popisuje budovu (otevřeno od 10:30), ne
+   začátek bohoslužby (11:00) — kdo by z něj časy odvozoval, poslal by lidi
+   o půl hodiny dřív. Soubor je čistá deklarace `const DATA = { … };`, proto
+   se vyhodnotí v sandboxu a vrátí se hodnota DATA. */
+function nactiObsah() {
+  try {
+    const kod = readFileSync(path.join(KOREN, 'assets/js/content.js'), 'utf8');
+    return runInNewContext(kod + '\n;DATA;', Object.create(null), { timeout: 2000 });
+  } catch (e) {
+    return null;
+  }
+}
+
 /* ---------------------------------------------------------------- llms.txt */
 /* Rozcestník pro nástroje s umělou inteligencí (llmstxt.org). Shrnuje na
    jednom místě to, na co se lidí ptají nejčastěji — kde sbor sídlí, kdy jsou
    bohoslužby, jak se ozvat — a odkazuje na jednotlivé stránky. Skládá se
    z týchž strukturovaných dat, která jsou v hotovém index.html, takže se
-   s webem nemůže rozejít. */
+   s webem nemůže rozejít; časy setkání přibývají z content.js (viz výš). */
 function slozLlmsTxt(html) {
   const blok = html.match(/<script type="application\/ld\+json" id="schema-org">([\s\S]*?)<\/script>/);
   if (!blok) return null;
@@ -426,6 +442,7 @@ function slozLlmsTxt(html) {
   } catch (e) { return null; }
   if (!org) return null;
 
+  const obsah = nactiObsah();
   const a = org.address || {};
   const radky = [];
 
@@ -461,17 +478,26 @@ function slozLlmsTxt(html) {
   }
   radky.push('');
 
-  const hodiny = org.openingHoursSpecification || [];
-  if (hodiny.length) {
-    const DNY = {
-      Sunday: 'neděle', Monday: 'pondělí', Tuesday: 'úterý', Wednesday: 'středa',
-      Thursday: 'čtvrtek', Friday: 'pátek', Saturday: 'sobota'
-    };
+  const setkani = (obsah && obsah.times) || [];
+  if (setkani.length) {
     radky.push('## Pravidelná setkání');
     radky.push('');
-    for (const h of hodiny) {
-      const den = DNY[String(h.dayOfWeek).split('/').pop()] || h.dayOfWeek;
-      radky.push('- **' + (h.name || 'Setkání') + ':** ' + den + ' ' + h.opens);
+    for (const s of setkani) {
+      const co  = (s.what  && s.what.cs)  || 'Setkání';
+      // „Neděle 11:00“ je v tabulce na webu samostatná buňka, tady pokračuje
+      // ve větě za dvojtečkou — velké písmeno by uprostřed řádku rušilo.
+      const kdy = ((s.when && s.when.cs) || '').replace(/^./, (z) => z.toLowerCase());
+      const kam = (s.where && s.where.cs) || '';
+      radky.push('- **' + co + ':** ' + [kdy, kam].filter(Boolean).join(', '));
+    }
+    // Budova se otevírá dřív než začíná bohoslužba. Bez téhle věty by AI
+    // odpovídala jen jedním z těch dvou časů — a jeden z nich by byl špatně.
+    const budova = (org.openingHoursSpecification || [])[0];
+    if (budova && budova.opens) {
+      radky.push('');
+      radky.push('Budova na adrese ' + (a.streetAddress || 'Hraniční 213') + ' se otevírá v '
+        + budova.opens + ', tedy před začátkem bohoslužby — kdo chce, může přijít dřív '
+        + 'a v klidu se seznámit.');
     }
     radky.push('');
   }

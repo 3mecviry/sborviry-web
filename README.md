@@ -182,14 +182,17 @@ Kromě samotných stránek vzniká i to, podle čeho si web najdou vyhledávače
 a nástroje s umělou inteligencí:
 
 - **Strukturovaná data** (schema.org) přímo v HTML každé stránky — kdo sbor je,
-  kde sídlí, IČO, odkazy na profily a **časy setkání ve strojovém tvaru**.
-  Díky nim umí asistent odpovědět na „kdy má Sbor Víry bohoslužby“ rovnou.
-  Časy se berou z `content.js` → `times`, z políček `den` a `cas`.
+  kde sídlí, IČO, odkazy na profily a **otevírací doba budovy** ve strojovém
+  tvaru (neděle 10:30–13:00). Pozor, to není začátek bohoslužby: ta je až
+  v 11:00 a budova se otevírá půl hodiny předem. Blok se proto schválně
+  nejmenuje „Bohoslužba“ — kdyby ano, vyhledávače i AI by lidi posílaly dřív.
   Na stránce *Jsem tu poprvé* se navíc přidají **časté dotazy** — čtou se
   rovnou ze stránky, takže se nikdy nerozejdou s tím, co je vidět.
 - **`sitemap.xml`** — všech 80 adres včetně jazykových verzí.
-- **`llms.txt`** — stručný rozcestník pro AI nástroje: adresa, časy setkání,
-  kontakt a seznam stránek na jednom místě.
+- **`llms.txt`** — stručný rozcestník pro AI nástroje: adresa, kontakt, seznam
+  stránek a **časy setkání** i s místem konání. Ty se berou z `content.js` →
+  `times` (políčka `what`, `when`, `where`), takže odpovídají tomu, co je
+  v tabulce na webu.
 
 Nic z toho se needituje ručně; vzniká to z `i18n.js` a `content.js`.
 
