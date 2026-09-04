@@ -152,6 +152,52 @@ const DATA = {
      ------------------------------------------------------------------ */
   news: [
     {
+      // Pozvánka na akci, která teprve bude. Po večeru stačí přepsat text na
+      // ohlédnutí, smazat dateLabel (vypíše se pak datum konání) a případně
+      // doplnit odkaz na záznam a vlastní fotku.
+      date: '2026-09-14',
+      dateLabel: {
+        cs: 'Pondělí 14. září v 18:00',
+        sk: 'Pondelok 14. septembra o 18:00',
+        pl: 'Poniedziałek 14 września o 18:00',
+        uk: 'Понеділок, 14 вересня, о 18:00',
+        ru: 'Понедельник, 14 сентября, в 18:00',
+        de: 'Montag, 14. September, 18:00 Uhr',
+        en: 'Monday 14 September at 18:00',
+        es: 'Lunes 14 de septiembre a las 18:00',
+        sv: 'Måndag 14 september kl. 18.00',
+        hu: 'Szeptember 14., hétfő, 18:00'
+      },
+      // Fotka z loňského prorockého večera, na který tenhle navazuje.
+      image: 'assets/img/prorocka-sluzba-2025.jpg',
+      link: '',
+      tag:   { cs: 'Pozvánka', sk: 'Pozvánka', pl: 'Zaproszenie', uk: 'Запрошення', ru: 'Приглашение', de: 'Einladung', en: 'Invitation', es: 'Invitación', sv: 'Inbjudan', hu: 'Meghívó' },
+      title: {
+        cs: 'Prorocký večer s uctíváním v Třinci — 14. září 2026',
+        sk: 'Prorocký večer s uctievaním v Třinci — 14. septembra 2026',
+        pl: 'Wieczór proroczy z uwielbieniem w Trzyńcu — 14 września 2026',
+        uk: 'Пророчий вечір із прославленням у Тршинці — 14 вересня 2026',
+        ru: 'Пророческий вечер с прославлением в Тршинце — 14 сентября 2026',
+        de: 'Prophetischer Abend mit Lobpreis in Třinec — 14. September 2026',
+        en: 'A prophetic evening with worship in Třinec — 14 September 2026',
+        es: 'Velada profética con alabanza en Třinec — 14 de septiembre de 2026',
+        sv: 'Profetisk kväll med lovsång i Třinec — 14 september 2026',
+        hu: 'Prófétai est dicsérettel Třinecben — 2026. szeptember 14.'
+      },
+      text: {
+        cs: 'V pondělí 14. září 2026 od 18:00 vás zveme do Sboru Víry v Třinci na další prorocký večer — navazuje na ten loňský z 13. října. Čekají nás chvály a uctívání, společná modlitba a prorocká slova. Přijít může kdokoli, vstup je volný a hlásit se nikam předem nemusíte. Sejdeme se na adrese Hraniční 213.',
+        sk: 'V pondelok 14. septembra 2026 od 18:00 vás pozývame do zboru Sbor Víry v Třinci na ďalší prorocký večer — nadväzuje na ten vlaňajší z 13. októbra. Čakajú nás chvály a uctievanie, spoločná modlitba a prorocké slová. Prísť môže ktokoľvek, vstup je voľný a vopred sa nikam hlásiť nemusíte. Stretneme sa na adrese Hraniční 213.',
+        pl: 'W poniedziałek 14 września 2026 r. od 18:00 zapraszamy do zboru Sbor Víry w Trzyńcu na kolejny wieczór proroczy — nawiązuje do zeszłorocznego z 13 października. Czekają nas uwielbienie, wspólna modlitwa i prorocze słowa. Przyjść może każdy, wstęp jest wolny i nie trzeba się wcześniej zgłaszać. Spotykamy się przy ulicy Hraniční 213.',
+        uk: 'У понеділок, 14 вересня 2026 року, о 18:00 запрошуємо до церкви Sbor Víry у Тршинці на черговий пророчий вечір — він продовжує торішній вечір 13 жовтня. На нас чекають прославлення, спільна молитва та пророчі слова. Прийти може будь-хто, вхід вільний і реєструватися заздалегідь не потрібно. Зустрічаємося за адресою Hraniční 213.',
+        ru: 'В понедельник, 14 сентября 2026 года, в 18:00 приглашаем в церковь Sbor Víry в Тршинце на очередной пророческий вечер — он продолжает прошлогодний вечер 13 октября. Нас ждут прославление, совместная молитва и пророческие слова. Прийти может любой, вход свободный и записываться заранее не нужно. Встречаемся по адресу Hraniční 213.',
+        de: 'Am Montag, dem 14. September 2026, laden wir ab 18:00 Uhr zu einem weiteren prophetischen Abend in die Gemeinde Sbor Víry in Třinec ein — er knüpft an den Abend vom 13. Oktober des vergangenen Jahres an. Es erwarten uns Lobpreis und Anbetung, gemeinsames Gebet und prophetische Worte. Kommen kann jeder, der Eintritt ist frei und eine Anmeldung ist nicht nötig. Wir treffen uns in der Hraniční 213.',
+        en: 'On Monday 14 September 2026 at 18:00 we invite you to Sbor Víry in Třinec for another prophetic evening — it follows on from the one we held here last October. There will be worship, prayer together and prophetic words. Anyone is welcome, admission is free and there is no need to sign up in advance. We meet at Hraniční 213.',
+        es: 'El lunes 14 de septiembre de 2026, a las 18:00, te invitamos a la iglesia Sbor Víry de Třinec a otra velada profética, que da continuidad a la del 13 de octubre del año pasado. Habrá alabanza y adoración, oración en común y palabras proféticas. Puede venir cualquiera, la entrada es libre y no hace falta inscribirse. Nos vemos en Hraniční 213.',
+        sv: 'Måndagen den 14 september 2026 kl. 18.00 bjuder vi in till ännu en profetisk kväll hos Sbor Víry i Třinec — den knyter an till kvällen den 13 oktober förra året. Det blir lovsång och tillbedjan, gemensam bön och profetiska ord. Alla är välkomna, inträdet är fritt och man behöver inte anmäla sig i förväg. Vi ses på Hraniční 213.',
+        hu: '2026. szeptember 14-én, hétfőn 18:00-tól újabb prófétai estre hívunk a třineci Sbor Víry gyülekezetbe — a tavalyi, október 13-i est folytatása. Dicséret és imádat, közös imádság és prófétai szavak várnak ránk. Bárki eljöhet, a belépés ingyenes, és előre nem kell jelentkezni. A Hraniční 213. szám alatt találkozunk.'
+      }
+    },
+    {
       date: '2026-06-01',
       // Pravidelná akce: místo data zveřejnění se na kartě ukáže tenhle popisek.
       dateLabel: {
