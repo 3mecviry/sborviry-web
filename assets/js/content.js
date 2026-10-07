@@ -76,7 +76,7 @@ const DATA = {
      Zůstanou-li obě pole prázdná, zobrazí se místo přehrávače tlačítko
      odkazující na kanál. Web se nikdy nerozbije.
      ------------------------------------------------------------------ */
-  youtubeVideoId: 'nc1icUaCYbU',
+  youtubeVideoId: 'FVgTRMftdYs',
   youtubePlaylistId: 'PLeGPPF1P4_e7bzvZGKWhvnJ1RVz-8MkM-',   // Bohoslužba | 2026
 
   // Rok založení sboru (uvádí se ve strukturovaných datech pro vyhledávače)
